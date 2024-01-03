@@ -1,5 +1,5 @@
 export type ContactIcon = {
-  icon: React.SVGProps<SVGSVGElement>;
+  icon: any;
   link: string;
   name: string;
   target: string;
