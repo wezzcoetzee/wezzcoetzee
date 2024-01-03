@@ -6,11 +6,12 @@ export default function Footer() {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
+          strokeWidth={1}
+          stroke="white"
           className="w-6 h-6"
         >
           <path
+            fill="white"
             strokeLinecap="round"
             strokeLinejoin="round"
             d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
@@ -22,7 +23,7 @@ export default function Footer() {
           />
         </svg>
 
-        <span>The Hague, Netherlands</span>
+        <h1 className="text-white">The Hague, Netherlands</h1>
       </div>
     </footer>
   );

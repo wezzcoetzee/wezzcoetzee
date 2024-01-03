@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 p-4 flex justify-between w-full">
       <div className="flex">
-        <h1>Wesley Coetzee</h1>
+        <h1 className="text-white">Wesley Coetzee</h1>
       </div>
       <div className="flex flex-row gap-5">
         <div>
