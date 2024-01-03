@@ -19,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <Header />
-        <Footer />
+        <div className="bg-slate-200 h-screen overflow-hidden flex justify-center items-center w-full tracking-tighter text-white">
+          {children}
+          <Header />
+          <Footer />
+        </div>
       </body>
     </html>
   );
