@@ -57,7 +57,7 @@ export default function Header() {
           />
         </svg>
       ),
-      link: "https://www.linkedin.com/in/wesley-coetzee-17390589/",
+      link: "https://www.linkedin.com/in/wesleycoetzee/",
       name: "linkedin",
       target: "_blank",
     },
