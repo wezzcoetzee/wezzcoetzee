@@ -1,4 +1,12 @@
-### Hi there 👋
+### Hi there 👋 I'm Wesley
+
+### Projects
+
+Loading...
+
+### Contact
+
+Direct message or tag [me on 𝕏](https://twitter.com/wezzcoetzee) for the best response times.
 
 <!--
 **wezzcoetzee/wezzcoetzee** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
