@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Script
           strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+          src="https://www.googletagmanager.com/gtag/js?id=G-M18S2XK0BZ"
         />
         <Script strategy="lazyOnload" id="google-analytics">
           {`

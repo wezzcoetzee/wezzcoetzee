@@ -1,3 +1,5 @@
+import SocialButton from "./SocialButton";
+
 export type ContactIcon = {
   icon: any;
   link: string;
@@ -134,6 +136,7 @@ export default function Header() {
     //   target: "_self",
     // },
   ];
+
   return (
     <header className="fixed top-0 p-4 flex justify-between w-full">
       <div className="flex">
@@ -142,11 +145,7 @@ export default function Header() {
       <div className="flex flex-row gap-5">
         {CONTACTS.map((contact: ContactIcon) => {
           return (
-            <div key={contact.name}>
-              <a href={contact.link} target="_blank">
-                {contact.icon}
-              </a>
-            </div>
+            <SocialButton key={contact.name} contact={contact}></SocialButton>
           );
         })}
       </div>
