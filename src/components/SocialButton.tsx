@@ -41,9 +41,6 @@ export default function SocialButton(props: { contact: ContactIcon }) {
       >
         {contact.icon}
       </a>
-      {/* <a href={contact.link} target="_blank">
-                {contact.icon}
-              </a> */}
     </div>
   );
 }
