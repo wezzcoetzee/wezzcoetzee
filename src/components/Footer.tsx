@@ -7,11 +7,11 @@ export default function Footer() {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1}
-          stroke="white"
+          stroke="black"
           className="w-6 h-6"
         >
           <path
-            fill="white"
+            fill="black"
             strokeLinecap="round"
             strokeLinejoin="round"
             d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </svg>
 
-        <h1 className="text-white">The Hague, Netherlands</h1>
+        <h1>The Hague, Netherlands</h1>
       </div>
     </footer>
   );
