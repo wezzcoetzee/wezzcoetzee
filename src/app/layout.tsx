@@ -33,10 +33,12 @@ export default function RootLayout({
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="bg-slate-200 h-screen overflow-hidden flex justify-center items-center w-full tracking-tighter">
-          {children}
-          <Header />
-          <Footer />
+        <div className="gradient-bg">
+          <div className="h-screen overflow-hidden flex justify-center items-center tracking-tighter">
+            <Header />
+            {children}
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
