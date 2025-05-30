@@ -27,9 +27,10 @@ export default function SocialButton(props: { contact: ContactIcon }) {
   };
 
   return (
-    <div>
+    <div className="flex justify-center">
       <a
         href="#"
+        className="p-2 rounded-full shadow-md bg-beige hover:shadow-lg transition-shadow duration-200 ease-in-out"
         onClick={() =>
           sendGoogleAnalyticsEvent(contact.link, {
             action: "click",

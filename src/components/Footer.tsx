@@ -6,7 +6,7 @@ export default function Footer() {
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth={1}
+          strokeWidth="2"
           stroke="black"
           className="w-6 h-6"
         >
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </svg>
 
-        <h1>The Hague, Netherlands</h1>
+        <h3>The Hague, Netherlands</h3>
       </div>
     </footer>
   );

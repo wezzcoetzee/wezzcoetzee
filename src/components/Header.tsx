@@ -85,10 +85,10 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 p-4 flex justify-between w-full">
-      <div className="flex">
+      <div className="flex justify-center items-center">
         <h1>Wesley Coetzee</h1>
       </div>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-3">
         {CONTACTS.map((contact: ContactIcon) => {
           return (
             <SocialButton key={contact.name} contact={contact}></SocialButton>
