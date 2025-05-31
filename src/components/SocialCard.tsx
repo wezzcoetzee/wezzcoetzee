@@ -11,11 +11,40 @@ interface SocialCardProps {
 }
 
 export default function SocialCard({ contact }: SocialCardProps) {
+    const sendGoogleAnalyticsEvent = (
+        link: string,
+        analyticData: {
+          action: string;
+          category: string;
+          label: string;
+          value: string;
+        }
+      ) => {
+        try {
+          (window as any).gtag("event", analyticData.action, {
+            event_category: analyticData.category,
+            event_label: analyticData.label,
+            value: analyticData.value,
+          });
+        } catch (e: any) {
+          console.error("No Google Analytics detected");
+        }
+    
+        window.open(link, "_blank");
+      };
+    
   return (
     <a
-      href={contact.link}
-      target={contact.target}
-      className="block p-6 rounded-lg shadow-md hover:bg-beige transition-colors"
+        href="#"
+        target={contact.target}
+        className="block p-6 rounded-lg shadow-md hover:bg-beige transition-colors"
+        onClick={() =>
+            sendGoogleAnalyticsEvent(contact.link, {
+            action: "click",
+            category: "social",
+            label: "external",
+            value: contact.name,
+        })}
     >
       <div className="flex items-center gap-4">
         <div className="flex-shrink-0">
