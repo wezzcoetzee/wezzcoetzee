@@ -34,10 +34,10 @@ export default function RootLayout({
         `}
         </Script>
         <div className="gradient-bg">
-          <div className="h-screen overflow-hidden flex justify-center items-center tracking-tighter">
-            <Header />
-            {children}
-            <Footer />
+          <div className="h-screen overflow-hidden flex tracking-tighter">
+              <Header />
+              {children}
+              <Footer />
           </div>
         </div>
       </body>

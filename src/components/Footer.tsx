@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 p-4 flex items-end w-full flex-col">
+    <footer className="fixed bottom-0 left-0 p-4 flex items-end flex-col w-full">
       <div className="flex flex-row gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"

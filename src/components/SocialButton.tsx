@@ -1,5 +1,6 @@
 "use client";
-import { ContactIcon } from "./Header";
+
+import { ContactIcon } from "./SocialCard";
 
 export default function SocialButton(props: { contact: ContactIcon }) {
   const { contact } = props;
