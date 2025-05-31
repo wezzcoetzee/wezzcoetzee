@@ -19,7 +19,7 @@
 }
 
 @theme {
-  --color-beige: rgb(252, 228, 192); 
+  --color-beige: rgb(255, 255, 235); 
 }
 
 @layer base {
@@ -49,8 +49,8 @@
 }
 
 :root {
-  --color-bg1: rgb(252, 228, 192);
-  --color-bg2: rgb(255, 231, 204);
+  --color-bg1: rgb(255, 255, 235);
+  --color-bg2: rgb(255, 255, 235);
 }
 
 .gradient-bg {

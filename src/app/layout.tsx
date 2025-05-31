@@ -37,7 +37,6 @@ export default function RootLayout({
           <div className="h-screen overflow-hidden flex tracking-tighter">
               <Header />
               {children}
-              <Footer />
           </div>
         </div>
       </body>

@@ -99,27 +99,15 @@ export default function Home() {
       </svg>
       ),
       link: "https://x.com/wezzcoetzee",
-      name: "x",
-      description: "Follow me on X",
+      name: undefined,
+      description: "Follow me on X, I'm @wezzcoetzee",
       target: "_blank",
     },
     {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="20"
-          width="15"
-          viewBox="0 0 384 512"
-        >
-          <path
-            fill="black"
-            d="M290.7 311L95 269.7 86.8 309l195.7 41zm51-87L188.2 95.7l-25.5 30.8 153.5 128.3zm-31.2 39.7L129.2 179l-16.7 36.5L293.7 300zM262 32l-32 24 119.3 160.3 32-24zm20.5 328h-200v39.7h200zm39.7 80H42.7V320h-40v160h359.5V320h-40z"
-          />
-        </svg>
-      ),
+      icon: undefined,
       link: "https://cv.wezzcoetzee.com",
-      name: "my CV",
-      description: "Download my CV",
+      name: "My Online CV",
+      description: "View my online CV, you can also download it",
       target: "_blank",
     }
   ];

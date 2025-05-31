@@ -1,9 +1,9 @@
 "use client";
 
 export type ContactIcon = {
-    icon: any;
+    icon?: any;
     link: string;
-    name: string;
+    name?: string;
     target: string;
     description: string;
   };
@@ -45,14 +45,14 @@ export default function SocialCard({ contact }: SocialCardProps) {
             action: "click",
             category: "social",
             label: "external",
-            value: contact.name,
+            value: contact.name!,
         })}
     >
-      <div className="flex items-center gap-4">
-        <div className="flex-shrink-0">
-          {contact.icon}
-        </div>
-        <div>
+      <div className="flex items-center justify-center gap-4">
+        <div className="flex flex-col items-center">
+          <div className="flex-shrink-0">
+            {contact.icon}
+          </div>
           <h3 className="text-xl font-semibold text-gray-900 capitalize">
             {contact.name}
           </h3>
