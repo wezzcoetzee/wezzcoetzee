@@ -37,7 +37,7 @@ export default function SocialButton(props: { contact: ContactIcon }) {
             action: "click",
             category: "social",
             label: "external",
-            value: contact.name,
+            value: contact.name ?? "unknown",
           })
         }
       >
