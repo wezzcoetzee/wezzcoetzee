@@ -1,13 +1,6 @@
-import Header from "@/components/Header";
 import SocialCard, { ContactIcon } from "@/components/SocialCard";
 
 export default function Home() {
-  const socialDescriptions: Record<string, string> = {
-    stackoverflow: "See my contributions to the developer community",
-    x: "Follow me on X",
-    printableCV: "Download my CV"
-  };
-
   const CONTACTS: ContactIcon[] = [
     {
       icon: (
