@@ -14,6 +14,32 @@ export default function Home() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           height="20"
+          width="17.5"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="black"
+            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
+          />
+        </svg>
+      ),
+      link: "https://www.linkedin.com/in/wesleycoetzee/",
+      description: "Connect with me professionally and view my work experience",
+      name: "linkedin",
+      target: "_blank",
+    },
+    {
+      icon: undefined,
+      link: "https://cv.wezzcoetzee.com",
+      name: "My Online CV",
+      description: "View my online CV, you can also download it",
+      target: "_blank",
+    },
+    {
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="20"
           width="19.375"
           viewBox="0 0 496 512"
         >
@@ -45,25 +71,6 @@ export default function Home() {
       link: "https://medium.com/@wezzcoetzee",
       name: "medium",
       description: "Read my technical articles and thoughts on software development",
-      target: "_blank",
-    },
-    {
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="20"
-          width="17.5"
-          viewBox="0 0 448 512"
-        >
-          <path
-            fill="black"
-            d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z"
-          />
-        </svg>
-      ),
-      link: "https://www.linkedin.com/in/wesleycoetzee/",
-      description: "Connect with me professionally and view my work experience",
-      name: "linkedin",
       target: "_blank",
     },
     {
@@ -103,22 +110,15 @@ export default function Home() {
       description: "Follow me on X, I'm @wezzcoetzee",
       target: "_blank",
     },
-    {
-      icon: undefined,
-      link: "https://cv.wezzcoetzee.com",
-      name: "My Online CV",
-      description: "View my online CV, you can also download it",
-      target: "_blank",
-    }
   ];
 
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {CONTACTS.map((contact) => (
+          {CONTACTS.map((contact, index) => (
             <SocialCard
-              key={contact.name}
+              key={`contact-${index}`}
               contact={contact}
             />
           ))}
