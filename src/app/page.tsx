@@ -1,4 +1,5 @@
 import SocialCard, { ContactIcon } from "@/components/SocialCard";
+import Introduction from "@/components/Introduction";
 
 export default function Home() {
   const CONTACTS: ContactIcon[] = [
@@ -93,21 +94,22 @@ export default function Home() {
           width="15"
           xmlns="http://www.w3.org/2000/svg">
         <path
-          fill="currentColor"
+          fill="black"
           d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
         />
       </svg>
       ),
       link: "https://x.com/wezzcoetzee",
-      name: undefined,
+      name: '',
       description: "Follow me on X, I'm @wezzcoetzee",
       target: "_blank",
     },
   ];
 
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 mt-20">
+    <main className="container relative mx-auto overflow-auto p-4 md:p-16">
+      <section className="mx-auto w-full max-w-2xl space-y-8 mt-10">
+        <Introduction />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CONTACTS.map((contact, index) => (
             <SocialCard

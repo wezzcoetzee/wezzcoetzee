@@ -25,6 +25,7 @@
 @layer base {
   html, body {
     font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   }
   
   *,
@@ -52,7 +53,7 @@
   --color-bg1: rgb(255, 255, 235);
   --color-bg2: rgb(255, 255, 235);
 }
-
+/* 
 .gradient-bg {
   width: 100vw;
   height: 100vh;
@@ -61,4 +62,4 @@
   background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
   top: 0;
   left: 0;
-}
+} */

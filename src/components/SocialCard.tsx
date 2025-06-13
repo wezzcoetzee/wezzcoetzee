@@ -49,13 +49,15 @@ export default function SocialCard({ contact }: SocialCardProps) {
         })}
     >
       <div className="flex items-center justify-center gap-4">
-        <div className="flex flex-col items-center">
-          <div className="flex-shrink-0">
-            {contact.icon}
+        <div className="flex flex-col">
+          <div className="flex items-center justify-center gap-2">
+            <div className="flex-shrink-0">
+              {contact.icon}
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 capitalize">
+              {contact.name}
+            </h3>
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 capitalize">
-            {contact.name}
-          </h3>
           <p className="mt-1 text-gray-600">
             {contact.description}
           </p>

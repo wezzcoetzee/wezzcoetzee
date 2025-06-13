@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -32,10 +31,9 @@ export default function RootLayout({
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="gradient-bg">
-          <div className="h-screen overflow-hidden flex tracking-tighter">
-              <Header />
-              {children}
+        <div className="gradient-bg h-screen overflow-auto  tracking-tighter">
+          <div className="overflow-auto ">
+          {children}
           </div>
         </div>
       </body>
