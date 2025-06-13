@@ -25,7 +25,7 @@ export default function Home() {
     {
       icon: undefined,
       link: "https://cv.wezzcoetzee.com",
-      name: "My Online CV",
+      name: "My CV",
       description: "View my online CV, you can also download it",
       target: "_blank",
     },
