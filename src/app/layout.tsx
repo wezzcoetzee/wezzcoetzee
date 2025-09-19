@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <ThemeProvider defaultTheme="system">
+        <ThemeProvider defaultTheme="light">
           {/* Theme toggle button - fixed position */}
           <div className="fixed top-4 right-4 z-50">
             <ThemeToggle />
