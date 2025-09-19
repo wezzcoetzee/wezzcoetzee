@@ -99,7 +99,7 @@ export default function Home() {
         />
       </svg>
       ),
-      link: "https://x.com/wezzcoetzee",
+      link: "https://x.com/intent/follow?screen_name=wezzcoetzee",
       name: '',
       description: "Follow me on X, I'm @wezzcoetzee",
       target: "_blank",
@@ -108,7 +108,7 @@ export default function Home() {
 
   return (
     <main className="container relative mx-auto overflow-auto p-4 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 mt-10">
+      <section className="mx-auto w-full max-w-2xl space-y-8 my-10">
         <Introduction />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CONTACTS.map((contact, index) => (

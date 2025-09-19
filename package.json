@@ -9,7 +9,9 @@
     "dev": "next dev --turbopack",
     "build": "next build && rm -rf ./.next/cache",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "next": "15.3.3",
@@ -25,6 +27,7 @@
     "eslint-config-next": "15.3.3",
     "postcss": "^8",
     "postcss-nesting": "^12.0.2",
+    "prettier": "^3.5.3",
     "tailwindcss": "^4.1.8",
     "typescript": "^5"
   },

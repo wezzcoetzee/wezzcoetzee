@@ -13,8 +13,8 @@ export default function Introduction() {
         />
       </div>
       <div className="flex-1 space-y-4">
-        <h1 className="text-4xl font-bold">Wesley Coetzee</h1>
-        <h3 className="text-md font-medium">Software Architect and Senior Engineer</h3>
+        <h1 className="font-bold">Wesley Coetzee</h1>
+        <h3 className="font-medium">Software Architect and Senior Engineer</h3>
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"

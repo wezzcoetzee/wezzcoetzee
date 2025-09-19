@@ -17,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="#ffffeb"
+        /> 
+
+        <meta name="theme-color" content="#ffffeb" />
+        <body className={inter.className}>
         <Script
           strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-M18S2XK0BZ"
@@ -31,7 +38,7 @@ export default function RootLayout({
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="gradient-bg h-screen overflow-auto  tracking-tighter">
+        <div className="gradient-bg overflow-auto  tracking-tighter">
           <div className="overflow-auto ">
           {children}
           </div>

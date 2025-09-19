@@ -39,7 +39,7 @@ export default function SocialCard({ contact }: SocialCardProps) {
     <a
         href="#"
         target={contact.target}
-        className="block p-6 rounded-lg shadow-md hover:bg-beige transition-colors"
+        className="block p-6 rounded-lg shadow-md hover:bg-off-white transition-colors"
         onClick={() =>
             sendGoogleAnalyticsEvent(contact.link, {
             action: "click",
