@@ -18,10 +18,11 @@
   }
 }
 
+/* Base theme variables */
 @theme {
   --color-off-white: rgb(255, 255, 235);
-
-  /* Semantic color tokens */
+  
+  /* Light mode colors */
   --color-background: 255 255 235;
   --color-foreground: 51 65 85;
   --color-card: 255 255 255;
@@ -36,12 +37,35 @@
 }
 
 @layer base {
+  :root {
+    --bg1: rgb(255, 255, 235);
+    --bg2: rgb(255, 255, 235);
+  }
+  
+  .dark {
+    --color-background: 2 8 23;
+    --color-foreground: 248 250 252;
+    --color-card: 15 23 42;
+    --color-card-foreground: 248 250 252;
+    --color-muted: 30 41 59;
+    --color-muted-foreground: 148 163 184;
+    --color-border: 51 65 85;
+    --color-primary: 96 165 250;
+    --color-primary-foreground: 2 8 23;
+    --color-secondary: 30 41 59;
+    --color-secondary-foreground: 248 250 252;
+    --bg1: rgb(2, 8, 23);
+    --bg2: rgb(15, 23, 42);
+  }
+
   html,
   body {
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    background: linear-gradient(40deg, var(--bg1), var(--bg2));
     min-height: 100vh;
     position: relative;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
   }
 
   .gradient-bg {
@@ -79,19 +103,22 @@
   ::before,
   ::backdrop,
   ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
+    border-color: rgb(var(--color-border));
   }
 
   h1 {
-    @apply text-2xl font-bold text-foreground tracking-tight;
+    @apply text-2xl font-bold tracking-tight;
+    color: rgb(var(--color-foreground));
   }
 
   h2 {
-    @apply text-xl font-bold text-foreground tracking-tight;
+    @apply text-xl font-bold tracking-tight;
+    color: rgb(var(--color-foreground));
   }
 
   h3 {
-    @apply text-lg font-bold text-foreground tracking-tight;
+    @apply text-lg font-bold tracking-tight;
+    color: rgb(var(--color-foreground));
   }
 
   /* Semantic color utilities */
@@ -208,14 +235,9 @@
   }
 }
 
-:root {
-  --color-bg1: rgb(255, 255, 235);
-  --color-bg2: rgb(255, 255, 235);
-}
-
-/* Dark mode temporarily disabled for testing - will re-enable after fixing contrast
+/* System dark mode preference */
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root:not(.light) {
     --color-background: 2 8 23;
     --color-foreground: 248 250 252;
     --color-card: 15 23 42;
@@ -227,11 +249,7 @@
     --color-primary-foreground: 2 8 23;
     --color-secondary: 30 41 59;
     --color-secondary-foreground: 248 250 252;
-  }
-
-  :root {
-    --color-bg1: rgb(2, 8, 23);
-    --color-bg2: rgb(15, 23, 42);
+    --bg1: rgb(2, 8, 23);
+    --bg2: rgb(15, 23, 42);
   }
 }
-*/

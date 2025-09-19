@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -31,9 +33,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="gradient-bg overflow-auto  tracking-tighter">
-          <div className="overflow-auto ">{children}</div>
-        </div>
+        <ThemeProvider defaultTheme="system">
+          {/* Theme toggle button - fixed position */}
+          <div className="fixed top-4 right-4 z-50">
+            <ThemeToggle />
+          </div>
+          
+          <div className="gradient-bg overflow-auto tracking-tighter">
+            <div className="overflow-auto">{children}</div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
