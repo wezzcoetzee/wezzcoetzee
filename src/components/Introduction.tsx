@@ -20,7 +20,7 @@ export default function Introduction() {
           <div className="space-y-2">
             <h1 className="text-3xl md:text-4xl font-bold text-foreground">Wesley Coetzee</h1>
             <h2 className="text-xl text-primary font-semibold">
-              Staff Engineer and Tech Lead
+              I write code and lead teams
             </h2>
           </div>
 
@@ -46,7 +46,7 @@ export default function Introduction() {
                 />
               </svg>
             </div>
-            <p className="text-muted-foreground text-base">The Hague, Netherlands</p>
+            <p className="text-muted-foreground text-base">Auckland, New Zealand</p>
           </div>
 
           <p className="text-muted-foreground leading-relaxed max-w-md">
