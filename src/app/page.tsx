@@ -102,20 +102,11 @@ export default function Home() {
       <main id="main-content" className="container relative mx-auto overflow-auto p-4 md:p-16">
         <section className="mx-auto w-full max-w-4xl space-y-12 my-10">
           <Introduction />
-
-          <div className="space-y-6">
-            <div className="text-center space-y-2">
-              <h2 className="text-2xl font-bold text-foreground">Connect With Me</h2>
-              <p className="text-muted-foreground">
-                Choose your preferred platform to get in touch
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {CONTACTS.map((contact, index) => (
-                <SocialCard key={`contact-${index}`} contact={contact} />
-              ))}
-            </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {CONTACTS.map((contact, index) => (
+              <SocialCard key={`contact-${index}`} contact={contact} />
+            ))}
           </div>
         </section>
       </main>
