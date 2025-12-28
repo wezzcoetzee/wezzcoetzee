@@ -1,27 +1,15 @@
 <div align="center">
 
-# Hey, I'm Wesley 👋
-
-### Principal Engineer • Distributed Systems • Blockchain Developer
+<img src="public/header.svg" alt="Hi, I'm Wesley - Principal Engineer • Distributed Systems • Blockchain" width="100%"/>
 
 [![Twitter](https://img.shields.io/badge/𝕏-@wezzcoetzee-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/wezzcoetzee)
-[![GitHub](https://img.shields.io/badge/GitHub-wezzcoetzee-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wezzcoetzee)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Wesley%20Coetzee-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wesleycoetzee/)
+[![GitHub](https://img.shields.io/badge/GitHub-wezzcoetzee-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wezzcoetzee)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Wesley%20Coetzee-000000?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wesleycoetzee/)
+
+[![Followers](https://img.shields.io/github/followers/wezzcoetzee?style=flat-square&label=Followers&labelColor=000000&color=22c55e)](https://github.com/wezzcoetzee?tab=followers)
+![Profile Views](https://komarev.com/ghpvc/?username=wezzcoetzee&color=22c55e&style=flat-square&label=Profile+Views)
 
 </div>
-
----
-
-### 🚀 About Me
-
-```typescript
-const wesley = {
-    role: "Principal Engineer",
-    focus: ["Distributed Systems", "Blockchain", "Web3"],
-    askMeAbout: ["System Design", "Smart Contracts", "Scalability"],
-    currently: "Architecting resilient systems"
-};
-```
 
 ---
 
@@ -31,60 +19,49 @@ const wesley = {
 
 **Languages & Frameworks**
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-000000?style=flat-square&logo=typescript&logoColor=3178C6)
+![JavaScript](https://img.shields.io/badge/JavaScript-000000?style=flat-square&logo=javascript&logoColor=F7DF1E)
+![Solidity](https://img.shields.io/badge/Solidity-000000?style=flat-square&logo=solidity&logoColor=white)
+![Go](https://img.shields.io/badge/Go-000000?style=flat-square&logo=go&logoColor=00ADD8)
+![React](https://img.shields.io/badge/React-000000?style=flat-square&logo=react&logoColor=61DAFB)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-000000?style=flat-square&logo=node.js&logoColor=22c55e)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-000000?style=flat-square&logo=tailwindcss&logoColor=06B6D4)
 
 **Blockchain & Web3**
 
-![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?style=flat-square&logo=ethereum&logoColor=white)
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
-![Hardhat](https://img.shields.io/badge/Hardhat-FFF100?style=flat-square&logo=hardhat&logoColor=black)
-![Foundry](https://img.shields.io/badge/Foundry-1C1C1C?style=flat-square&logo=foundry&logoColor=white)
-![Web3.js](https://img.shields.io/badge/Web3.js-F16822?style=flat-square&logo=web3.js&logoColor=white)
-![Ethers.js](https://img.shields.io/badge/Ethers.js-2535A0?style=flat-square&logo=ethers&logoColor=white)
+![Ethereum](https://img.shields.io/badge/Ethereum-000000?style=flat-square&logo=ethereum&logoColor=white)
+![Solana](https://img.shields.io/badge/Solana-000000?style=flat-square&logo=solana&logoColor=9945FF)
+![Hardhat](https://img.shields.io/badge/Hardhat-000000?style=flat-square&logo=hardhat&logoColor=FFF100)
+![Foundry](https://img.shields.io/badge/Foundry-000000?style=flat-square&logo=foundry&logoColor=white)
+![Web3.js](https://img.shields.io/badge/Web3.js-000000?style=flat-square&logo=web3.js&logoColor=F16822)
+![Ethers.js](https://img.shields.io/badge/Ethers.js-000000?style=flat-square&logo=ethers&logoColor=white)
 
 </div>
 
 ---
 
-### 📊 GitHub Activity
+### 📊 GitHub Stats
 
 <div align="center">
-
-[![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=wezzcoetzee&theme=tokyo-night&hide_border=true&bg_color=0D1117&color=70a5fd&line=bf91f3&point=38bdae)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-</div>
-
----
-
-### 🔥 Recent Activity
-
-<!--START_SECTION:activity-->
-<!-- GitHub Activity will show here if you set up the GitHub Activity README action -->
-<!--END_SECTION:activity-->
-
-> 💡 *Check out my [repositories](https://github.com/wezzcoetzee?tab=repositories) to see what I'm working on!*
-
----
-
-### 📬 Let's Connect
-
-<div align="center">
-
-💬 **Got a question or just want to chat?**
-
-Drop me a DM or tag me on [𝕏 (Twitter)](https://twitter.com/wezzcoetzee) — I'm always up for a good conversation!
-
-<br>
-
-![Profile Views](https://komarev.com/ghpvc/?username=wezzcoetzee&color=blueviolet&style=flat-square&label=Profile+Views)
-
+<table>
+<tr>
+<td>
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&bg_color=00000000&title_color=ffffff&text_color=a1a1aa&icon_color=22c55e">
+<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&theme=default">
+<img alt="GitHub Stats" src="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&theme=default">
+</picture>
+</td>
+<td>
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-six-seven.vercel.app/api/top-langs/?username=wezzcoetzee&layout=compact&langs_count=8&hide_border=true&bg_color=00000000&title_color=ffffff&text_color=a1a1aa">
+<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-six-seven.vercel.app/api/top-langs/?username=wezzcoetzee&layout=compact&langs_count=8&hide_border=true&theme=default">
+<img alt="Top Languages" src="https://github-readme-stats-six-seven.vercel.app/api/top-langs/?username=wezzcoetzee&layout=compact&langs_count=8&hide_border=true&theme=default">
+</picture>
+</td>
+</tr>
+</table>
 </div>
 
 ---
