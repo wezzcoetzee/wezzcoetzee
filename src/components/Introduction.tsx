@@ -22,7 +22,7 @@ export default function Introduction() {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
           }}
         >
-          <div className="relative aspect-square overflow-hidden group chrome-shimmer">
+          <div className="relative aspect-square overflow-hidden group">
             <div
               className="absolute inset-0 border-4 transition-all duration-300"
               style={{
@@ -31,7 +31,7 @@ export default function Introduction() {
               }}
             />
             <div
-              className="absolute top-4 right-4 w-full h-full border-2 -z-10"
+              className="absolute top-4 right-4 w-full h-full border-2 -z-10 transition-all duration-300"
               style={{
                 borderColor: 'rgba(148, 163, 184, 0.4)',
                 boxShadow: '0 0 15px rgba(203, 213, 225, 0.3)',
@@ -44,6 +44,15 @@ export default function Introduction() {
               className="object-cover transition-all duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
+            />
+            {/* Chrome shine overlay on hover */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{
+                background: 'linear-gradient(135deg, transparent 0%, rgba(241, 245, 249, 0.4) 45%, rgba(226, 232, 240, 0.6) 50%, rgba(241, 245, 249, 0.4) 55%, transparent 100%)',
+                backgroundSize: '200% 200%',
+                animation: 'chromeShineSlide 2s ease-in-out infinite',
+              }}
             />
           </div>
         </div>
