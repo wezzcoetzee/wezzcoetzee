@@ -61,6 +61,20 @@ export default function Home() {
     },
     {
       icon: (
+        <svg viewBox="0 0 24 24" height="20" width="15" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="currentColor"
+            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+          />
+        </svg>
+      ),
+      link: 'https://x.com/intent/follow?screen_name=wezzcoetzee',
+      name: 'X',
+      description: "Follow me on X, I'm @wezzcoetzee",
+      target: '_blank',
+    },
+    {
+      icon: (
         <svg xmlns="http://www.w3.org/2000/svg" height="20" width="15" viewBox="0 0 384 512">
           <path
             fill="currentColor"
@@ -73,20 +87,6 @@ export default function Home() {
       description: 'See my contributions to the developer community',
       target: '_blank',
     },
-    {
-      icon: (
-        <svg viewBox="0 0 24 24" height="20" width="15" xmlns="http://www.w3.org/2000/svg">
-          <path
-            fill="currentColor"
-            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-          />
-        </svg>
-      ),
-      link: 'https://x.com/intent/follow?screen_name=wezzcoetzee',
-      name: '',
-      description: "Follow me on X, I'm @wezzcoetzee",
-      target: '_blank',
-    },
   ];
 
   return (
@@ -94,21 +94,65 @@ export default function Home() {
       {/* Skip to main content link for screen readers */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50 focus:outline-none"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 z-50 focus:outline-none focus:ring-2 focus:ring-primary"
       >
         Skip to main content
       </a>
 
-      <main id="main-content" className="container relative mx-auto overflow-auto p-4 md:p-16">
-        <section className="mx-auto w-full max-w-4xl space-y-12 my-10">
-          <Introduction />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {CONTACTS.map((contact, index) => (
-              <SocialCard key={`contact-${index}`} contact={contact} />
-            ))}
+      <main id="main-content" className="relative min-h-screen">
+        <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
+          <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
+            {/* Introduction Section */}
+            <Introduction />
+
+            {/* Chrome divider */}
+            <div className="relative h-px max-w-4xl" style={{ background: 'rgba(71, 85, 105, 0.3)' }}>
+              <div
+                className="absolute left-0 top-0 h-full w-32 chrome-shimmer"
+                style={{
+                  background: 'linear-gradient(90deg, rgba(203, 213, 225, 0.5), transparent)',
+                  boxShadow: '0 0 10px rgba(203, 213, 225, 0.3)',
+                }}
+              />
+            </div>
+
+            {/* Social Links Section */}
+            <section className="space-y-8">
+              <div className="flex items-center gap-4">
+                <h2 className="text-2xl md:text-3xl font-display font-semibold">Connect</h2>
+                <div className="h-px flex-1" style={{ background: 'rgba(71, 85, 105, 0.2)' }} />
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                {CONTACTS.map((contact, index) => (
+                  <SocialCard key={`contact-${index}`} contact={contact} index={index} />
+                ))}
+              </div>
+            </section>
+
+            {/* Footer accent */}
+            <div className="pt-12 pb-6">
+              <div className="flex items-center justify-center gap-3 text-sm">
+                <div className="w-8 h-px chrome-shimmer" style={{ background: 'rgba(148, 163, 184, 0.4)' }} />
+                <span
+                  className="font-medium tracking-wide chrome-text"
+                  style={{ fontSize: '0.875rem' }}
+                >
+                  Built with precision
+                </span>
+                <div className="w-8 h-px chrome-shimmer" style={{ background: 'rgba(148, 163, 184, 0.4)' }} />
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+
+        {/* Chrome background accent element */}
+        <div
+          className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(203, 213, 225, 0.08) 0%, transparent 70%)',
+          }}
+        />
       </main>
     </>
   );
