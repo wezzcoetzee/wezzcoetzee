@@ -1,12 +1,28 @@
-import Link from 'next/link';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: '404 - Page Not Found',
-  description: 'The page you are looking for does not exist.',
-};
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function NotFound() {
+  const router = useRouter();
+  const [countdown, setCountdown] = useState(5);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          clearInterval(timer);
+          router.push('/');
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [router]);
+
   return (
     <main className="relative min-h-screen flex items-center justify-center">
       <div className="container relative mx-auto px-6 md:px-12">
@@ -29,6 +45,18 @@ export default function NotFound() {
             <h1 className="text-3xl md:text-4xl font-display font-semibold">Page Not Found</h1>
             <p className="text-lg text-foreground/80">
               The page you&apos;re looking for doesn&apos;t exist or has been moved.
+            </p>
+            <p className="text-base text-foreground/60">
+              Redirecting to home in{' '}
+              <span
+                className="font-bold chrome-text"
+                style={{
+                  fontSize: '1.25rem',
+                }}
+              >
+                {countdown}
+              </span>{' '}
+              {countdown === 1 ? 'second' : 'seconds'}...
             </p>
           </div>
 
