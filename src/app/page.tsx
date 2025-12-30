@@ -89,8 +89,45 @@ export default function Home() {
     },
   ];
 
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Wesley Coetzee',
+    jobTitle: ['Tech Lead', 'Software Engineer', 'Engineering Manager'],
+    description:
+      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
+    url: 'https://wezzcoetzee.com',
+    image: 'https://avatars.githubusercontent.com/u/15249642?v=4',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Auckland',
+      addressCountry: 'NZ',
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/wesleycoetzee/',
+      'https://github.com/wezzcoetzee',
+      'https://medium.com/@wezzcoetzee',
+      'https://x.com/wezzcoetzee',
+      'https://stackoverflow.com/users/5658060/wesley-coetzee',
+    ],
+    knowsAbout: [
+      'Software Engineering',
+      'Technical Leadership',
+      'Engineering Management',
+      'Scalable Solutions',
+      'Web Development',
+      'Full Stack Development',
+    ],
+  };
+
   return (
     <>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
       {/* Skip to main content link for screen readers */}
       <a
         href="#main-content"

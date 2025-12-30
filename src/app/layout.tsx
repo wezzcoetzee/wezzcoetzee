@@ -16,8 +16,81 @@ const crimsonPro = Crimson_Pro({
 });
 
 export const metadata: Metadata = {
-  title: 'Wesley Coetzee | Software Engineer',
-  description: 'Software engineer and tech lead crafting scalable solutions',
+  metadataBase: new URL('https://wezzcoetzee.com'),
+  title: {
+    default: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    template: '%s | Wesley Coetzee',
+  },
+  description:
+    'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
+  keywords: [
+    'Wesley Coetzee',
+    'Software Engineer',
+    'Tech Lead',
+    'Engineering Manager',
+    'Auckland',
+    'New Zealand',
+    'Full Stack Developer',
+    'Web Development',
+    'Scalable Solutions',
+    'Engineering Leadership',
+  ],
+  authors: [{ name: 'Wesley Coetzee' }],
+  creator: 'Wesley Coetzee',
+  publisher: 'Wesley Coetzee',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_NZ',
+    url: 'https://wezzcoetzee.com',
+    siteName: 'Wesley Coetzee',
+    title: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    description:
+      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Building scalable solutions & leading engineering teams.',
+    images: [
+      {
+        url: 'https://avatars.githubusercontent.com/u/15249642?v=4',
+        width: 460,
+        height: 460,
+        alt: 'Wesley Coetzee - Tech Lead and Software Engineer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    site: '@wezzcoetzee',
+    creator: '@wezzcoetzee',
+    title: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    description:
+      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Building scalable solutions & leading engineering teams.',
+    images: ['https://avatars.githubusercontent.com/u/15249642?v=4'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    other: [
+      { rel: 'android-chrome-192x192', url: '/android-chrome-192x192.png' },
+      { rel: 'android-chrome-512x512', url: '/android-chrome-512x512.png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
