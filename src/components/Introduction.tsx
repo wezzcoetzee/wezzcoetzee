@@ -3,8 +3,26 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+function RolePill({ label }: { label: string }) {
+  return (
+    <div
+      className="inline-block px-4 py-1.5 border chrome-shimmer"
+      style={{
+        background: 'rgba(203, 213, 225, 0.1)',
+        borderColor: 'rgba(203, 213, 225, 0.3)',
+        boxShadow: '0 0 10px rgba(203, 213, 225, 0.2)',
+      }}
+    >
+      <span className="text-sm font-medium chrome-text tracking-wide uppercase">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
+  const roles = ['Tech Lead', 'Software Engineer', 'Engineering Manager'];
 
   useEffect(() => {
     setIsVisible(true);
@@ -22,16 +40,16 @@ export default function Introduction() {
             transition: 'opacity 0.6s ease-out, transform 0.6s ease-out',
           }}
         >
-          <div className="relative aspect-square overflow-hidden group">
+          <div className="relative aspect-square overflow-hidden rounded-full group">
             <div
-              className="absolute inset-0 border-4 transition-all duration-300"
+              className="absolute inset-0 border-4 rounded-full transition-all duration-300"
               style={{
                 borderImage: 'linear-gradient(145deg, #cbd5e1, #e2e8f0, #94a3b8, #cbd5e1) 1',
                 boxShadow: 'inset 0 0 20px rgba(203, 213, 225, 0.2)',
               }}
             />
             <div
-              className="absolute top-4 right-4 w-full h-full border-2 -z-10 transition-all duration-300"
+              className="absolute top-4 right-4 w-full h-full border-2 rounded-full -z-10 transition-all duration-300"
               style={{
                 borderColor: 'rgba(148, 163, 184, 0.4)',
                 boxShadow: '0 0 15px rgba(203, 213, 225, 0.3)',
@@ -67,17 +85,10 @@ export default function Introduction() {
               transition: 'opacity 0.6s ease-out 0.2s, transform 0.6s ease-out 0.2s',
             }}
           >
-            <div
-              className="inline-block px-4 py-1.5 border chrome-shimmer"
-              style={{
-                background: 'rgba(203, 213, 225, 0.1)',
-                borderColor: 'rgba(203, 213, 225, 0.3)',
-                boxShadow: '0 0 10px rgba(203, 213, 225, 0.2)',
-              }}
-            >
-              <span className="text-sm font-medium chrome-text tracking-wide uppercase">
-                Software Engineer
-              </span>
+            <div className="flex flex-wrap gap-2">
+              {roles.map((role) => (
+                <RolePill key={role} label={role} />
+              ))}
             </div>
 
             <h1>Wesley Coetzee</h1>
