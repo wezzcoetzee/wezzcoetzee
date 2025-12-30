@@ -17,12 +17,15 @@ const crimsonPro = Crimson_Pro({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wezzcoetzee.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
-    default: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    default: 'Wesley Coetzee | Tech Lead & Software Engineer',
     template: '%s | Wesley Coetzee',
   },
   description:
-    'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
+    'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams to deliver exceptional products.',
   keywords: [
     'Wesley Coetzee',
     'Software Engineer',
@@ -48,9 +51,9 @@ export const metadata: Metadata = {
     locale: 'en_NZ',
     url: 'https://wezzcoetzee.com',
     siteName: 'Wesley Coetzee',
-    title: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
-      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Building scalable solutions & leading engineering teams.',
+      'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
     images: [
       {
         url: 'https://avatars.githubusercontent.com/u/15249642?v=4',
@@ -61,12 +64,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     site: '@wezzcoetzee',
     creator: '@wezzcoetzee',
-    title: 'Wesley Coetzee | Tech Lead, Software Engineer & Engineering Manager',
+    title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
-      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Building scalable solutions & leading engineering teams.',
+      'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
     images: ['https://avatars.githubusercontent.com/u/15249642?v=4'],
   },
   robots: {
