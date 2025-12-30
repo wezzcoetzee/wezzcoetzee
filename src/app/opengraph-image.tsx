@@ -1,8 +1,5 @@
 import { ImageResponse } from 'next/og';
 
-// Route segment config
-export const dynamic = 'force-static';
-
 // Image metadata
 export const alt = 'Wesley Coetzee - Tech Lead, Software Engineer & Engineering Manager';
 export const size = {
