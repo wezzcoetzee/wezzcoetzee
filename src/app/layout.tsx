@@ -99,9 +99,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a" />
-      <meta name="theme-color" content="#0f172a" />
+      <head>
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a" />
+        <meta name="theme-color" content="#0f172a" />
+      </head>
       <body className={`${dmSans.variable} ${crimsonPro.variable}`}>
         <Script
           strategy="lazyOnload"

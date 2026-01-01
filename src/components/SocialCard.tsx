@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export type ContactIcon = {
+export type ItemIcon = {
   icon?: any;
   link: string;
   name?: string;
@@ -11,7 +11,7 @@ export type ContactIcon = {
 };
 
 interface SocialCardProps {
-  contact: ContactIcon;
+  contact: ItemIcon;
   index: number;
 }
 
