@@ -85,7 +85,7 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
           {/* Icon */}
           <div className="flex-shrink-0 relative">
             <div
-              className="w-12 h-12 flex items-center justify-center border transition-all duration-300 chrome-shimmer"
+              className="w-12 h-12 flex items-center justify-center border transition-all duration-300"
               style={{
                 transform: isHovered ? 'rotate(0deg)' : 'rotate(-5deg)',
                 background: isHovered
