@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { DM_Sans, Crimson_Pro } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
+import { ThemeProvider } from '@/components/ThemeProvider';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -119,9 +121,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="gradient-bg">
-          {children}
-        </div>
+        <ThemeProvider defaultTheme="dark">
+          <div className="gradient-bg">
+            <div className="fixed top-4 right-4 z-50">
+              <ThemeToggle />
+            </div>
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
