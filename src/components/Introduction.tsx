@@ -30,13 +30,7 @@ export default function Introduction() {
           }}
         >
           <div className="relative aspect-square overflow-hidden rounded-full group">
-            <div
-              className="absolute inset-0 border-4 rounded-full transition-all duration-300"
-              style={{
-                borderImage: 'linear-gradient(145deg, #cbd5e1, #e2e8f0, #94a3b8, #cbd5e1) 1',
-                boxShadow: 'inset 0 0 20px rgb(var(--color-chrome-highlight) / 0.2)',
-              }}
-            />
+            <div className="absolute inset-0 border-4 rounded-full transition-all duration-300 profile-border" />
             <div
               className="absolute top-4 right-4 w-full h-full border-2 rounded-full -z-10 transition-all duration-300"
               style={{
@@ -52,15 +46,7 @@ export default function Introduction() {
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{
-                background:
-                  'linear-gradient(135deg, transparent 0%, rgba(241, 245, 249, 0.4) 45%, rgba(226, 232, 240, 0.6) 50%, rgba(241, 245, 249, 0.4) 55%, transparent 100%)',
-                backgroundSize: '200% 200%',
-                animation: 'chromeShineSlide 2s ease-in-out infinite',
-              }}
-            />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none profile-shine" />
           </div>
         </div>
 

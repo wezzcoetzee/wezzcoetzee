@@ -60,7 +60,7 @@ export default function Home() {
             <section className="space-y-8">
               <div className="flex items-center gap-4">
                 <h2 className="text-2xl md:text-3xl font-display font-semibold">Connect</h2>
-                <div className="h-px flex-1" style={{ background: 'rgba(71, 85, 105, 0.2)' }} />
+                <div className="h-px flex-1 section-divider" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -74,7 +74,7 @@ export default function Home() {
             <section className="space-y-8">
               <div className="flex items-center gap-4">
                 <h2 className="text-2xl md:text-3xl font-display font-semibold">Tools</h2>
-                <div className="h-px flex-1" style={{ background: 'rgba(71, 85, 105, 0.2)' }} />
+                <div className="h-px flex-1 section-divider" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -87,26 +87,18 @@ export default function Home() {
             {/* Footer accent */}
             <div className="pt-12 pb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
-                <div className="w-8 h-px chrome-shimmer" style={{ background: 'rgba(148, 163, 184, 0.4)' }} />
-                <span
-                  className="font-medium tracking-wide chrome-text"
-                  style={{ fontSize: '0.875rem' }}
-                >
+                <div className="w-8 h-px chrome-shimmer footer-accent" />
+                <span className="font-medium tracking-wide chrome-text text-sm">
                   Built with precision
                 </span>
-                <div className="w-8 h-px chrome-shimmer" style={{ background: 'rgba(148, 163, 184, 0.4)' }} />
+                <div className="w-8 h-px chrome-shimmer footer-accent" />
               </div>
             </div>
           </div>
         </div>
 
         {/* Chrome background accent element */}
-        <div
-          className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none"
-          style={{
-            background: 'radial-gradient(circle, rgba(203, 213, 225, 0.08) 0%, transparent 70%)',
-          }}
-        />
+        <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none bg-accent-orb" />
       </main>
     </>
   );

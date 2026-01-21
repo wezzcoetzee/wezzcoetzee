@@ -498,45 +498,84 @@
 }
 
 .light {
-  --color-background: 248 250 252;
-  --color-foreground: 15 23 42;
-  --color-card: 241 245 249;
+  /* Warm off-white background */
+  --color-background: 255 253 250;
+  --color-foreground: 30 41 59;
+
+  /* Glass card appearance */
+  --color-card: 255 255 255;
   --color-card-foreground: 30 41 59;
-  --color-muted: 226 232 240;
-  --color-muted-foreground: 71 85 105;
-  --color-border: 203 213 225;
+
+  /* Soft muted tones */
+  --color-muted: 241 245 249;
+  --color-muted-foreground: 100 116 139;
+
+  /* Border: translucent for glass effect */
+  --color-border: 148 163 184;
+
+  /* Primary: Deep slate for contrast */
   --color-primary: 51 65 85;
-  --color-primary-foreground: 248 250 252;
-  --color-secondary: 100 116 139;
-  --color-secondary-foreground: 248 250 252;
-  --color-accent: 30 41 59;
-  --color-accent-foreground: 248 250 252;
-  --grain-opacity: 0.015;
-  --color-chrome-highlight: 71 85 105;
-  --color-chrome-glow: 51 65 85;
+  --color-primary-foreground: 255 255 255;
+
+  /* Secondary: Medium slate */
+  --color-secondary: 71 85 105;
+  --color-secondary-foreground: 255 255 255;
+
+  /* Accent: Warm tone for light mode personality */
+  --color-accent: 59 130 246;
+  --color-accent-foreground: 255 255 255;
+
+  /* Glass-specific tokens */
+  --glass-blur: 20px;
+  --glass-opacity: 0.7;
+  --glass-border-opacity: 0.2;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --glass-inner-glow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+
+  /* Chrome → Prismatic for light mode */
+  --color-chrome-highlight: 96 165 250;
+  --color-chrome-glow: 147 197 253;
+
+  --grain-opacity: 0.012;
 }
 
 .light .gradient-bg {
   background:
-    radial-gradient(circle at 20% 80%, rgba(71, 85, 105, 0.06) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(51, 65, 85, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 40% 40%, rgba(30, 41, 59, 0.04) 0%, transparent 50%),
+    /* Soft warm base */
+    linear-gradient(180deg, rgb(255, 253, 250) 0%, rgb(248, 250, 255) 100%),
     rgb(var(--color-background));
 }
 
 .light .gradient-bg::after {
   background:
-    radial-gradient(circle 400px at 30% 40%, rgba(51, 65, 85, 0.08) 0%, transparent 60%),
-    radial-gradient(circle 300px at 70% 60%, rgba(71, 85, 105, 0.06) 0%, transparent 50%),
-    radial-gradient(circle 250px at 50% 80%, rgba(100, 116, 139, 0.04) 0%, transparent 45%);
+    /* Soft blue orb - top right */
+    radial-gradient(circle 500px at 75% 15%, rgba(96, 165, 250, 0.12) 0%, transparent 60%),
+    /* Soft purple orb - left */
+    radial-gradient(circle 400px at 15% 50%, rgba(167, 139, 250, 0.08) 0%, transparent 50%),
+    /* Soft teal orb - bottom */
+    radial-gradient(circle 350px at 60% 85%, rgba(45, 212, 191, 0.06) 0%, transparent 45%),
+    /* Warm glow - center */
+    radial-gradient(circle 600px at 50% 40%, rgba(251, 191, 36, 0.04) 0%, transparent 60%);
 }
 
 .light h1,
 .light h2,
 .light h3,
 .light .chrome-text {
-  background: linear-gradient(145deg, #1e293b 0%, #334155 25%, #0f172a 50%, #475569 75%, #1e293b 100%);
-  filter: drop-shadow(0 0 15px rgba(15, 23, 42, 0.15));
+  background: linear-gradient(
+    135deg,
+    #1e293b 0%,
+    #3b82f6 25%,
+    #1e293b 50%,
+    #8b5cf6 75%,
+    #1e293b 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chromeText 10s ease-in-out infinite;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
 .light .chrome-border {
@@ -544,5 +583,130 @@
 }
 
 .light .chrome-shimmer::before {
-  background: linear-gradient(90deg, transparent, rgba(51, 65, 85, 0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+/* Frosted Glass Card Styles */
+.light .card-interactive {
+  background: rgba(255, 255, 255, var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 2px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    var(--glass-shadow),
+    var(--glass-inner-glow),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.light .card-interactive:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow:
+    0 12px 40px rgba(96, 165, 250, 0.15),
+    var(--glass-inner-glow),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.light .card-shadow-offset {
+  background: rgba(96, 165, 250, 0.08);
+  border: 2px solid rgba(96, 165, 250, 0.2);
+  box-shadow: none;
+}
+
+/* Glass Icon Container */
+.light .icon-container {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.light .group:hover .icon-container {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-color: transparent;
+  box-shadow:
+    0 4px 16px rgba(59, 130, 246, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.light .icon-color {
+  color: #475569;
+}
+
+.light .group:hover .icon-color {
+  color: #ffffff;
+}
+
+/* Glass Pills and Borders */
+.light .chrome-pill {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(100, 116, 139, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.light .chrome-border-left {
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: -2px 0 12px rgba(96, 165, 250, 0.15);
+}
+
+/* Profile image border - theme aware */
+.profile-border {
+  border-image: linear-gradient(145deg, #cbd5e1, #e2e8f0, #94a3b8, #cbd5e1) 1;
+  box-shadow: inset 0 0 20px rgb(var(--color-chrome-highlight) / 0.2);
+}
+
+.light .profile-border {
+  border-image: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6) 1;
+  box-shadow:
+    inset 0 0 20px rgba(96, 165, 250, 0.2),
+    0 0 30px rgba(96, 165, 250, 0.15);
+}
+
+/* Profile image hover shine - theme aware */
+.profile-shine {
+  background:
+    linear-gradient(135deg, transparent 0%, rgba(241, 245, 249, 0.4) 45%, rgba(226, 232, 240, 0.6) 50%, rgba(241, 245, 249, 0.4) 55%, transparent 100%);
+  background-size: 200% 200%;
+  animation: chromeShineSlide 2s ease-in-out infinite;
+}
+
+.light .profile-shine {
+  background:
+    linear-gradient(135deg, transparent 0%, rgba(96, 165, 250, 0.3) 45%, rgba(167, 139, 250, 0.4) 50%, rgba(96, 165, 250, 0.3) 55%, transparent 100%);
+  background-size: 200% 200%;
+}
+
+/* Section divider - theme aware */
+.section-divider {
+  background: rgba(71, 85, 105, 0.2);
+}
+
+.light .section-divider {
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.4), rgba(167, 139, 250, 0.3), rgba(96, 165, 250, 0.2));
+}
+
+/* Footer accent line - theme aware */
+.footer-accent {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.light .footer-accent {
+  background: rgba(96, 165, 250, 0.5);
+}
+
+/* Background accent orb - theme aware */
+.bg-accent-orb {
+  background: radial-gradient(circle, rgba(203, 213, 225, 0.08) 0%, transparent 70%);
+}
+
+.light .bg-accent-orb {
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.06) 0%, transparent 70%);
 }
