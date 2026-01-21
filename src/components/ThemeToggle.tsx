@@ -77,18 +77,20 @@ export function ThemeToggle() {
   return (
     <button
       onClick={cycleTheme}
-      className="relative p-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:bg-card/70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/50 group"
+      className="relative p-2.5 bg-card/80 backdrop-blur-sm border-2 border-border/30 hover:border-border/50 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background group"
+      style={{
+        boxShadow: '0 0 10px rgb(var(--color-border) / 0.2)',
+      }}
       title={getTooltip()}
       aria-label={`Switch to ${
         theme === "light" ? "dark" : theme === "dark" ? "system" : "light"
       } theme`}
     >
-      <div className="text-foreground group-hover:text-primary transition-colors">
+      <div className="text-foreground group-hover:text-primary transition-colors duration-300">
         {getIcon()}
       </div>
-      
-      {/* Theme indicator dots */}
-      <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 flex gap-0.5">
+
+      <div className="absolute -bottom-1.5 left-1/2 transform -translate-x-1/2 flex gap-0.5">
         <div
           className={`w-1 h-1 rounded-full transition-colors ${
             theme === "light" ? "bg-primary" : "bg-muted-foreground/30"
