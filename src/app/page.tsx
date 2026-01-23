@@ -1,5 +1,5 @@
 import SocialCard from '@/components/SocialCard';
-import { CONTACTS, TOOLS } from '@/data';
+import { CONTACTS } from '@/data';
 import Introduction from '@/components/Introduction';
 import About from '@/components/About';
 import FeaturedWork from '@/components/FeaturedWork';
@@ -44,6 +44,11 @@ export default function Home() {
       name: 'Software Engineer',
       occupationalCategory: '15-1252.00',
       workExample: [
+        {
+          '@type': 'CreativeWork',
+          name: 'BETH Stack',
+          url: 'https://wezzcoetzee.com/work/beth-stack/',
+        },
         {
           '@type': 'CreativeWork',
           name: 'GRVT TypeScript SDK',
@@ -111,20 +116,6 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {CONTACTS.map((contact, index) => (
                   <SocialCard key={`contact-${index}`} contact={contact} index={index} />
-                ))}
-              </div>
-            </section>
-
-            {/* Tools Section */}
-            <section className="space-y-8">
-              <div className="flex items-center gap-4">
-                <h2 className="text-2xl md:text-3xl font-display font-semibold">Tools</h2>
-                <div className="h-px flex-1 section-divider" />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {TOOLS.map((tool, index) => (
-                  <SocialCard key={`tool-${index}`} contact={tool} index={index} />
                 ))}
               </div>
             </section>
