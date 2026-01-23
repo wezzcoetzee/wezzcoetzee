@@ -1,5 +1,7 @@
 import { ItemIcon } from '@/components/SocialCard';
 
+export { PROJECTS, type Project } from './projects';
+
 export const CONTACTS: ItemIcon[] = [
   {
     icon: (

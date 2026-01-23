@@ -1,6 +1,8 @@
 import SocialCard from '@/components/SocialCard';
 import { CONTACTS, TOOLS } from '@/data';
 import Introduction from '@/components/Introduction';
+import About from '@/components/About';
+import FeaturedWork from '@/components/FeaturedWork';
 
 export default function Home() {
   const structuredData = {
@@ -23,6 +25,7 @@ export default function Home() {
       'https://medium.com/@wezzcoetzee',
       'https://x.com/wezzcoetzee',
       'https://stackoverflow.com/users/5658060/wesley-coetzee',
+      'https://wezzcoetzee.com/work/',
     ],
     knowsAbout: [
       'Software Engineering',
@@ -32,6 +35,37 @@ export default function Home() {
       'Web Development',
       'Full Stack Development',
     ],
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://wezzcoetzee.com',
+    },
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: 'Software Engineer',
+      occupationalCategory: '15-1252.00',
+      workExample: [
+        {
+          '@type': 'CreativeWork',
+          name: 'Email Verification Service',
+          url: 'https://wezzcoetzee.com/work/email-verification/',
+        },
+        {
+          '@type': 'CreativeWork',
+          name: "What's Risk Management",
+          url: 'https://wezzcoetzee.com/work/risk-management/',
+        },
+        {
+          '@type': 'CreativeWork',
+          name: 'Solana DCA Bot',
+          url: 'https://wezzcoetzee.com/work/solana-dca-bot/',
+        },
+        {
+          '@type': 'CreativeWork',
+          name: 'Printable CV',
+          url: 'https://wezzcoetzee.com/work/printable-cv/',
+        },
+      ],
+    },
   };
 
   return (
@@ -55,6 +89,12 @@ export default function Home() {
           <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
             {/* Introduction Section */}
             <Introduction />
+
+            {/* About Section */}
+            <About />
+
+            {/* Featured Work Section */}
+            <FeaturedWork />
 
             {/* Social Links Section */}
             <section className="space-y-8">
