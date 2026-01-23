@@ -46,6 +46,11 @@ export default function Home() {
       workExample: [
         {
           '@type': 'CreativeWork',
+          name: 'WETH Permit Exploit',
+          url: 'https://wezzcoetzee.com/work/weth-permit-exploit/',
+        },
+        {
+          '@type': 'CreativeWork',
           name: 'BETH Stack',
           url: 'https://wezzcoetzee.com/work/beth-stack/',
         },

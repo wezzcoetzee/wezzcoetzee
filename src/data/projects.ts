@@ -11,6 +11,31 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'weth-permit-exploit',
+    title: 'WETH Permit Exploit',
+    tagline: 'Demonstrating ERC20 permit vulnerabilities in DeFi',
+    description:
+      "A security research project demonstrating a vulnerability in ERC20 token interactions. The exploit targets WETH's lack of a permit function, showing how an attacker can bypass authentication by submitting an empty signature to fraudulently transfer funds through a bank contract's accounting system.",
+    technologies: ['Solidity', 'Foundry', 'Security Research', 'DeFi'],
+    role: 'Author',
+    links: [
+      {
+        label: 'Read Article',
+        url: 'https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8',
+      },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/weth-permit-exploit',
+      },
+    ],
+    highlights: [
+      'Demonstrates real-world DeFi vulnerability',
+      'Shows how missing permit validation can be exploited',
+      'Built with Foundry testing framework',
+      'Educational resource for smart contract security',
+    ],
+  },
+  {
     slug: 'beth-stack',
     title: 'BETH Stack',
     tagline: 'Hypermedia-driven web apps with great DX',
