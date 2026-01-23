@@ -44,6 +44,10 @@ export const PROJECTS: Project[] = [
         label: 'Visit Site',
         url: 'https://whatsriskmanagement.com',
       },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/whats-risk-management',
+      },
     ],
     highlights: [
       'Interactive risk calculators for position sizing',
@@ -85,6 +89,10 @@ export const PROJECTS: Project[] = [
       {
         label: 'View CV',
         url: 'https://cv.wezzcoetzee.com',
+      },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/printable-cv',
       },
     ],
     highlights: [
