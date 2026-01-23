@@ -1,7 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { PROJECTS } from '@/data';
+
+const INITIAL_PROJECT_COUNT = 4;
 
 type ProjectCardProps = {
   project: (typeof PROJECTS)[number];
@@ -70,6 +73,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 }
 
 export default function FeaturedWork() {
+  const [showAll, setShowAll] = useState(false);
+  const hasMoreProjects = PROJECTS.length > INITIAL_PROJECT_COUNT;
+  const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, INITIAL_PROJECT_COUNT);
+
   return (
     <section className="space-y-8">
       <div className="flex items-center gap-4">
@@ -97,10 +104,34 @@ export default function FeaturedWork() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {PROJECTS.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <ProjectCard key={project.slug} project={project} index={index} />
         ))}
       </div>
+
+      {hasMoreProjects && (
+        <div className="flex justify-center">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2 group"
+          >
+            {showAll ? 'View less' : 'View more'}
+            <svg
+              className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'group-hover:-translate-y-0.5' : 'group-hover:translate-y-0.5'}`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d={showAll ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'}
+              />
+            </svg>
+          </button>
+        </div>
+      )}
     </section>
   );
 }

@@ -46,6 +46,11 @@ export default function Home() {
       workExample: [
         {
           '@type': 'CreativeWork',
+          name: 'Solidity Tips and Tricks',
+          url: 'https://wezzcoetzee.com/work/solidity-tips-and-tricks/',
+        },
+        {
+          '@type': 'CreativeWork',
           name: 'WETH Permit Exploit',
           url: 'https://wezzcoetzee.com/work/weth-permit-exploit/',
         },
@@ -90,14 +95,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-
-      {/* Skip to main content link for screen readers */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 z-50 focus:outline-none focus:ring-2 focus:ring-primary"
-      >
-        Skip to main content
-      </a>
 
       <main id="main-content" className="relative min-h-screen">
         <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
