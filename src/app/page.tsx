@@ -46,6 +46,11 @@ export default function Home() {
       workExample: [
         {
           '@type': 'CreativeWork',
+          name: 'GRVT TypeScript SDK',
+          url: 'https://wezzcoetzee.com/work/grvt-sdk/',
+        },
+        {
+          '@type': 'CreativeWork',
           name: 'Email Verification Service',
           url: 'https://wezzcoetzee.com/work/email-verification/',
         },

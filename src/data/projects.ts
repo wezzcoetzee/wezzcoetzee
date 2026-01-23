@@ -11,6 +11,31 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'grvt-sdk',
+    title: 'GRVT TypeScript SDK',
+    tagline: 'Deno-first TypeScript SDK for GRVT Exchange',
+    description:
+      'A Deno-first, NPM-compatible TypeScript SDK for interacting with the GRVT Exchange. Provides both a high-level CCXT-style client for familiar trading patterns and a raw API client for advanced control. Features full type safety, cross-platform compatibility (Deno, Node.js, Bun, browsers), and supports real-time WebSocket subscriptions for market data.',
+    technologies: ['TypeScript', 'Deno', 'Node.js', 'WebSocket', 'EIP-712'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'View Documentation',
+        url: 'https://wezzcoetzee.gitbook.io/grvt-docs',
+      },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/grvt',
+      },
+    ],
+    highlights: [
+      'Full TypeScript support with typed requests, responses, and enums',
+      'Cross-platform: works in Deno, Node.js, Bun, and browsers',
+      'CCXT-compatible interface for familiar trading patterns',
+      'Real-time orderbook, ticker, and trade subscriptions via WebSocket',
+    ],
+  },
+  {
     slug: 'email-verification',
     title: 'Email Verification Service',
     tagline: 'High-performance email validation at scale',
