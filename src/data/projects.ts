@@ -11,6 +11,31 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'beth-stack',
+    title: 'BETH Stack',
+    tagline: 'Hypermedia-driven web apps with great DX',
+    description:
+      'An opinionated hypermedia-driven web framework that prioritises developer experience while maintaining amazing performance. The BETH stack combines Bun as the runtime, Elysia as the web framework, Turso for serverless SQLite, and HTMX for interactive UIs without heavy JavaScript. Built to demonstrate how modern web apps can be fast, type-safe, and simple.',
+    technologies: ['Bun', 'Elysia', 'Turso', 'HTMX', 'TypeScript', 'Drizzle'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'Read Article',
+        url: 'https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3',
+      },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/beth-stack',
+      },
+    ],
+    highlights: [
+      'Hypermedia-driven architecture using HTMX',
+      'End-to-end type safety with Elysia and TypeScript',
+      'Serverless edge database with Turso',
+      'Blazing fast runtime with Bun',
+    ],
+  },
+  {
     slug: 'grvt-sdk',
     title: 'GRVT TypeScript SDK',
     tagline: 'Deno-first TypeScript SDK for GRVT Exchange',
