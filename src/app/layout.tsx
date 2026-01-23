@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     site: '@wezzcoetzee',
     creator: '@wezzcoetzee',
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',

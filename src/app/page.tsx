@@ -25,7 +25,6 @@ export default function Home() {
       'https://medium.com/@wezzcoetzee',
       'https://x.com/wezzcoetzee',
       'https://stackoverflow.com/users/5658060/wesley-coetzee',
-      'https://wezzcoetzee.com/work/',
     ],
     knowsAbout: [
       'Software Engineering',

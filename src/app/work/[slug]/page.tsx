@@ -58,6 +58,7 @@ export default async function ProjectPage({ params }: Props) {
       url: 'https://wezzcoetzee.com',
     },
     keywords: project.technologies.join(', '),
+    ...(project.dateCreated && { dateCreated: project.dateCreated }),
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `https://wezzcoetzee.com/work/${project.slug}/`,

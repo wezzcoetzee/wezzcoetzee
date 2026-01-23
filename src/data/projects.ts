@@ -7,6 +7,7 @@ export type Project = {
   role: string;
   links: { label: string; url: string }[];
   highlights: string[];
+  dateCreated?: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -34,6 +35,7 @@ export const PROJECTS: Project[] = [
       'CCXT-compatible interface for familiar trading patterns',
       'Real-time orderbook, ticker, and trade subscriptions via WebSocket',
     ],
+    dateCreated: '2024-12-01',
   },
   {
     slug: 'email-verification',
@@ -55,6 +57,7 @@ export const PROJECTS: Project[] = [
       'Scales to handle large email lists efficiently',
       'Reduces bounce rates and improves deliverability',
     ],
+    dateCreated: '2024-06-15',
   },
   {
     slug: 'risk-management',
@@ -80,6 +83,7 @@ export const PROJECTS: Project[] = [
       'Responsive design for use on any device',
       'Helps traders develop disciplined trading habits',
     ],
+    dateCreated: '2024-03-20',
   },
   {
     slug: 'solana-dca-bot',
@@ -101,6 +105,7 @@ export const PROJECTS: Project[] = [
       'Configurable purchase intervals and amounts',
       'Removes emotional decision-making from investing',
     ],
+    dateCreated: '2024-01-10',
   },
   {
     slug: 'solidity-tips-and-tricks',
@@ -122,6 +127,7 @@ export const PROJECTS: Project[] = [
       'Solving Stack Too Deep errors',
       'Working with nested mappings',
     ],
+    dateCreated: '2023-08-15',
   },
   {
     slug: 'weth-permit-exploit',
@@ -147,6 +153,7 @@ export const PROJECTS: Project[] = [
       'Built with Foundry testing framework',
       'Educational resource for smart contract security',
     ],
+    dateCreated: '2024-11-01',
   },
   {
     slug: 'beth-stack',
@@ -172,6 +179,7 @@ export const PROJECTS: Project[] = [
       'Serverless edge database with Turso',
       'Blazing fast runtime with Bun',
     ],
+    dateCreated: '2024-10-15',
   },
   {
     slug: 'printable-cv',
@@ -197,5 +205,6 @@ export const PROJECTS: Project[] = [
       'Professional print output with proper formatting',
       'Open source - fork and customise for your own use',
     ],
+    dateCreated: '2023-05-01',
   },
 ];

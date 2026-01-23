@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const projectPages = PROJECTS.map((project) => ({
     url: `${baseUrl}/work/${project.slug}/`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -16,13 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${baseUrl}/work/`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
