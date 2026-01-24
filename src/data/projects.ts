@@ -21,13 +21,21 @@ export const PROJECTS: Project[] = [
     role: 'Creator',
     links: [
       {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/grvt',
+      },
+      {
         label: 'View Documentation',
         url: 'https://wezzcoetzee.gitbook.io/grvt-docs',
       },
       {
-        label: 'View on GitHub',
-        url: 'https://github.com/wezzcoetzee/grvt',
+        label: 'View on NPM',
+        url: 'https://www.npmjs.com/package/@wezzcoetzee/grvt',
       },
+      {
+        label: 'View on JSR',
+        url: 'https://jsr.io/@wezzcoetzee/grvt',
+      }
     ],
     highlights: [
       'Full TypeScript support with typed requests, responses, and enums',
@@ -35,7 +43,7 @@ export const PROJECTS: Project[] = [
       'CCXT-compatible interface for familiar trading patterns',
       'Real-time orderbook, ticker, and trade subscriptions via WebSocket',
     ],
-    dateCreated: '2024-12-01',
+    dateCreated: '2026-01-24',
   },
   {
     slug: 'email-verification',
@@ -57,7 +65,7 @@ export const PROJECTS: Project[] = [
       'Scales to handle large email lists efficiently',
       'Reduces bounce rates and improves deliverability',
     ],
-    dateCreated: '2024-06-15',
+    dateCreated: '2025-12-22',
   },
   {
     slug: 'risk-management',
