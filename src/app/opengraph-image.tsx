@@ -4,7 +4,7 @@ import { ImageResponse } from 'next/og';
 export const dynamic = 'force-static';
 
 // Image metadata
-export const alt = 'Wesley Coetzee - Tech Lead, Software Engineer & Engineering Manager';
+export const alt = 'Wesley Coetzee - Tech Lead, & Principal Software Engineer';
 export const size = {
   width: 1200,
   height: 630,
@@ -80,7 +80,7 @@ export default async function Image() {
               justifyContent: 'center',
             }}
           >
-            {['Tech Lead', 'Software Engineer', 'Engineering Manager'].map((role) => (
+            {['Tech Lead', 'Principal Software Engineer'].map((role) => (
               <div
                 key={role}
                 style={{

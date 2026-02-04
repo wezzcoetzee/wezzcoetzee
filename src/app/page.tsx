@@ -9,9 +9,9 @@ export default function Home() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Wesley Coetzee',
-    jobTitle: ['Tech Lead', 'Software Engineer', 'Engineering Manager'],
+    jobTitle: ['Tech Lead', 'Principal Software Engineer'],
     description:
-      'Tech Lead, Software Engineer, and Engineering Manager based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
+      'Tech Lead, and Principal Software Engineer based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
     url: 'https://wezzcoetzee.com',
     image: 'https://avatars.githubusercontent.com/u/15249642?v=4',
     address: {

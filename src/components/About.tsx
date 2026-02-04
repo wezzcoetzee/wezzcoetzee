@@ -76,8 +76,8 @@ export default function About() {
         >
           <p>
             10+ years in software engineering, from junior developer to Tech Lead
-            and Engineering Manager. Built casino platforms at Derivco, Virtual
-            Power Plants at Eneco, and now leading mass communications at Idexx.
+            and Principal Software Engineer. Built casino platforms at Derivco, A Virtual
+            Power Plant at Eneco, and now leading mass communications at Idexx.
           </p>
           <p>
             Won the Tesla Innovation Award in 2017 and spoke at GoTo Amsterdam

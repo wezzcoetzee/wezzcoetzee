@@ -13,7 +13,7 @@ function RolePill({ label }: { label: string }) {
 
 export default function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
-  const roles = ['Tech Lead', 'Engineering Manager', 'Software Engineer'];
+  const roles = ['Tech Lead', 'Principal Software Engineer'];
 
   useEffect(() => {
     setIsVisible(true);

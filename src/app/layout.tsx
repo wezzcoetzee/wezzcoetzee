@@ -27,12 +27,11 @@ export const metadata: Metadata = {
     template: '%s | Wesley Coetzee',
   },
   description:
-    'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams to deliver exceptional products.',
+    'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams to deliver exceptional products.',
   keywords: [
     'Wesley Coetzee',
-    'Software Engineer',
+    'Principal Software Engineer',
     'Tech Lead',
-    'Engineering Manager',
     'Auckland',
     'New Zealand',
     'Full Stack Developer',
@@ -55,7 +54,7 @@ export const metadata: Metadata = {
     siteName: 'Wesley Coetzee',
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
-      'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
     images: [
       {
         url: 'https://avatars.githubusercontent.com/u/15249642?v=4',
