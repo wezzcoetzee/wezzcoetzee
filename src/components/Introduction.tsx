@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 function RolePill({ label }: { label: string }) {
   return (
-    <div className="inline-block px-4 py-1.5 border chrome-shimmer chrome-pill">
+    <div className="inline-block px-4 py-1.5 border chrome-shimmer-hover chrome-pill">
       <span className="text-sm font-medium chrome-text tracking-wide uppercase">{label}</span>
     </div>
   );
@@ -21,15 +21,15 @@ export default function Introduction() {
 
   return (
     <div className="relative">
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
         <div
-          className="md:col-span-4 relative transition-all duration-600 ease-out"
+          className="relative transition-all duration-600 ease-out shrink-0"
           style={{
             opacity: isVisible ? 1 : 0,
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
-          <div className="relative aspect-square overflow-hidden rounded-full group">
+          <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full">
             <div className="absolute inset-0 border-4 rounded-full transition-all duration-300 profile-border" />
             <div
               className="absolute top-4 right-4 w-full h-full border-2 rounded-full -z-10 transition-all duration-300"
@@ -40,17 +40,16 @@ export default function Introduction() {
             />
             <Image
               src="https://avatars.githubusercontent.com/u/15249642?v=4"
-              alt="Wesley Coetzee - Staff Engineer and Tech Lead"
+              alt="Wesley Coetzee - Principal Software Engineer and Tech Lead"
               fill
               className="object-cover transition-all duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
               priority
             />
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none profile-shine" />
           </div>
         </div>
 
-        <div className="md:col-span-8 space-y-6 md:pt-8">
+        <div className="space-y-6">
           <div
             className="space-y-4 transition-all duration-600 ease-out"
             style={{
@@ -94,20 +93,6 @@ export default function Introduction() {
               />
             </svg>
             <span className="text-base font-medium text-foreground">Auckland, New Zealand</span>
-          </div>
-
-          <div
-            className="max-w-2xl border-l-2 pl-6 chrome-border-left transition-all duration-600 ease-out"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.6s',
-            }}
-          >
-            <p className="text-foreground/80 text-lg leading-relaxed">
-              Passionate about crafting elegant, scalable solutions and empowering engineering teams to build
-              exceptional products. Let&apos;s connect and create something remarkable.
-            </p>
           </div>
         </div>
       </div>
