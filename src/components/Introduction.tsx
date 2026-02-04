@@ -20,7 +20,7 @@ export default function Introduction() {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative flex justify-center">
       <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
         <div
           className="relative transition-all duration-600 ease-out shrink-0"

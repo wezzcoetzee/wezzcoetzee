@@ -65,19 +65,48 @@ export default async function ProjectPage({ params }: Props) {
     },
   };
 
+  const breadcrumbData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://wezzcoetzee.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Work',
+        item: 'https://wezzcoetzee.com/work/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: project.title,
+        item: `https://wezzcoetzee.com/work/${project.slug}/`,
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+      />
 
-      <main className="relative min-h-screen">
+      <main id="main-content" className="relative min-h-screen">
         <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
           <div className="mx-auto w-full max-w-7xl">
             <CaseStudy project={project} />
 
-            <div className="pt-24 pb-6">
+            <footer className="pt-24 pb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
                 <span className="font-medium tracking-wide chrome-text text-sm">
@@ -85,7 +114,7 @@ export default async function ProjectPage({ params }: Props) {
                 </span>
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
               </div>
-            </div>
+            </footer>
           </div>
         </div>
 

@@ -121,8 +121,7 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Footer accent */}
-            <div className="pt-12 pb-6">
+            <footer className="pt-12 pb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
                 <span className="font-medium tracking-wide chrome-text text-sm">
@@ -130,7 +129,7 @@ export default function Home() {
                 </span>
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
               </div>
-            </div>
+            </footer>
           </div>
         </div>
 

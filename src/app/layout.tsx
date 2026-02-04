@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     site: '@wezzcoetzee',
     creator: '@wezzcoetzee',
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
@@ -107,6 +107,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#0f172a" />
       </head>
       <body className={`${dmSans.variable} ${crimsonPro.variable}`}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md"
+        >
+          Skip to content
+        </a>
         <Script
           strategy="lazyOnload"
           src="https://www.googletagmanager.com/gtag/js?id=G-M18S2XK0BZ"
@@ -122,9 +128,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
         <ThemeProvider defaultTheme="dark">
           <div className="gradient-bg">
-            <div className="fixed top-4 right-4 z-50">
+            <nav aria-label="Site navigation" className="fixed top-4 right-4 z-50">
               <ThemeToggle />
-            </div>
+            </nav>
             {children}
           </div>
         </ThemeProvider>

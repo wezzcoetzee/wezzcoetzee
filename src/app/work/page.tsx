@@ -109,7 +109,7 @@ export default function WorkPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <main className="relative min-h-screen">
+      <main id="main-content" className="relative min-h-screen">
         <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
           <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
             <header className="space-y-6">
@@ -163,7 +163,7 @@ export default function WorkPage() {
               </div>
             </section>
 
-            <div className="pt-12 pb-6">
+            <footer className="pt-12 pb-6">
               <div className="flex items-center justify-center gap-3 text-sm">
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
                 <span className="font-medium tracking-wide chrome-text text-sm">
@@ -171,7 +171,7 @@ export default function WorkPage() {
                 </span>
                 <div className="w-8 h-px chrome-shimmer footer-accent" />
               </div>
-            </div>
+            </footer>
           </div>
         </div>
 
