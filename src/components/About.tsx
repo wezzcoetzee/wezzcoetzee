@@ -19,7 +19,7 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
 
   return (
     <div
-      className="relative bg-card card-interactive p-6 transition-all duration-600 ease-out"
+      className="group relative bg-card card-interactive p-6 transition-all duration-600 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -33,7 +33,7 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
           </div>
         </div>
         <div className="flex-1 min-w-0 pt-1">
-          <h3 className="font-display text-xl font-semibold mb-3 text-secondary">
+          <h3 className="font-display text-xl font-semibold mb-3 text-secondary transition-all duration-300 group-hover:text-foreground group-hover:[text-shadow:0_0_10px_rgb(var(--color-chrome-glow)/0.5)]">
             {title}
           </h3>
           <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
