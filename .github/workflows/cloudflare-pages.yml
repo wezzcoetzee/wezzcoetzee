@@ -1,4 +1,4 @@
-name: Azure Static Web Apps CI/CD
+name: Deploy to Cloudflare Pages
 
 on:
   push:
@@ -10,10 +10,14 @@ on:
       - main
 
 jobs:
-  build_and_deploy_job:
+  deploy:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
+    permissions:
+      contents: read
+      deployments: write
+    name: Build and Deploy
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,27 +35,24 @@ jobs:
       - name: Build application
         run: bun run build
 
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_SEA_08D029103 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: './out'
-          api_location: ''
-          output_location: ''
-          skip_app_build: true
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ./out --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
     name: Close Pull Request Job
     steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
+      - name: Delete PR preview
+        uses: cloudflare/wrangler-action@v3
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_SEA_08D029103 }}
-          action: 'close'
-          app_location: '/'
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deployment delete --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME }} ${{ github.event.pull_request.head.ref }}
