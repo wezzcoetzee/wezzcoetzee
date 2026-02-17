@@ -76,7 +76,6 @@ function ProjectCard({ project, index }: ProjectCardProps) {
 export default function FeaturedWork() {
   const [showAll, setShowAll] = useState(false);
   const hasMoreProjects = PROJECTS.length > INITIAL_PROJECT_COUNT;
-  const visibleProjects = showAll ? PROJECTS : PROJECTS.slice(0, INITIAL_PROJECT_COUNT);
 
   return (
     <section className="space-y-8">
@@ -105,8 +104,10 @@ export default function FeaturedWork() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {visibleProjects.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} />
+        {PROJECTS.map((project, index) => (
+          <div key={project.slug} className={!showAll && index >= INITIAL_PROJECT_COUNT ? 'hidden' : undefined}>
+            <ProjectCard project={project} index={index} />
+          </div>
         ))}
       </div>
 

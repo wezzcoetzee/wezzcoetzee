@@ -4,6 +4,19 @@ import FeaturedWork from '@/components/FeaturedWork';
 import ConnectSection from '@/components/ConnectSection';
 
 export default function Home() {
+  const websiteData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Wesley Coetzee',
+    url: 'https://wezzcoetzee.com',
+    description:
+      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+    author: {
+      '@type': 'Person',
+      name: 'Wesley Coetzee',
+    },
+  };
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -88,6 +101,10 @@ export default function Home() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

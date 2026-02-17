@@ -9,7 +9,6 @@ const INITIAL_CONTACT_COUNT = 4;
 export default function ConnectSection() {
   const [showAll, setShowAll] = useState(false);
   const hasMoreContacts = CONTACTS.length > INITIAL_CONTACT_COUNT;
-  const visibleContacts = showAll ? CONTACTS : CONTACTS.slice(0, INITIAL_CONTACT_COUNT);
 
   return (
     <section id="connect" className="space-y-8">
@@ -19,12 +18,13 @@ export default function ConnectSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {visibleContacts.map((contact, index) => (
-          <SocialCard
-            key={`contact-${index}`}
-            contact={contact}
-            index={index >= INITIAL_CONTACT_COUNT ? index - INITIAL_CONTACT_COUNT : index}
-          />
+        {CONTACTS.map((contact, index) => (
+          <div key={`contact-${index}`} className={!showAll && index >= INITIAL_CONTACT_COUNT ? 'hidden' : undefined}>
+            <SocialCard
+              contact={contact}
+              index={index >= INITIAL_CONTACT_COUNT ? index - INITIAL_CONTACT_COUNT : index}
+            />
+          </div>
         ))}
       </div>
 

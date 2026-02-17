@@ -3,14 +3,19 @@ import { PROJECTS } from '@/data';
 
 export const dynamic = 'force-static';
 
+const DEFAULT_DATE = '2023-05-01';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://wezzcoetzee.com';
 
-  const lastModified = new Date();
+  const mostRecentDate = PROJECTS.reduce((latest, project) => {
+    const date = project.dateCreated ?? DEFAULT_DATE;
+    return date > latest ? date : latest;
+  }, DEFAULT_DATE);
 
   const projectPages = PROJECTS.map((project) => ({
     url: `${baseUrl}/work/${project.slug}/`,
-    lastModified,
+    lastModified: new Date(project.dateCreated ?? DEFAULT_DATE),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -18,13 +23,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified,
+      lastModified: new Date(mostRecentDate),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${baseUrl}/work/`,
-      lastModified,
+      lastModified: new Date(mostRecentDate),
       changeFrequency: 'monthly',
       priority: 0.8,
     },

@@ -23,15 +23,12 @@ interface SocialCardProps {
 }
 
 export default function SocialCard({ contact, index }: SocialCardProps) {
-  const sendGoogleAnalyticsEvent = (
-    link: string,
-    analyticData: {
-      action: string;
-      category: string;
-      label: string;
-      value: string;
-    }
-  ) => {
+  const sendGoogleAnalyticsEvent = (analyticData: {
+    action: string;
+    category: string;
+    label: string;
+    value: string;
+  }) => {
     if (window.gtag) {
       window.gtag('event', analyticData.action, {
         event_category: analyticData.category,
@@ -39,16 +36,16 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
         value: analyticData.value,
       });
     }
-
-    window.open(link, '_blank');
   };
 
   return (
-    <button
-      type="button"
+    <a
+      href={contact.link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="group relative block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
       onClick={() =>
-        sendGoogleAnalyticsEvent(contact.link, {
+        sendGoogleAnalyticsEvent({
           action: 'click',
           category: 'social',
           label: 'external',
@@ -101,6 +98,6 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
           </div>
         </div>
       </CornerBrackets>
-    </button>
+    </a>
   );
 }

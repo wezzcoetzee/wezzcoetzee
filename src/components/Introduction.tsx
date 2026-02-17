@@ -57,7 +57,9 @@ export default function Introduction() {
 
             <h1>Wesley Coetzee</h1>
 
-            <h2 className="max-w-2xl">Building scalable solutions & leading engineering teams</h2>
+            <p className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] max-w-2xl">
+              Building scalable solutions & leading engineering teams
+            </p>
           </div>
 
           <div
