@@ -49,9 +49,9 @@ export default function CaseStudy({ project }: CaseStudyProps) {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="inline-block px-3 py-1 text-sm font-medium chrome-pill border"
+                className="inline-block px-3 py-1 text-sm font-medium border border-border text-muted-foreground"
               >
-                <span className="chrome-text">{tech}</span>
+                {tech}
               </span>
             ))}
           </div>
@@ -74,11 +74,11 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       >
         <div className="flex items-center gap-4">
           <h2 className="text-2xl md:text-3xl font-display font-semibold">Overview</h2>
-          <div className="h-px flex-1 section-divider" />
+          <div className="h-px flex-1 divider" />
         </div>
 
         <div className="max-w-3xl">
-          <div className="border-l-2 pl-6 chrome-border-left">
+          <div className="border-l-2 border-border pl-6">
             <p className="text-foreground/80 text-lg leading-relaxed">
               {project.description}
             </p>
@@ -98,7 +98,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
           <h2 className="text-2xl md:text-3xl font-display font-semibold">
             Highlights
           </h2>
-          <div className="h-px flex-1 section-divider" />
+          <div className="h-px flex-1 divider" />
         </div>
 
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
@@ -108,7 +108,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
               className="flex items-start gap-3 text-foreground/80"
             >
               <svg
-                className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5 [filter:drop-shadow(0_0_5px_rgb(var(--color-chrome-highlight)/0.5))]"
+                className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -137,7 +137,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
         >
           <div className="flex items-center gap-4">
             <h2 className="text-2xl md:text-3xl font-display font-semibold">Links</h2>
-            <div className="h-px flex-1 section-divider" />
+            <div className="h-px flex-1 divider" />
           </div>
 
           <div className="flex flex-wrap gap-4">
@@ -147,13 +147,13 @@ export default function CaseStudy({ project }: CaseStudyProps) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-card card-interactive font-medium transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 py-3 card-minimal font-medium transition-all duration-300"
               >
-                <span className="text-secondary group-hover:text-foreground transition-colors duration-300">
+                <span className="text-foreground transition-colors duration-300">
                   {link.label}
                 </span>
                 <svg
-                  className="w-4 h-4 text-secondary transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1"
+                  className="w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

@@ -60,27 +60,23 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
         animation: `fadeInUp 0.6s ease-out ${0.8 + index * 0.1}s forwards`,
       }}
     >
-      <div className="relative bg-card card-interactive p-6">
-        <div className="card-shadow-offset" />
-
+      <div className="card-minimal p-6">
         <div className="flex items-start gap-5">
-          <div className="flex-shrink-0 relative">
-            <div className="icon-container">
-              <div className="icon-color">
-                {contact.icon || <div className="w-6 h-6 bg-muted-foreground/30" />}
-              </div>
+          <div className="flex-shrink-0">
+            <div className="w-12 h-12 flex items-center justify-center border border-border text-muted-foreground">
+              {contact.icon || <div className="w-6 h-6 bg-muted-foreground/30" />}
             </div>
           </div>
 
           <div className="flex-1 min-w-0 pt-1">
             <div className="flex items-start justify-between gap-3 mb-2">
-              <h3 className="font-display text-xl font-semibold transition-all duration-300 capitalize leading-tight text-secondary group-hover:text-foreground group-hover:[text-shadow:0_0_10px_rgb(var(--color-chrome-glow)/0.5)]">
+              <h3 className="font-display text-xl font-semibold transition-colors duration-300 capitalize leading-tight text-foreground">
                 {contact.name || 'Visit Link'}
               </h3>
 
               <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
                 <svg
-                  className="w-5 h-5 text-secondary group-hover:[filter:drop-shadow(0_0_5px_rgb(var(--color-chrome-highlight)/0.6))]"
+                  className="w-5 h-5 text-muted-foreground"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"

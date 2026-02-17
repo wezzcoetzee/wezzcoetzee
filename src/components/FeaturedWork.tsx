@@ -21,18 +21,16 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
       }}
     >
-      <div className="relative bg-card card-interactive p-6">
-        <div className="card-shadow-offset" />
-
+      <div className="card-minimal p-6">
         <div className="space-y-4">
           <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-xl font-semibold transition-all duration-300 leading-tight text-secondary group-hover:text-foreground group-hover:[text-shadow:0_0_10px_rgb(var(--color-chrome-glow)/0.5)]">
+            <h3 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
               {project.title}
             </h3>
 
             <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
               <svg
-                className="w-5 h-5 text-secondary group-hover:[filter:drop-shadow(0_0_5px_rgb(var(--color-chrome-highlight)/0.6))]"
+                className="w-5 h-5 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -55,9 +53,9 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             {project.technologies.slice(0, 3).map((tech) => (
               <span
                 key={tech}
-                className="inline-block px-2 py-0.5 text-xs font-medium chrome-pill border"
+                className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
               >
-                <span className="chrome-text">{tech}</span>
+                {tech}
               </span>
             ))}
             {project.technologies.length > 3 && (
@@ -81,7 +79,7 @@ export default function FeaturedWork() {
     <section className="space-y-8">
       <div className="flex items-center gap-4">
         <h2 className="text-2xl md:text-3xl font-display font-semibold">Work</h2>
-        <div className="h-px flex-1 section-divider" />
+        <div className="h-px flex-1 divider" />
         <Link
           href="/work/"
           className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-1 group"

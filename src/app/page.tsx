@@ -89,7 +89,6 @@ export default function Home() {
 
   return (
     <>
-      {/* Structured Data for SEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -98,20 +97,20 @@ export default function Home() {
       <main id="main-content" className="relative min-h-screen">
         <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
           <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
-            {/* Introduction Section */}
             <Introduction />
 
-            {/* About Section */}
-            <About />
+            <section id="about">
+              <About />
+            </section>
 
-            {/* Featured Work Section */}
-            <FeaturedWork />
+            <section id="work">
+              <FeaturedWork />
+            </section>
 
-            {/* Social Links Section */}
-            <section className="space-y-8">
+            <section id="connect" className="space-y-8">
               <div className="flex items-center gap-4">
                 <h2 className="text-2xl md:text-3xl font-display font-semibold">Connect</h2>
-                <div className="h-px flex-1 section-divider" />
+                <div className="h-px flex-1 divider" />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -122,19 +121,13 @@ export default function Home() {
             </section>
 
             <footer className="pt-12 pb-6">
-              <div className="flex items-center justify-center gap-3 text-sm">
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-                <span className="font-medium tracking-wide chrome-text text-sm">
-                  Built with precision
-                </span>
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-              </div>
+              <div className="divider mb-6" />
+              <p className="text-center text-sm text-muted-foreground">
+                Built with precision
+              </p>
             </footer>
           </div>
         </div>
-
-        {/* Chrome background accent element */}
-        <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none bg-accent-orb" />
       </main>
     </>
   );

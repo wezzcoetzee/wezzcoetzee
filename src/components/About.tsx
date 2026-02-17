@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
 type AboutSectionProps = {
   icon: React.ReactNode;
   title: string;
@@ -19,21 +18,20 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
 
   return (
     <div
-      className="group relative bg-card card-interactive p-6 transition-all duration-600 ease-out"
+      className="card-minimal p-6 transition-all duration-600 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
       }}
     >
-      <div className="card-shadow-offset" />
       <div className="flex items-start gap-5">
-        <div className="flex-shrink-0 relative">
-          <div className="icon-container">
-            <div className="icon-color">{icon}</div>
+        <div className="flex-shrink-0">
+          <div className="w-12 h-12 flex items-center justify-center border border-border text-muted-foreground">
+            {icon}
           </div>
         </div>
         <div className="flex-1 min-w-0 pt-1">
-          <h3 className="font-display text-xl font-semibold mb-3 text-secondary transition-all duration-300 group-hover:text-foreground group-hover:[text-shadow:0_0_10px_rgb(var(--color-chrome-glow)/0.5)]">
+          <h3 className="font-display text-xl font-semibold mb-3 text-foreground">
             {title}
           </h3>
           <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
@@ -50,7 +48,7 @@ export default function About() {
     <section className="space-y-8">
       <div className="flex items-center gap-4">
         <h2 className="text-2xl md:text-3xl font-display font-semibold">About</h2>
-        <div className="h-px flex-1 section-divider" />
+        <div className="h-px flex-1 divider" />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">

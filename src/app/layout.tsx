@@ -2,9 +2,6 @@ import type { Metadata } from 'next';
 import { DM_Sans, Crimson_Pro } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-import { ThemeProvider } from '@/components/ThemeProvider';
-import { ThemeToggle } from '@/components/ThemeToggle';
-
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-body',
@@ -99,17 +96,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a" />
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#0a0a0a" />
+        <meta name="theme-color" content="#0a0a0a" />
       </head>
       <body className={`${dmSans.variable} ${crimsonPro.variable}`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
         >
           Skip to content
         </a>
@@ -126,14 +123,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <ThemeProvider defaultTheme="dark">
-          <div className="gradient-bg">
-            <nav aria-label="Site navigation" className="fixed top-4 right-4 z-50">
-              <ThemeToggle />
-            </nav>
-            {children}
-          </div>
-        </ThemeProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          {children}
+        </div>
       </body>
     </html>
   );

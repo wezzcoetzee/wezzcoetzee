@@ -21,7 +21,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border chrome-pill hover:bg-card transition-colors duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border border-border text-foreground hover:bg-muted transition-colors duration-300"
           >
             <svg
               className="w-4 h-4"
@@ -36,12 +36,10 @@ export default function NotFound() {
                 d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
               />
             </svg>
-            <span className="chrome-text">Back home</span>
+            Back home
           </Link>
         </div>
       </div>
-
-      <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none bg-accent-orb" />
     </main>
   );
 }

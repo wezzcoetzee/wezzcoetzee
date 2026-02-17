@@ -107,18 +107,13 @@ export default async function ProjectPage({ params }: Props) {
             <CaseStudy project={project} />
 
             <footer className="pt-24 pb-6">
-              <div className="flex items-center justify-center gap-3 text-sm">
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-                <span className="font-medium tracking-wide chrome-text text-sm">
-                  Built with precision
-                </span>
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-              </div>
+              <div className="divider mb-6" />
+              <p className="text-center text-sm text-muted-foreground">
+                Built with precision
+              </p>
             </footer>
           </div>
         </div>
-
-        <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none bg-accent-orb" />
       </main>
     </>
   );

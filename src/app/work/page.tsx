@@ -33,18 +33,16 @@ function ProjectCard({
         animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
       }}
     >
-      <div className="relative bg-card card-interactive p-6">
-        <div className="card-shadow-offset" />
-
+      <div className="card-minimal p-6">
         <div className="space-y-4">
           <div className="flex items-start justify-between gap-3">
-            <h2 className="font-display text-xl font-semibold transition-all duration-300 leading-tight text-secondary group-hover:text-foreground group-hover:[text-shadow:0_0_10px_rgb(var(--color-chrome-glow)/0.5)]">
+            <h2 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
               {project.title}
             </h2>
 
             <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
               <svg
-                className="w-5 h-5 text-secondary group-hover:[filter:drop-shadow(0_0_5px_rgb(var(--color-chrome-highlight)/0.6))]"
+                className="w-5 h-5 text-muted-foreground"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,9 +65,9 @@ function ProjectCard({
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="inline-block px-2 py-0.5 text-xs font-medium chrome-pill border"
+                className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
               >
-                <span className="chrome-text">{tech}</span>
+                {tech}
               </span>
             ))}
           </div>
@@ -164,18 +162,13 @@ export default function WorkPage() {
             </section>
 
             <footer className="pt-12 pb-6">
-              <div className="flex items-center justify-center gap-3 text-sm">
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-                <span className="font-medium tracking-wide chrome-text text-sm">
-                  Built with precision
-                </span>
-                <div className="w-8 h-px chrome-shimmer footer-accent" />
-              </div>
+              <div className="divider mb-6" />
+              <p className="text-center text-sm text-muted-foreground">
+                Built with precision
+              </p>
             </footer>
           </div>
         </div>
-
-        <div className="fixed bottom-0 right-0 w-96 h-96 rounded-full blur-3xl -z-10 pointer-events-none bg-accent-orb" />
       </main>
     </>
   );
