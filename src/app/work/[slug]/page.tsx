@@ -105,13 +105,6 @@ export default async function ProjectPage({ params }: Props) {
         <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
           <div className="mx-auto w-full max-w-7xl">
             <CaseStudy project={project} />
-
-            <footer className="pt-24 pb-6">
-              <div className="divider mb-6" />
-              <p className="text-center text-sm text-muted-foreground">
-                Built with precision
-              </p>
-            </footer>
           </div>
         </div>
       </main>

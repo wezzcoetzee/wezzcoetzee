@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { Project } from '@/data';
+import { CornerBrackets } from './CornerBrackets';
 
 type CaseStudyProps = {
   project: Project;
@@ -142,30 +143,31 @@ export default function CaseStudy({ project }: CaseStudyProps) {
 
           <div className="flex flex-wrap gap-4">
             {project.links.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-6 py-3 card-minimal font-medium transition-all duration-300"
-              >
-                <span className="text-foreground transition-colors duration-300">
-                  {link.label}
-                </span>
-                <svg
-                  className="w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
+              <CornerBrackets key={link.url}>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-6 py-3 card-minimal font-medium transition-all duration-300"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M7 17L17 7M17 7H7M17 7v10"
-                  />
-                </svg>
-              </a>
+                  <span className="text-foreground transition-colors duration-300">
+                    {link.label}
+                  </span>
+                  <svg
+                    className="w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M7 17L17 7M17 7H7M17 7v10"
+                    />
+                  </svg>
+                </a>
+              </CornerBrackets>
             ))}
           </div>
         </section>

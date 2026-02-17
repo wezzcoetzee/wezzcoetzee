@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { PROJECTS } from '@/data';
+import { CornerBrackets } from '@/components/CornerBrackets';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -33,46 +34,48 @@ function ProjectCard({
         animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
       }}
     >
-      <div className="card-minimal p-6">
-        <div className="space-y-4">
-          <div className="flex items-start justify-between gap-3">
-            <h2 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
-              {project.title}
-            </h2>
+      <CornerBrackets>
+        <div className="card-minimal p-6">
+          <div className="space-y-4">
+            <div className="flex items-start justify-between gap-3">
+              <h2 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
+                {project.title}
+              </h2>
 
-            <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
-              <svg
-                className="w-5 h-5 text-muted-foreground"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
+              <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <svg
+                  className="w-5 h-5 text-muted-foreground"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {project.tagline}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
-
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            {project.tagline}
-          </p>
-
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
         </div>
-      </div>
+      </CornerBrackets>
     </Link>
   );
 }
