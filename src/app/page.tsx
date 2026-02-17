@@ -2,6 +2,7 @@ import Introduction from '@/components/Introduction';
 import About from '@/components/About';
 import FeaturedWork from '@/components/FeaturedWork';
 import ConnectSection from '@/components/ConnectSection';
+import { PROJECTS } from '@/data';
 
 export default function Home() {
   const websiteData = {
@@ -45,6 +46,8 @@ export default function Home() {
       'Scalable Solutions',
       'Web Development',
       'Full Stack Development',
+      'Blockchain Development',
+      'Cryptocurrency Trading',
     ],
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -54,48 +57,11 @@ export default function Home() {
       '@type': 'Occupation',
       name: 'Software Engineer',
       occupationalCategory: '15-1252.00',
-      workExample: [
-        {
-          '@type': 'CreativeWork',
-          name: 'Solidity Tips and Tricks',
-          url: 'https://wezzcoetzee.com/work/solidity-tips-and-tricks/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'WETH Permit Exploit',
-          url: 'https://wezzcoetzee.com/work/weth-permit-exploit/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'BETH Stack',
-          url: 'https://wezzcoetzee.com/work/beth-stack/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'GRVT TypeScript SDK',
-          url: 'https://wezzcoetzee.com/work/grvt-sdk/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'Email Verification Service',
-          url: 'https://wezzcoetzee.com/work/email-verification/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: "What's Risk Management",
-          url: 'https://wezzcoetzee.com/work/risk-management/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'Solana DCA Bot',
-          url: 'https://wezzcoetzee.com/work/solana-dca-bot/',
-        },
-        {
-          '@type': 'CreativeWork',
-          name: 'Printable CV',
-          url: 'https://wezzcoetzee.com/work/printable-cv/',
-        },
-      ],
+      workExample: PROJECTS.map((project) => ({
+        '@type': 'CreativeWork',
+        name: project.title,
+        url: `https://wezzcoetzee.com/work/${project.slug}/`,
+      })),
     },
   };
 

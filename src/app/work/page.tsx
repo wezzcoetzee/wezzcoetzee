@@ -6,15 +6,21 @@ import { CornerBrackets } from '@/components/CornerBrackets';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
+    'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
   alternates: {
     canonical: '/work/',
   },
   openGraph: {
     title: 'Work | Wesley Coetzee',
     description:
-      'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
+      'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
     url: 'https://wezzcoetzee.com/work/',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Work | Wesley Coetzee',
+    description:
+      'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
   },
 };
 

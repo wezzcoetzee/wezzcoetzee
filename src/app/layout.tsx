@@ -44,6 +44,14 @@ export const metadata: Metadata = {
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
       'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+    images: [
+      {
+        url: 'https://avatars.githubusercontent.com/u/15249642?v=4',
+        width: 460,
+        height: 460,
+        alt: 'Wesley Coetzee',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -52,6 +60,7 @@ export const metadata: Metadata = {
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
       'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+    images: ['https://avatars.githubusercontent.com/u/15249642?v=4'],
   },
   robots: {
     index: true,

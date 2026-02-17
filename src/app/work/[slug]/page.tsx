@@ -35,6 +35,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://wezzcoetzee.com/work/${project.slug}/`,
       type: 'article',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${project.title} | Wesley Coetzee`,
+      description: project.description,
+    },
   };
 }
 

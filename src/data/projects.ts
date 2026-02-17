@@ -46,26 +46,26 @@ export const PROJECTS: Project[] = [
     dateCreated: '2026-01-24',
   },
   {
-    slug: 'email-verification',
-    title: 'Email Verification Service',
-    tagline: 'High-performance email validation at scale',
+    slug: 'trading-lab',
+    title: "Trading Lab",
+    tagline: 'Data driven trading signals for the crypto market',
     description:
-      'A robust email verification service built in Go that validates email addresses at scale. The service performs comprehensive checks including syntax validation, domain verification, MX record lookups, and SMTP verification to determine if an email address is deliverable. Designed for high throughput and reliability, making it ideal for cleaning mailing lists and preventing bounces.',
-    technologies: ['Go', 'SMTP', 'DNS', 'MX Records'],
+      'This project removes the guesswork from momentum trading by backtesting three critical pillars: trend direction, capital efficiency, and risk protection. It calculates the optimal Moving Average and Leverage settings while using an ATR Trailing Stop to ensure exits are dictated by market volatility, not emotion.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
     role: 'Creator',
     links: [
       {
-        label: 'View on GitHub',
-        url: 'https://github.com/wezzcoetzee/email-verification',
-      },
+        label: 'Visit Site',
+        url: 'https://tradinglab.vip',
+      }
     ],
     highlights: [
-      'Built in Go for maximum performance and concurrency',
-      'Comprehensive validation including syntax, domain, and SMTP checks',
-      'Scales to handle large email lists efficiently',
-      'Reduces bounce rates and improves deliverability',
+      'Data driven trading',
+      'Educational content on momentum based strategies',
+      'Back test real data',
+      'Helps traders develop disciplined trading habits',
     ],
-    dateCreated: '2025-12-22',
+    dateCreated: '2026-02-02',
   },
   {
     slug: 'risk-management',
@@ -114,6 +114,28 @@ export const PROJECTS: Project[] = [
       'Removes emotional decision-making from investing',
     ],
     dateCreated: '2024-01-10',
+  },
+  {
+    slug: 'email-verification',
+    title: 'Email Verification Service',
+    tagline: 'High-performance email validation at scale',
+    description:
+      'A robust email verification service built in Go that validates email addresses at scale. The service performs comprehensive checks including syntax validation, domain verification, MX record lookups, and SMTP verification to determine if an email address is deliverable. Designed for high throughput and reliability, making it ideal for cleaning mailing lists and preventing bounces.',
+    technologies: ['Go', 'SMTP', 'DNS', 'MX Records'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/email-verification',
+      },
+    ],
+    highlights: [
+      'Built in Go for maximum performance and concurrency',
+      'Comprehensive validation including syntax, domain, and SMTP checks',
+      'Scales to handle large email lists efficiently',
+      'Reduces bounce rates and improves deliverability',
+    ],
+    dateCreated: '2025-12-22',
   },
   {
     slug: 'solidity-tips-and-tricks',
