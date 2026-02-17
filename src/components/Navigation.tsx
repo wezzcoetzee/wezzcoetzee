@@ -12,11 +12,11 @@ const NAV_LINKS = [
 export function NavBar() {
   return (
     <header className="sticky top-0 z-50">
-      <div className="container mx-auto px-6 md:px-12 pt-4">
+      <div className="container mx-auto pt-4">
         <CornerBrackets>
           <nav
             aria-label="Main navigation"
-            className="mx-auto max-w-7xl bg-card/80 backdrop-blur-md px-6 py-3"
+            className="bg-card/80 backdrop-blur-md px-6 py-3"
           >
           <div className="flex items-center justify-between">
             <Link
