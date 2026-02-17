@@ -79,12 +79,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}if(t==='light'){document.documentElement.setAttribute('data-theme','light')}document.documentElement.classList.add('no-transitions');requestAnimationFrame(function(){requestAnimationFrame(function(){document.documentElement.classList.remove('no-transitions')})})}catch(e){}})();`,
+          }}
+        />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#0a0a0a" />
-        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
       </head>
       <body className={`${dmSans.variable} ${crimsonPro.variable}`}>
         <a

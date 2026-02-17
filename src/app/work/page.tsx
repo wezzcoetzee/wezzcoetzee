@@ -163,13 +163,6 @@ export default function WorkPage() {
                 ))}
               </div>
             </section>
-
-            <footer className="pt-12 pb-6">
-              <div className="divider mb-6" />
-              <p className="text-center text-sm text-muted-foreground">
-                Built with precision
-              </p>
-            </footer>
           </div>
         </div>
       </main>

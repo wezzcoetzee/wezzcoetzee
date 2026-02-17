@@ -26,7 +26,7 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
 
       <div className="flex items-start gap-5">
         <div className="flex-shrink-0">
-          <div className="w-12 h-12 flex items-center justify-center border border-border text-muted-foreground">
+          <div className="w-12 h-12 flex items-center justify-center text-muted-foreground">
             {icon}
           </div>
         </div>

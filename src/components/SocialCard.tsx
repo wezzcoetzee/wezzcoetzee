@@ -59,7 +59,6 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
       }}
     >
       <CornerBrackets>
-
         <div className="card-minimal p-6">
           <div className="flex items-start gap-5">
             <div className="flex-shrink-0">
