@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { DM_Sans, Crimson_Pro } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
+import { NavBar } from '@/components/Navigation';
+import { Footer } from '@/components/Footer';
+
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-body',
@@ -124,7 +127,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}
         </Script>
         <div className="min-h-screen bg-background text-foreground">
+          <NavBar />
           {children}
+          <Footer />
         </div>
       </body>
     </html>
