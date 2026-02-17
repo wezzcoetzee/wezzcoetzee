@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { PROJECTS } from '@/data';
+import { CornerBrackets } from './CornerBrackets';
 
 const INITIAL_PROJECT_COUNT = 4;
 
@@ -21,51 +22,53 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
       }}
     >
-      <div className="card-minimal p-6">
-        <div className="space-y-4">
-          <div className="flex items-start justify-between gap-3">
-            <h3 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
-              {project.title}
-            </h3>
+      <CornerBrackets>
+        <div className="card-minimal p-6">
+          <div className="space-y-4">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
+                {project.title}
+              </h3>
 
-            <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
-              <svg
-                className="w-5 h-5 text-muted-foreground"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                />
-              </svg>
+              <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
+                <svg
+                  className="w-5 h-5 text-muted-foreground"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+              {project.tagline}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.slice(0, 3).map((tech) => (
+                <span
+                  key={tech}
+                  className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
+                >
+                  {tech}
+                </span>
+              ))}
+              {project.technologies.length > 3 && (
+                <span className="inline-block px-2 py-0.5 text-xs font-medium text-muted-foreground">
+                  +{project.technologies.length - 3}
+                </span>
+              )}
             </div>
           </div>
-
-          <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-            {project.tagline}
-          </p>
-
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.slice(0, 3).map((tech) => (
-              <span
-                key={tech}
-                className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
-              >
-                {tech}
-              </span>
-            ))}
-            {project.technologies.length > 3 && (
-              <span className="inline-block px-2 py-0.5 text-xs font-medium text-muted-foreground">
-                +{project.technologies.length - 3}
-              </span>
-            )}
-          </div>
         </div>
-      </div>
+      </CornerBrackets>
     </Link>
   );
 }

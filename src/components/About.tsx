@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { CornerBrackets } from './CornerBrackets';
 type AboutSectionProps = {
   icon: React.ReactNode;
   title: string;
@@ -17,13 +18,12 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
   }, [delay]);
 
   return (
-    <div
-      className="card-minimal p-6 transition-all duration-600 ease-out"
+    <CornerBrackets className="card-minimal h-full p-6 transition-all duration-600 ease-out"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-      }}
-    >
+      }}>
+
       <div className="flex items-start gap-5">
         <div className="flex-shrink-0">
           <div className="w-12 h-12 flex items-center justify-center border border-border text-muted-foreground">
@@ -39,7 +39,7 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
           </div>
         </div>
       </div>
-    </div>
+    </CornerBrackets>
   );
 }
 
