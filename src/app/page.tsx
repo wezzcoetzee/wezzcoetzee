@@ -88,7 +88,7 @@ export default function Home() {
             <section id="work">
               <FeaturedWork />
             </section>
-            
+
             <section id="connect">
               <ConnectSection />
             </section>

@@ -17,7 +17,7 @@ export function NavBar() {
   return (
     <header className="sticky top-0 z-50">
       <div className="container mx-auto pt-4">
-        <CornerBrackets>
+        <CornerBrackets showCorners={true}>
           <nav
             aria-label="Main navigation"
             className="bg-card/80 backdrop-blur-md px-6 py-3"
