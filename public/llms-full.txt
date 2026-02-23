@@ -1,0 +1,257 @@
+# Wesley Coetzee
+
+> Tech Lead and Principal Software Engineer based in Auckland, New Zealand. 10+ years of experience building scalable software systems and leading engineering teams across fintech, energy, and veterinary diagnostics industries.
+
+Wesley Coetzee is a hands-on engineering leader with expertise in full-stack development, distributed systems, and cloud infrastructure. He has held roles ranging from junior developer to Tech Lead and Principal Software Engineer, working across companies such as Derivco, Eneco, and Idexx. He won the Tesla Innovation Award in 2017 and spoke at GoTo Amsterdam 2024.
+
+---
+
+## Home Page
+
+**URL:** https://wezzcoetzee.com/
+
+### Introduction
+
+Wesley Coetzee is a Tech Lead and Principal Software Engineer based in Auckland, New Zealand. He builds scalable solutions and leads engineering teams to deliver exceptional products.
+
+**Roles:** Tech Lead, Principal Software Engineer  
+**Location:** Auckland, New Zealand
+
+### About
+
+#### Journey
+
+10+ years in software engineering, from junior developer to Tech Lead and Principal Software Engineer. Built casino platforms at Derivco, a Virtual Power Plant at Eneco, and now leading mass communications at Idexx.
+
+Won the Tesla Innovation Award in 2017 and spoke at GoTo Amsterdam 2024. Now based in Auckland, still hands-on with code.
+
+#### Expertise
+
+Full-stack with C#, TypeScript, and Go. Deep experience in distributed systems, event-driven architecture, and cloud infrastructure on Azure and AWS.
+
+Comfortable across the stack — from React and Next.js frontends to Kafka-driven microservices and Kubernetes deployments.
+
+#### Leadership
+
+Led cross-functional teams of developers and automation engineers. Focus on mentorship, clear communication, and creating environments where engineers grow.
+
+Experience orchestrating migrations, establishing CI/CD pipelines, and improving engineering processes across organisations.
+
+---
+
+## Work Page
+
+**URL:** https://wezzcoetzee.com/work/
+
+Portfolio of projects by Wesley Coetzee — GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.
+
+---
+
+## Projects
+
+### GRVT TypeScript SDK
+
+**URL:** https://wezzcoetzee.com/work/grvt-sdk/  
+**Tagline:** Deno-first TypeScript SDK for GRVT Exchange  
+**Role:** Creator  
+**Technologies:** TypeScript, Deno, Node.js, WebSocket, EIP-712  
+**Date:** 2026-01-24
+
+A Deno-first, NPM-compatible TypeScript SDK for interacting with the GRVT Exchange. Provides both a high-level CCXT-style client for familiar trading patterns and a raw API client for advanced control. Features full type safety, cross-platform compatibility (Deno, Node.js, Bun, browsers), and supports real-time WebSocket subscriptions for market data.
+
+**Highlights:**
+- Full TypeScript support with typed requests, responses, and enums
+- Cross-platform: works in Deno, Node.js, Bun, and browsers
+- CCXT-compatible interface for familiar trading patterns
+- Real-time orderbook, ticker, and trade subscriptions via WebSocket
+
+**Links:**
+- GitHub: https://github.com/wezzcoetzee/grvt
+- Documentation: https://wezzcoetzee.gitbook.io/grvt-docs
+- NPM: https://www.npmjs.com/package/@wezzcoetzee/grvt
+- JSR: https://jsr.io/@wezzcoetzee/grvt
+
+---
+
+### Trading Lab
+
+**URL:** https://wezzcoetzee.com/work/trading-lab/  
+**Tagline:** Data driven trading signals for the crypto market  
+**Role:** Creator  
+**Technologies:** Next.js, React, TypeScript, Tailwind CSS  
+**Date:** 2026-02-02
+
+This project removes the guesswork from momentum trading by backtesting three critical pillars: trend direction, capital efficiency, and risk protection. It calculates the optimal Moving Average and Leverage settings while using an ATR Trailing Stop to ensure exits are dictated by market volatility, not emotion.
+
+**Highlights:**
+- Data driven trading
+- Educational content on momentum based strategies
+- Back test real data
+- Helps traders develop disciplined trading habits
+
+**Links:**
+- Site: https://tradinglab.vip
+
+---
+
+### What's Risk Management
+
+**URL:** https://wezzcoetzee.com/work/risk-management/  
+**Tagline:** Teaching traders to manage risk before entering trades  
+**Role:** Creator  
+**Technologies:** Next.js, React, TypeScript, Tailwind CSS  
+**Date:** 2024-03-20
+
+An educational platform designed to help traders understand and implement proper risk management strategies. The site provides calculators, guides, and interactive tools that teach fundamental concepts like position sizing, stop-loss placement, and risk-to-reward ratios. Built to help both novice and experienced traders protect their capital while maximising their potential returns.
+
+**Highlights:**
+- Interactive risk calculators for position sizing
+- Educational content on trading risk management
+- Responsive design for use on any device
+- Helps traders develop disciplined trading habits
+
+**Links:**
+- Site: https://whatsriskmanagement.com
+- GitHub: https://github.com/wezzcoetzee/whats-risk-management
+
+---
+
+### Solana DCA Bot
+
+**URL:** https://wezzcoetzee.com/work/solana-dca-bot/  
+**Tagline:** Automated dollar-cost averaging into Bitcoin on Solana  
+**Role:** Creator  
+**Technologies:** Solana, Rust, TypeScript, Web3  
+**Date:** 2024-01-10
+
+An automated trading bot built on the Solana blockchain that implements dollar-cost averaging (DCA) strategy for Bitcoin purchases. The bot executes scheduled buys at regular intervals, helping users accumulate Bitcoin without trying to time the market. Leverages Solana for low transaction fees and fast execution times.
+
+**Highlights:**
+- Automated DCA strategy execution
+- Low fees using Solana blockchain
+- Configurable purchase intervals and amounts
+- Removes emotional decision-making from investing
+
+**Links:**
+- GitHub: https://github.com/wezzcoetzee/solana-dca-bot
+
+---
+
+### Email Verification Service
+
+**URL:** https://wezzcoetzee.com/work/email-verification/  
+**Tagline:** High-performance email validation at scale  
+**Role:** Creator  
+**Technologies:** Go, SMTP, DNS, MX Records  
+**Date:** 2025-12-22
+
+A robust email verification service built in Go that validates email addresses at scale. The service performs comprehensive checks including syntax validation, domain verification, MX record lookups, and SMTP verification to determine if an email address is deliverable. Designed for high throughput and reliability, making it ideal for cleaning mailing lists and preventing bounces.
+
+**Highlights:**
+- Built in Go for maximum performance and concurrency
+- Comprehensive validation including syntax, domain, and SMTP checks
+- Scales to handle large email lists efficiently
+- Reduces bounce rates and improves deliverability
+
+**Links:**
+- GitHub: https://github.com/wezzcoetzee/email-verification
+
+---
+
+### Solidity Tips and Tricks
+
+**URL:** https://wezzcoetzee.com/work/solidity-tips-and-tricks/  
+**Tagline:** Practical tips for your Solidity learning journey  
+**Role:** Author  
+**Technologies:** Solidity, Hardhat, Smart Contracts, Web3  
+**Date:** 2023-08-15
+
+An article sharing practical tips and tricks learned along the Solidity development journey. Covers debugging with console.log, pragma version locking, handling Stack Too Deep errors, public variable getters, and working with nested mappings.
+
+**Highlights:**
+- Debugging smart contracts with console.log
+- Why you should lock pragma versions
+- Solving Stack Too Deep errors
+- Working with nested mappings
+
+**Links:**
+- Article: https://coinsbench.com/solidity-tips-and-trick-5201d08ce49f
+
+---
+
+### WETH Permit Exploit
+
+**URL:** https://wezzcoetzee.com/work/weth-permit-exploit/  
+**Tagline:** Demonstrating ERC20 permit vulnerabilities in DeFi  
+**Role:** Author  
+**Technologies:** Solidity, Foundry, Security Research, DeFi  
+**Date:** 2024-11-01
+
+A security research project demonstrating a vulnerability in ERC20 token interactions. The exploit targets WETH's lack of a permit function, showing how an attacker can bypass authentication by submitting an empty signature to fraudulently transfer funds through a bank contract's accounting system.
+
+**Highlights:**
+- Demonstrates real-world DeFi vulnerability
+- Shows how missing permit validation can be exploited
+- Built with Foundry testing framework
+- Educational resource for smart contract security
+
+**Links:**
+- Article: https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8
+- GitHub: https://github.com/wezzcoetzee/weth-permit-exploit
+
+---
+
+### BETH Stack
+
+**URL:** https://wezzcoetzee.com/work/beth-stack/  
+**Tagline:** Hypermedia-driven web apps with great DX  
+**Role:** Creator  
+**Technologies:** Bun, Elysia, Turso, HTMX, TypeScript, Drizzle  
+**Date:** 2024-10-15
+
+An opinionated hypermedia-driven web framework that prioritises developer experience while maintaining amazing performance. The BETH stack combines Bun as the runtime, Elysia as the web framework, Turso for serverless SQLite, and HTMX for interactive UIs without heavy JavaScript. Built to demonstrate how modern web apps can be fast, type-safe, and simple.
+
+**Highlights:**
+- Hypermedia-driven architecture using HTMX
+- End-to-end type safety with Elysia and TypeScript
+- Serverless edge database with Turso
+- Blazing fast runtime with Bun
+
+**Links:**
+- Article: https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3
+- GitHub: https://github.com/wezzcoetzee/beth-stack
+
+---
+
+### Printable CV
+
+**URL:** https://wezzcoetzee.com/work/printable-cv/  
+**Tagline:** A hostable CV that prints beautifully  
+**Role:** Creator  
+**Technologies:** Next.js, React, TypeScript, CSS Print Styles  
+**Date:** 2023-05-01
+
+A web-based CV solution that can be hosted online and prints to a clean, professional PDF. Built with the idea that your CV should be accessible online while still producing high-quality print output. Features responsive design for web viewing and optimised print styles for when you need a physical copy.
+
+**Highlights:**
+- Dual-purpose: web and print optimised
+- Always up-to-date online version
+- Professional print output with proper formatting
+- Open source — fork and customise for your own use
+
+**Links:**
+- View CV: https://cv.wezzcoetzee.com
+- GitHub: https://github.com/wezzcoetzee/printable-cv
+
+---
+
+## Connect
+
+Contact and social profiles for Wesley Coetzee:
+
+- **LinkedIn:** https://www.linkedin.com/in/wesleycoetzee/ — Connect professionally and view work experience
+- **GitHub:** https://github.com/wezzcoetzee — Open-source contributions and personal projects
+- **Medium:** https://medium.com/@wezzcoetzee — Technical articles and thoughts on software development
+- **X / Twitter:** https://x.com/intent/follow?screen_name=wezzcoetzee — @wezzcoetzee
+- **CV:** https://cv.wezzcoetzee.com — Online CV, downloadable as PDF
+- **Stack Overflow:** https://stackoverflow.com/users/5658060/wesley-coetzee — Community contributions
