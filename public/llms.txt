@@ -1,0 +1,35 @@
+# Wesley Coetzee
+
+> Tech Lead and Principal Software Engineer based in Auckland, New Zealand. 10+ years of experience building scalable software systems and leading engineering teams across fintech, energy, and veterinary diagnostics industries.
+
+Wesley Coetzee is a hands-on engineering leader with expertise in full-stack development, distributed systems, and cloud infrastructure. He has held roles ranging from junior developer to Tech Lead and Principal Software Engineer, working across companies such as Derivco, Eneco, and Idexx. He won the Tesla Innovation Award in 2017 and spoke at GoTo Amsterdam 2024.
+
+## About
+
+- [Home](https://wezzcoetzee.com/): Introduction, professional background, featured work, and contact links
+- [Work](https://wezzcoetzee.com/work/): Full portfolio of projects and case studies
+- [CV](https://cv.wezzcoetzee.com): Online CV, downloadable as PDF
+
+## Projects
+
+- [GRVT TypeScript SDK](https://wezzcoetzee.com/work/grvt-sdk/): Deno-first, NPM-compatible TypeScript SDK for the GRVT Exchange with CCXT-style client and WebSocket support
+- [Trading Lab](https://wezzcoetzee.com/work/trading-lab/): Data-driven trading signals and backtesting for crypto momentum strategies
+- [What's Risk Management](https://wezzcoetzee.com/work/risk-management/): Educational platform with calculators and guides for trading risk management
+- [Solana DCA Bot](https://wezzcoetzee.com/work/solana-dca-bot/): Automated dollar-cost averaging bot on the Solana blockchain
+- [Email Verification Service](https://wezzcoetzee.com/work/email-verification/): High-performance email validation service in Go with syntax, domain, and SMTP checks
+- [Solidity Tips and Tricks](https://wezzcoetzee.com/work/solidity-tips-and-tricks/): Article on practical Solidity development tips
+- [WETH Permit Exploit](https://wezzcoetzee.com/work/weth-permit-exploit/): Security research demonstrating ERC20 permit vulnerability in DeFi
+- [BETH Stack](https://wezzcoetzee.com/work/beth-stack/): Hypermedia-driven web framework using Bun, Elysia, Turso, and HTMX
+- [Printable CV](https://wezzcoetzee.com/work/printable-cv/): Open-source web-based CV that renders cleanly for print
+
+## Connect
+
+- [LinkedIn](https://www.linkedin.com/in/wesleycoetzee/): Professional profile and work history
+- [GitHub](https://github.com/wezzcoetzee): Open-source projects and contributions
+- [Medium](https://medium.com/@wezzcoetzee): Technical articles and writing
+- [X / Twitter](https://x.com/intent/follow?screen_name=wezzcoetzee): @wezzcoetzee
+- [Stack Overflow](https://stackoverflow.com/users/5658060/wesley-coetzee): Community contributions
+
+## Optional
+
+- [llms-full.txt](https://wezzcoetzee.com/llms-full.txt): Full site content in a single LLM-readable document
