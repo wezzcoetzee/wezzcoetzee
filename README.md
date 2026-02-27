@@ -48,9 +48,9 @@
 <tr>
 <td>
 <picture>
-<source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&bg_color=00000000&title_color=ffffff&text_color=a1a1aa&icon_color=22c55e">
-<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=default">
-<img alt="GitHub Stats" src="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=default">
+<source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&bg_color=00000000&title_color=ffffff&text_color=a1a1aa&icon_color=22c55e">
+<source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&theme=default">
+<img alt="GitHub Stats" src="https://github-readme-stats-six-seven.vercel.app/api?username=wezzcoetzee&show_icons=true&count_private=true&hide_border=true&theme=default">
 </picture>
 </td>
 <td>
