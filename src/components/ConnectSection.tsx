@@ -32,6 +32,7 @@ export default function ConnectSection() {
         <div className="flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}
+            aria-expanded={showAll}
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2 group"
           >
             {showAll ? 'View less' : 'View more'}

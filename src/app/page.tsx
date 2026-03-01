@@ -18,6 +18,27 @@ export default function Home() {
     },
   };
 
+  const profilePageData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    dateCreated: '2023-05-01',
+    dateModified: new Date().toISOString().split('T')[0],
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Wesley Coetzee',
+      jobTitle: ['Tech Lead', 'Principal Software Engineer'],
+      url: 'https://wezzcoetzee.com',
+      image: 'https://avatars.githubusercontent.com/u/15249642?v=4',
+      sameAs: [
+        'https://www.linkedin.com/in/wesleycoetzee/',
+        'https://github.com/wezzcoetzee',
+        'https://medium.com/@wezzcoetzee',
+        'https://x.com/wezzcoetzee',
+        'https://stackoverflow.com/users/5658060/wesley-coetzee',
+      ],
+    },
+  };
+
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -70,6 +91,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageData) }}
       />
       <script
         type="application/ld+json"

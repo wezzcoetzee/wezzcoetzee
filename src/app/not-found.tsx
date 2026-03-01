@@ -15,7 +15,7 @@ export default function NotFound() {
     <main className="relative min-h-screen flex items-center justify-center">
       <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
         <div className="mx-auto w-full max-w-2xl text-center space-y-8">
-          <h1>404</h1>
+          <h1>Page Not Found</h1>
           <p className="text-xl text-muted-foreground">
             The page you&apos;re looking for doesn&apos;t exist or has been moved.
           </p>

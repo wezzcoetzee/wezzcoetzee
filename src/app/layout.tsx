@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer';
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
+  weight: ['500', '600', '700'],
 });
 
 const crimsonPro = Crimson_Pro({
@@ -44,14 +44,6 @@ export const metadata: Metadata = {
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
       'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
-    images: [
-      {
-        url: 'https://avatars.githubusercontent.com/u/15249642?v=4',
-        width: 460,
-        height: 460,
-        alt: 'Wesley Coetzee',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -59,8 +51,7 @@ export const metadata: Metadata = {
     creator: '@wezzcoetzee',
     title: 'Wesley Coetzee | Tech Lead & Software Engineer',
     description:
-      'Tech Lead and Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
-    images: ['https://avatars.githubusercontent.com/u/15249642?v=4'],
+      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
   },
   robots: {
     index: true,
@@ -97,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#0a0a0a" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
       </head>
