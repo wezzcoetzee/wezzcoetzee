@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { Project } from '@/data';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { CornerBrackets } from './CornerBrackets';
 
 type CaseStudyProps = {
@@ -11,6 +12,7 @@ type CaseStudyProps = {
 
 export default function CaseStudy({ project }: CaseStudyProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
     setIsVisible(true);
@@ -21,8 +23,8 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       <header
         className="space-y-6 transition-all duration-600 ease-out"
         style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          opacity: isVisible || reducedMotion ? 1 : 0,
+          transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
         }}
       >
         <Link
@@ -35,6 +37,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
             viewBox="0 0 24 24"
             stroke="currentColor"
             strokeWidth={2}
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"
@@ -68,8 +71,8 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       <section
         className="space-y-8 transition-all duration-600 ease-out"
         style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          opacity: isVisible || reducedMotion ? 1 : 0,
+          transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
           transitionDelay: '0.2s',
         }}
       >
@@ -90,8 +93,8 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       <section
         className="space-y-8 transition-all duration-600 ease-out"
         style={{
-          opacity: isVisible ? 1 : 0,
-          transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+          opacity: isVisible || reducedMotion ? 1 : 0,
+          transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
           transitionDelay: '0.4s',
         }}
       >
@@ -114,6 +117,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 strokeWidth={2}
+                aria-hidden="true"
               >
                 <path
                   strokeLinecap="round"
@@ -159,6 +163,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                     strokeWidth={2}
+                    aria-hidden="true"
                   >
                     <path
                       strokeLinecap="round"

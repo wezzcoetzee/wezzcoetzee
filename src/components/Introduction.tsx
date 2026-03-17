@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 export default function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
+  const reducedMotion = useReducedMotion();
   const roles = ['Tech Lead', 'Principal Software Engineer'];
 
   useEffect(() => {
@@ -19,8 +21,8 @@ export default function Introduction() {
         <div
           className="relative transition-all duration-600 ease-out shrink-0"
           style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+            opacity: isVisible || reducedMotion ? 1 : 0,
+            transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
           }}
         >
           <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-2 border-border">
@@ -77,6 +79,7 @@ export default function Introduction() {
               strokeWidth="1.5"
               stroke="currentColor"
               className="w-5 h-5"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
               <path

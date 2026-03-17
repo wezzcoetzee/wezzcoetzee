@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { CornerBrackets } from './CornerBrackets';
 type AboutSectionProps = {
   icon: React.ReactNode;
@@ -11,17 +12,19 @@ type AboutSectionProps = {
 
 function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const reducedMotion = useReducedMotion();
 
   useEffect(() => {
+    if (reducedMotion) return;
     const timer = setTimeout(() => setIsVisible(true), delay * 1000);
     return () => clearTimeout(timer);
-  }, [delay]);
+  }, [delay, reducedMotion]);
 
   return (
     <CornerBrackets className="card-minimal h-full p-6 transition-all duration-600 ease-out"
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+        opacity: isVisible || reducedMotion ? 1 : 0,
+        transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
       }}>
 
       <div className="flex items-start gap-5">
@@ -63,6 +66,7 @@ export default function About() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -94,6 +98,7 @@ export default function About() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
@@ -125,6 +130,7 @@ export default function About() {
               strokeWidth={1.5}
               stroke="currentColor"
               className="w-6 h-6"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"
