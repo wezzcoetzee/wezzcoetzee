@@ -97,13 +97,13 @@ export default function CaseStudy({ project }: CaseStudyProps) {
 
       <RevealSection className="space-y-8">
         <div className="flex items-center gap-4">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold">Overview</h2>
+          <h2>Overview</h2>
           <div className="h-px flex-1 divider" />
         </div>
 
         <div className="max-w-3xl">
           <div className="border-l-2 border-border pl-6">
-            <p className="text-foreground/80 text-lg leading-relaxed">
+            <p className="text-foreground text-lg leading-relaxed">
               {project.description}
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
 
       <RevealSection className="space-y-8">
         <div className="flex items-center gap-4">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold">
+          <h2>
             Highlights
           </h2>
           <div className="h-px flex-1 divider" />
@@ -122,7 +122,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
           {project.highlights.map((highlight, index) => (
             <li
               key={index}
-              className="flex items-start gap-3 text-foreground/80"
+              className="flex items-start gap-3 text-foreground"
             >
               <svg
                 className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5"
@@ -147,7 +147,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       {project.links.length > 0 && (
         <RevealSection className="space-y-8">
           <div className="flex items-center gap-4">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold">Links</h2>
+            <h2>Links</h2>
             <div className="h-px flex-1 divider" />
           </div>
 

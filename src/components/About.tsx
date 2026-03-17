@@ -46,7 +46,7 @@ export default function About() {
   return (
     <section className="space-y-8">
       <div className="flex items-center gap-4">
-        <h2 className="text-2xl md:text-3xl font-display font-semibold">About</h2>
+        <h2>About</h2>
         <div className="h-px flex-1 divider" />
       </div>
 

@@ -46,7 +46,7 @@ All colors are defined as space-separated RGB channels (e.g., `10 10 10`) and co
 | Element | Size (mobile → desktop) | Weight | Line Height |
 |---------|------------------------|--------|-------------|
 | `h1` | `text-5xl` → `text-6xl` | Bold | 1.1 |
-| `h2` | `text-3xl` → `text-4xl` | Semibold | 1.2 |
+| `h2` | `text-2xl` → `text-3xl` | Semibold | 1.2 |
 | `h3` | `text-xl` → `text-2xl` | Semibold | 1.3 |
 | `p` | `text-base` | Regular | Relaxed |
 
