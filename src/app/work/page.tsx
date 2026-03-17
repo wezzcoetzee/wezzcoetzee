@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { PROJECTS } from '@/data';
-import { CornerBrackets } from '@/components/CornerBrackets';
+import { ProjectCard } from '@/components/ProjectCard';
+import { ArrowLeftIcon } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Work',
@@ -23,69 +24,6 @@ export const metadata: Metadata = {
       'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
   },
 };
-
-function ProjectCard({
-  project,
-  index,
-}: {
-  project: (typeof PROJECTS)[number];
-  index: number;
-}) {
-  return (
-    <Link
-      href={`/work/${project.slug}/`}
-      className="group relative block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
-      style={{
-        opacity: 0,
-        animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
-      }}
-    >
-      <CornerBrackets>
-        <div className="card-minimal p-6">
-          <div className="space-y-4">
-            <div className="flex items-start justify-between gap-3">
-              <h2 className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">
-                {project.title}
-              </h2>
-
-              <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
-                <svg
-                  className="w-5 h-5 text-muted-foreground"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </div>
-            </div>
-
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              {project.tagline}
-            </p>
-
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-block px-2 py-0.5 text-xs font-medium border border-border text-muted-foreground"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </CornerBrackets>
-    </Link>
-  );
-}
 
 export default function WorkPage() {
   const structuredData = {
@@ -129,20 +67,7 @@ export default function WorkPage() {
                   animation: 'fadeInUp 0.6s ease-out forwards',
                 }}
               >
-                <svg
-                  className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-                  />
-                </svg>
+                <ArrowLeftIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 Back home
               </Link>
 
@@ -167,6 +92,7 @@ export default function WorkPage() {
                     key={project.slug}
                     project={project}
                     index={index}
+                    headingLevel="h2"
                   />
                 ))}
               </div>

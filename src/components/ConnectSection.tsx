@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import SocialCard from '@/components/SocialCard';
 import { CONTACTS } from '@/data';
+import { ChevronIcon } from './Icons';
 
 const INITIAL_CONTACT_COUNT = 4;
 
@@ -36,20 +37,10 @@ export default function ConnectSection() {
             className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2 group"
           >
             {showAll ? 'View less' : 'View more'}
-            <svg
+            <ChevronIcon
               className={`w-4 h-4 transition-transform duration-300 ${showAll ? 'group-hover:-translate-y-0.5' : 'group-hover:translate-y-0.5'}`}
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d={showAll ? 'M5 15l7-7 7 7' : 'M19 9l-7 7-7-7'}
-              />
-            </svg>
+              direction={showAll ? 'up' : 'down'}
+            />
           </button>
         </div>
       )}

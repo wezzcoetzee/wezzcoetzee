@@ -6,6 +6,7 @@ import type { Project } from '@/data';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
 import { useInView } from '@/hooks/use-in-view';
 import { CornerBrackets } from './CornerBrackets';
+import { ArrowLeftIcon, CheckIcon, ExternalLinkIcon } from './Icons';
 
 type CaseStudyProps = {
   project: Project;
@@ -58,20 +59,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
           href="/work/"
           className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 group"
         >
-          <svg
-            className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-            aria-hidden="true"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-            />
-          </svg>
+          <ArrowLeftIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
           Back to work
         </Link>
 
@@ -124,20 +112,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
               key={index}
               className="flex items-start gap-3 text-foreground"
             >
-              <svg
-                className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
-              </svg>
+              <CheckIcon className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" />
               <span>{highlight}</span>
             </li>
           ))}
@@ -163,20 +138,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
                   <span className="text-foreground transition-colors duration-300">
                     {link.label}
                   </span>
-                  <svg
-                    className="w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M7 17L17 7M17 7H7M17 7v10"
-                    />
-                  </svg>
+                  <ExternalLinkIcon className="w-4 h-4 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </a>
               </CornerBrackets>
             ))}

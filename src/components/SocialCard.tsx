@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { CornerBrackets } from './CornerBrackets';
+import { ArrowRightIcon } from './Icons';
 
 declare global {
   interface Window {
@@ -74,20 +75,7 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
                 </h3>
 
                 <div className="flex-shrink-0 transition-all duration-300 opacity-40 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
-                  <svg
-                    className="w-5 h-5 text-muted-foreground"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-                    />
-                  </svg>
+                  <ArrowRightIcon className="w-5 h-5 text-muted-foreground" />
                 </div>
               </div>
 
