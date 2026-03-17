@@ -102,7 +102,7 @@ export default function Home() {
       />
 
       <main id="main-content" className="relative min-h-screen">
-        <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
+        <div className="container relative py-12 md:py-24">
           <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
             <Introduction />
 

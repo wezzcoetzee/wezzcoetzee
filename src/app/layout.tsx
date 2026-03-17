@@ -8,7 +8,7 @@ import { Footer } from '@/components/Footer';
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-body',
-  weight: ['500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
 });
 
 const crimsonPro = Crimson_Pro({

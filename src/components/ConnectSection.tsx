@@ -11,7 +11,7 @@ export default function ConnectSection() {
   const hasMoreContacts = CONTACTS.length > INITIAL_CONTACT_COUNT;
 
   return (
-    <section id="connect" className="space-y-8">
+    <section className="space-y-8">
       <div className="flex items-center gap-4">
         <h2 className="text-2xl md:text-3xl font-display font-semibold">Connect</h2>
         <div className="h-px flex-1 divider" />

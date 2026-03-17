@@ -26,7 +26,7 @@
   --color-card: 20 20 20;
   --color-card-foreground: 229 229 229;
   --color-muted: 26 26 26;
-  --color-muted-foreground: 115 115 115;
+  --color-muted-foreground: 140 140 140;
   --color-border: 38 38 38;
   --color-primary: 245 245 245;
   --color-primary-foreground: 10 10 10;
@@ -38,7 +38,7 @@ html[data-theme='light'] {
   --color-card: 244 241 237;
   --color-card-foreground: 41 37 32;
   --color-muted: 236 232 226;
-  --color-muted-foreground: 120 110 98;
+  --color-muted-foreground: 105 96 85;
   --color-border: 220 215 207;
   --color-primary: 22 18 14;
   --color-primary-foreground: 250 248 245;
