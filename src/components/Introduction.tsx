@@ -41,8 +41,8 @@ export default function Introduction() {
           <div
             className="space-y-4 transition-all duration-600 ease-out"
             style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              opacity: isVisible || reducedMotion ? 1 : 0,
+              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
               transitionDelay: '0.2s',
             }}
           >
@@ -67,8 +67,8 @@ export default function Introduction() {
           <div
             className="flex items-center gap-3 text-muted-foreground transition-all duration-600 ease-out"
             style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
+              opacity: isVisible || reducedMotion ? 1 : 0,
+              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
               transitionDelay: '0.4s',
             }}
           >
