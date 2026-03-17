@@ -27,7 +27,7 @@ export function NavBar() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="container mx-auto pt-4">
+      <div className="container pt-4">
         <CornerBrackets showCorners={true}>
           <nav
             aria-label="Main navigation"

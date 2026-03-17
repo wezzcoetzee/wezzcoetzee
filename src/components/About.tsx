@@ -16,7 +16,7 @@ function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
   return (
     <CornerBrackets
       ref={ref}
-      className="card-minimal h-full p-6 transition-all duration-600 ease-out"
+      className="card-minimal h-full p-6 transition-[opacity,transform] duration-600 ease-out"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(20px)',

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowLeftIcon } from '@/components/Icons';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="relative min-h-screen flex items-center justify-center">
-      <div className="container relative mx-auto px-6 md:px-12 py-12 md:py-24">
+      <div className="container relative py-12 md:py-24">
         <div className="mx-auto w-full max-w-2xl text-center space-y-8">
           <h1>Page Not Found</h1>
           <p className="text-xl text-muted-foreground">
@@ -23,19 +24,7 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border border-border text-foreground hover:bg-muted transition-colors duration-300"
           >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
-              />
-            </svg>
+            <ArrowLeftIcon />
             Back home
           </Link>
         </div>

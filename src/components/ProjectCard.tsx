@@ -26,14 +26,14 @@ export function ProjectCard({
   return (
     <Link
       href={`/work/${project.slug}/`}
-      className="group relative block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
+      className="group relative block w-full h-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
       style={{
         opacity: 0,
         animation: `fadeInUp 0.6s ease-out ${0.1 + index * 0.1}s forwards`,
       }}
     >
-      <CornerBrackets>
-        <div className="card-minimal p-6">
+      <CornerBrackets className="h-full">
+        <div className="card-minimal p-6 h-full">
           <div className="space-y-4">
             <div className="flex items-start justify-between gap-3">
               <Heading className="font-display text-xl font-semibold transition-colors duration-300 leading-tight text-foreground">

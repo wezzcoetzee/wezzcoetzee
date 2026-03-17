@@ -44,7 +44,7 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
       href={contact.link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
+      className="group relative block w-full h-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background overflow-hidden"
       onClick={() =>
         sendGoogleAnalyticsEvent({
           action: 'click',
@@ -59,8 +59,8 @@ export default function SocialCard({ contact, index }: SocialCardProps) {
         animation: `fadeInUp 0.6s ease-out ${0.8 + index * 0.1}s forwards`,
       }}
     >
-      <CornerBrackets>
-        <div className="card-minimal p-6">
+      <CornerBrackets className="h-full">
+        <div className="card-minimal p-6 h-full">
           <div className="flex items-start gap-5">
             <div className="flex-shrink-0">
               <div className="w-12 h-12 flex items-center justify-center border border-border text-muted-foreground">

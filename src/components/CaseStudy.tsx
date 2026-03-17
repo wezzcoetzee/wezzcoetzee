@@ -26,7 +26,7 @@ function RevealSection({
   return (
     <section
       ref={ref}
-      className={`transition-all duration-600 ease-out ${className || ''}`}
+      className={`transition-[opacity,transform] duration-600 ease-out ${className || ''}`}
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? 'translateY(0)' : 'translateY(20px)',
@@ -49,7 +49,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
   return (
     <article className="space-y-12">
       <header
-        className="space-y-6 transition-all duration-600 ease-out"
+        className="space-y-6 transition-[opacity,transform] duration-600 ease-out"
         style={{
           opacity: isVisible || reducedMotion ? 1 : 0,
           transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',

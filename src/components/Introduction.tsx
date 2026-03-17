@@ -19,7 +19,7 @@ export default function Introduction() {
 
       <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
         <div
-          className="relative transition-all duration-600 ease-out shrink-0"
+          className="relative transition-[opacity,transform] duration-600 ease-out shrink-0"
           style={{
             opacity: isVisible || reducedMotion ? 1 : 0,
             transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
@@ -39,7 +39,7 @@ export default function Introduction() {
 
         <div className="space-y-6">
           <div
-            className="space-y-4 transition-all duration-600 ease-out"
+            className="space-y-4 transition-[opacity,transform] duration-600 ease-out"
             style={{
               opacity: isVisible || reducedMotion ? 1 : 0,
               transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
@@ -65,7 +65,7 @@ export default function Introduction() {
           </div>
 
           <div
-            className="flex items-center gap-3 text-muted-foreground transition-all duration-600 ease-out"
+            className="flex items-center gap-3 text-muted-foreground transition-[opacity,transform] duration-600 ease-out"
             style={{
               opacity: isVisible || reducedMotion ? 1 : 0,
               transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
