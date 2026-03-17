@@ -4,11 +4,38 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { Project } from '@/data';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
+import { useInView } from '@/hooks/use-in-view';
 import { CornerBrackets } from './CornerBrackets';
 
 type CaseStudyProps = {
   project: Project;
 };
+
+function RevealSection({
+  children,
+  className,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+}) {
+  const [ref, inView] = useInView<HTMLElement>(0.1);
+
+  return (
+    <section
+      ref={ref}
+      className={`transition-all duration-600 ease-out ${className || ''}`}
+      style={{
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(20px)',
+        transitionDelay: inView ? `${delay}s` : '0s',
+      }}
+    >
+      {children}
+    </section>
+  );
+}
 
 export default function CaseStudy({ project }: CaseStudyProps) {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,14 +95,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
         </div>
       </header>
 
-      <section
-        className="space-y-8 transition-all duration-600 ease-out"
-        style={{
-          opacity: isVisible || reducedMotion ? 1 : 0,
-          transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-          transitionDelay: '0.2s',
-        }}
-      >
+      <RevealSection className="space-y-8">
         <div className="flex items-center gap-4">
           <h2 className="text-2xl md:text-3xl font-display font-semibold">Overview</h2>
           <div className="h-px flex-1 divider" />
@@ -88,16 +108,9 @@ export default function CaseStudy({ project }: CaseStudyProps) {
             </p>
           </div>
         </div>
-      </section>
+      </RevealSection>
 
-      <section
-        className="space-y-8 transition-all duration-600 ease-out"
-        style={{
-          opacity: isVisible || reducedMotion ? 1 : 0,
-          transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-          transitionDelay: '0.4s',
-        }}
-      >
+      <RevealSection className="space-y-8">
         <div className="flex items-center gap-4">
           <h2 className="text-2xl md:text-3xl font-display font-semibold">
             Highlights
@@ -129,17 +142,10 @@ export default function CaseStudy({ project }: CaseStudyProps) {
             </li>
           ))}
         </ul>
-      </section>
+      </RevealSection>
 
       {project.links.length > 0 && (
-        <section
-          className="space-y-8 transition-all duration-600 ease-out"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transitionDelay: '0.6s',
-          }}
-        >
+        <RevealSection className="space-y-8">
           <div className="flex items-center gap-4">
             <h2 className="text-2xl md:text-3xl font-display font-semibold">Links</h2>
             <div className="h-px flex-1 divider" />
@@ -175,7 +181,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
               </CornerBrackets>
             ))}
           </div>
-        </section>
+        </RevealSection>
       )}
     </article>
   );

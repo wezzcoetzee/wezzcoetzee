@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
+import { useInView } from '@/hooks/use-in-view';
 import { CornerBrackets } from './CornerBrackets';
+
 type AboutSectionProps = {
   icon: React.ReactNode;
   title: string;
@@ -11,20 +11,16 @@ type AboutSectionProps = {
 };
 
 function AboutSection({ icon, title, children, delay }: AboutSectionProps) {
-  const [isVisible, setIsVisible] = useState(false);
-  const reducedMotion = useReducedMotion();
-
-  useEffect(() => {
-    if (reducedMotion) return;
-    const timer = setTimeout(() => setIsVisible(true), delay * 1000);
-    return () => clearTimeout(timer);
-  }, [delay, reducedMotion]);
+  const [ref, inView] = useInView(0.2);
 
   return (
-    <CornerBrackets className="card-minimal h-full p-6 transition-all duration-600 ease-out"
+    <CornerBrackets
+      ref={ref}
+      className="card-minimal h-full p-6 transition-all duration-600 ease-out"
       style={{
-        opacity: isVisible || reducedMotion ? 1 : 0,
-        transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
+        opacity: inView ? 1 : 0,
+        transform: inView ? 'translateY(0)' : 'translateY(20px)',
+        transitionDelay: inView ? `${delay}s` : '0s',
       }}>
 
       <div className="flex items-start gap-5">
@@ -56,7 +52,7 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
         <AboutSection
-          delay={0.1}
+          delay={0}
           title="Journey"
           icon={
             <svg
@@ -88,7 +84,7 @@ export default function About() {
         </AboutSection>
 
         <AboutSection
-          delay={0.2}
+          delay={0.1}
           title="Expertise"
           icon={
             <svg
@@ -120,7 +116,7 @@ export default function About() {
         </AboutSection>
 
         <AboutSection
-          delay={0.3}
+          delay={0.2}
           title="Leadership"
           icon={
             <svg
