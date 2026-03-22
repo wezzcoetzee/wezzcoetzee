@@ -21,8 +21,8 @@ export default function Home() {
   const profilePageData = {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
-    dateCreated: '2023-05-01',
-    dateModified: new Date().toISOString().split('T')[0],
+    dateCreated: '2023-05-01T00:00:00+00:00',
+    dateModified: new Date().toISOString(),
     mainEntity: {
       '@type': 'Person',
       name: 'Wesley Coetzee',
