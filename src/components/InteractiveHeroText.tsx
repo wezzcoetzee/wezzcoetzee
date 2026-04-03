@@ -103,7 +103,12 @@ export default function InteractiveHeroText() {
     if (!ctx) return
 
     const cursor = cursorRef.current
+    let hasDelayed = false
     particlesRef.current = particlesRef.current.map((p) => {
+      if (p.delay > 0) {
+        hasDelayed = true
+        return { ...p, delay: p.delay - 1 }
+      }
       let updated = applyRepel(p, cursor.x, cursor.y, REPEL_RADIUS, REPEL_STRENGTH)
       updated = applySpring(updated, SPRING_K)
       updated = applyDamping(updated, DAMPING)
@@ -113,7 +118,7 @@ export default function InteractiveHeroText() {
 
     renderFrame(ctx)
 
-    if (totalKineticEnergy(particlesRef.current) > IDLE_ENERGY_THRESHOLD) {
+    if (hasDelayed || totalKineticEnergy(particlesRef.current) > IDLE_ENERGY_THRESHOLD) {
       rafRef.current = requestAnimationFrame(tick)
     } else {
       runningRef.current = false

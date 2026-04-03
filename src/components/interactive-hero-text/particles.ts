@@ -7,6 +7,7 @@ export type Particle = {
   vy: number
   radius: number
   color: string
+  delay: number
 }
 
 export function createDotParticle(
@@ -15,7 +16,7 @@ export function createDotParticle(
   radius: number,
   color: string,
 ): Particle {
-  return { x, y, targetX: x, targetY: y, vx: 0, vy: 0, radius, color }
+  return { x, y, targetX: x, targetY: y, vx: 0, vy: 0, radius, color, delay: 0 }
 }
 
 export function applySpring(p: Particle, k: number): Particle {

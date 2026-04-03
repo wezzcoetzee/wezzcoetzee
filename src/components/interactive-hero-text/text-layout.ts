@@ -95,6 +95,8 @@ export function sampleDotsFromText(
   return { particles: allParticles, totalHeight: yOffset }
 }
 
+const PULSE_SPEED = 3
+
 export function explodeDots(
   particles: Particle[],
   clickX: number,
@@ -105,12 +107,14 @@ export function explodeDots(
   return particles.map((p) => {
     const dx = p.targetX - clickX
     const dy = p.targetY - clickY
+    const dist = Math.sqrt(dx * dx + dy * dy)
     const angle = Math.atan2(dy, dx) + (Math.random() - 0.5) * 0.5
     const speed = minVel + Math.random() * (maxVel - minVel)
     return {
       ...p,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
+      delay: Math.round(dist / PULSE_SPEED),
     }
   })
 }
