@@ -23,11 +23,13 @@ import {
   HERO_TEXTS,
 } from './interactive-hero-text/constants'
 
+const ROLES = ['Tech Lead', 'Principal Software Engineer']
+
 export default function InteractiveHeroText() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const reducedMotion = useReducedMotion()
-  const [canvasEnabled, setCanvasEnabled] = useState(false)
+  const [ready, setReady] = useState(false)
 
   const particlesRef = useRef<Particle[]>([])
   const baseParticlesRef = useRef<Particle[]>([])
@@ -46,11 +48,7 @@ export default function InteractiveHeroText() {
     if (!canvas || !container) return
 
     const width = container.clientWidth
-    if (width < MIN_CANVAS_WIDTH) {
-      setCanvasEnabled(false)
-      return
-    }
-    setCanvasEnabled(true)
+    if (width < MIN_CANVAS_WIDTH) return
 
     const isMobile = width < 768
     const theme = getTheme()
@@ -67,6 +65,7 @@ export default function InteractiveHeroText() {
     const ctx = canvas.getContext('2d')
     if (ctx) {
       renderFrame(ctx)
+      setReady(true)
     }
   }, [getTheme])
 
@@ -237,6 +236,24 @@ export default function InteractiveHeroText() {
 
   return (
     <div ref={containerRef} className="relative w-full">
+      <div
+        className={`transition-opacity duration-300 ${ready ? 'opacity-0 pointer-events-none absolute inset-0' : 'opacity-100'}`}
+        aria-hidden={ready}
+      >
+        <p className="font-body text-sm font-medium text-muted-foreground tracking-wide uppercase">
+          {HERO_TEXTS.badges}
+        </p>
+        <h1 className="mt-4 font-display text-5xl md:text-6xl font-bold tracking-tight text-primary leading-[1.1]">
+          {HERO_TEXTS.name}
+        </h1>
+        <p className="mt-2 font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] whitespace-nowrap">
+          {HERO_TEXTS.tagline}
+        </p>
+        <p className="mt-6 text-base font-medium text-muted-foreground">
+          {HERO_TEXTS.location}
+        </p>
+      </div>
+
       <canvas
         ref={canvasRef}
         role="img"
@@ -247,9 +264,9 @@ export default function InteractiveHeroText() {
         onTouchMove={handleTouchMove}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        className={`block cursor-default ${canvasEnabled ? '' : 'hidden'}`}
+        className={`block cursor-default transition-opacity duration-300 ${ready ? 'opacity-100' : 'opacity-0'}`}
       />
-      <div className="sr-only" aria-hidden={canvasEnabled ? 'false' : undefined}>
+      <div className="sr-only">
         <span>{HERO_TEXTS.badges}</span>
         <span>{HERO_TEXTS.name}</span>
         <span>{HERO_TEXTS.tagline}</span>
