@@ -39,9 +39,9 @@ export function computeWordPositions(
 }
 
 function splitGraphemeWidths(text: string, totalWidth: number): number[] {
-  const graphemes = [
-    ...new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text),
-  ].map((s) => s.segment)
+  const graphemes = Array.from(
+    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text),
+  ).map((s) => s.segment)
   const charWidth = totalWidth / graphemes.length
   return graphemes.map(() => charWidth)
 }
@@ -49,9 +49,9 @@ function splitGraphemeWidths(text: string, totalWidth: number): number[] {
 export function splitWordIntoCharPositions(
   word: WordPosition,
 ): { text: string; x: number; y: number }[] {
-  const graphemes = [
-    ...new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(word.text),
-  ].map((s) => s.segment)
+  const graphemes = Array.from(
+    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(word.text),
+  ).map((s) => s.segment)
   const chars: { text: string; x: number; y: number }[] = []
   let x = word.x
   for (let i = 0; i < graphemes.length; i++) {
