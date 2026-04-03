@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useReducedMotion } from '@/hooks/use-reduced-motion';
+import InteractiveHeroText from './InteractiveHeroText';
 
 export default function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,58 +39,64 @@ export default function Introduction() {
         </div>
 
         <div className="space-y-6">
-          <div
-            className="space-y-4 transition-[opacity,transform] duration-600 ease-out"
-            style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.2s',
-            }}
-          >
-            <div className="flex flex-wrap gap-2">
-              {roles.map((role) => (
-                <span
-                  key={role}
-                  className="inline-block px-4 py-1.5 border border-border text-sm font-medium text-muted-foreground tracking-wide uppercase"
+          {!reducedMotion ? (
+            <InteractiveHeroText />
+          ) : (
+            <>
+              <div
+                className="space-y-4 transition-[opacity,transform] duration-600 ease-out"
+                style={{
+                  opacity: isVisible || reducedMotion ? 1 : 0,
+                  transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: '0.2s',
+                }}
+              >
+                <div className="flex flex-wrap gap-2">
+                  {roles.map((role) => (
+                    <span
+                      key={role}
+                      className="inline-block px-4 py-1.5 border border-border text-sm font-medium text-muted-foreground tracking-wide uppercase"
+                    >
+                      {role}
+                    </span>
+                  ))}
+                </div>
+
+                <h1>Wesley Coetzee</h1>
+
+                <p className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] max-w-2xl">
+                  Building scalable solutions & leading engineering teams
+                </p>
+              </div>
+
+              <div
+                className="flex items-center gap-3 text-muted-foreground transition-[opacity,transform] duration-600 ease-out"
+                style={{
+                  opacity: isVisible || reducedMotion ? 1 : 0,
+                  transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
+                  transitionDelay: '0.4s',
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-5 h-5"
+                  aria-hidden="true"
                 >
-                  {role}
-                </span>
-              ))}
-            </div>
-
-            <h1>Wesley Coetzee</h1>
-
-            <p className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] max-w-2xl">
-              Building scalable solutions & leading engineering teams
-            </p>
-          </div>
-
-          <div
-            className="flex items-center gap-3 text-muted-foreground transition-[opacity,transform] duration-600 ease-out"
-            style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.4s',
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-5 h-5"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-              />
-            </svg>
-            <span className="text-base font-medium text-foreground">Auckland, New Zealand</span>
-          </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                  />
+                </svg>
+                <span className="text-base font-medium text-foreground">Auckland, New Zealand</span>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
