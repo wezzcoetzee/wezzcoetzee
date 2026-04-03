@@ -38,7 +38,7 @@ export default function Introduction() {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="flex-1 min-w-0 space-y-6">
           {!reducedMotion ? (
             <InteractiveHeroText />
           ) : (
