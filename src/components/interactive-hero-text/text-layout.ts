@@ -1,79 +1,35 @@
-import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext'
-import { createParticle, type Particle } from './particles'
-import { FONT_CONFIGS, MOBILE_FONT_CONFIGS, HERO_TEXTS, LINE_HEIGHTS, BLOCK_GAPS } from './constants'
+import { prepare, layout } from '@chenglou/pretext'
+import { createDotParticle, type Particle } from './particles'
+import {
+  FONT_CONFIGS,
+  MOBILE_FONT_CONFIGS,
+  HERO_TEXTS,
+  LINE_HEIGHTS,
+  BLOCK_GAPS,
+  DOT_SPACING,
+  DOT_MIN_RADIUS,
+  DOT_MAX_RADIUS,
+  DOT_JITTER,
+} from './constants'
 import type { FontConfigKey } from './constants'
 
-export type WordPosition = {
-  text: string
-  x: number
-  y: number
-  width: number
-  font: string
-  color: string
-  graphemeWidths: number[]
-}
-
-type LayoutCursor = { segmentIndex: number; graphemeIndex: number }
-
-export function computeWordPositions(
-  segments: string[],
-  widths: number[],
-  lineStart: LayoutCursor,
-  lineEnd: LayoutCursor,
-  lineY: number,
-  font: string,
-  color: string,
-): WordPosition[] {
-  const words: WordPosition[] = []
-  let x = 0
-  for (let i = lineStart.segmentIndex; i < lineEnd.segmentIndex; i++) {
-    const seg = segments[i]
-    const w = widths[i]
-    if (seg.trim().length > 0) {
-      const graphemeWidths = splitGraphemeWidths(seg, w)
-      words.push({ text: seg, x, y: lineY, width: w, font, color, graphemeWidths })
-    }
-    x += w
-  }
-  return words
-}
-
-function splitGraphemeWidths(text: string, totalWidth: number): number[] {
-  const graphemes = Array.from(
-    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(text),
-  ).map((s) => s.segment)
-  const charWidth = totalWidth / graphemes.length
-  return graphemes.map(() => charWidth)
-}
-
-export function splitWordIntoCharPositions(
-  word: WordPosition,
-): { text: string; x: number; y: number }[] {
-  const graphemes = Array.from(
-    new Intl.Segmenter(undefined, { granularity: 'grapheme' }).segment(word.text),
-  ).map((s) => s.segment)
-  const chars: { text: string; x: number; y: number }[] = []
-  let x = word.x
-  for (let i = 0; i < graphemes.length; i++) {
-    chars.push({ text: graphemes[i], x, y: word.y })
-    x += word.graphemeWidths[i]
-  }
-  return chars
-}
-
-export type LayoutResult = {
-  wordPositions: WordPosition[]
+export type DotSampleResult = {
+  particles: Particle[]
   totalHeight: number
 }
 
-export function layoutAllText(
+export function sampleDotsFromText(
   canvasWidth: number,
   isMobile: boolean,
   theme: 'dark' | 'light',
-): LayoutResult {
+): DotSampleResult {
   const configs = isMobile ? MOBILE_FONT_CONFIGS : FONT_CONFIGS
-  const allWords: WordPosition[] = []
+  const allParticles: Particle[] = []
   let yOffset = 0
+
+  const offscreen = document.createElement('canvas')
+  const offCtx = offscreen.getContext('2d')
+  if (!offCtx) return { particles: [], totalHeight: 0 }
 
   for (const config of configs) {
     const key = config.key as FontConfigKey
@@ -85,52 +41,73 @@ export function layoutAllText(
 
     yOffset += gap
 
-    const prepared = prepareWithSegments(text, config.font)
-    const { lines } = layoutWithLines(prepared, canvasWidth, lineHeight)
+    const prepared = prepare(text, config.font)
+    const { height, lineCount } = layout(prepared, canvasWidth, lineHeight)
 
-    for (let lineIdx = 0; lineIdx < lines.length; lineIdx++) {
-      const line = lines[lineIdx]
-      const lineY = yOffset + lineIdx * lineHeight
-      const words = computeWordPositions(
-        prepared.segments,
-        (prepared as unknown as { widths: number[] }).widths,
-        line.start,
-        line.end,
-        lineY,
-        config.font,
-        color,
-      )
-      allWords.push(...words)
+    const blockHeight = lineCount * lineHeight
+    offscreen.width = canvasWidth
+    offscreen.height = blockHeight
+
+    offCtx.clearRect(0, 0, canvasWidth, blockHeight)
+    offCtx.font = config.font
+    offCtx.fillStyle = '#ffffff'
+    offCtx.textBaseline = 'top'
+
+    const words = text.split(/(\s+)/)
+    let lineX = 0
+    let lineY = 0
+    for (const word of words) {
+      if (word.trim().length === 0) {
+        lineX += offCtx.measureText(word).width
+        continue
+      }
+      const wordWidth = offCtx.measureText(word).width
+      if (lineX + wordWidth > canvasWidth && lineX > 0) {
+        lineX = 0
+        lineY += lineHeight
+      }
+      offCtx.fillText(word, lineX, lineY)
+      lineX += wordWidth
     }
 
-    yOffset += lines.length * lineHeight
+    const imageData = offCtx.getImageData(0, 0, canvasWidth, blockHeight)
+    const pixels = imageData.data
+
+    for (let y = 0; y < blockHeight; y += DOT_SPACING) {
+      for (let x = 0; x < canvasWidth; x += DOT_SPACING) {
+        const i = (y * canvasWidth + x) * 4
+        const alpha = pixels[i + 3]
+        if (alpha > 128) {
+          const jx = x + (Math.random() - 0.5) * DOT_JITTER * 2
+          const jy = y + (Math.random() - 0.5) * DOT_JITTER * 2
+          const radius = DOT_MIN_RADIUS + Math.random() * (DOT_MAX_RADIUS - DOT_MIN_RADIUS)
+          allParticles.push(createDotParticle(jx, yOffset + jy, radius, color))
+        }
+      }
+    }
+
+    yOffset += blockHeight
   }
 
-  return { wordPositions: allWords, totalHeight: yOffset }
+  return { particles: allParticles, totalHeight: yOffset }
 }
 
-export function wordPositionsToParticles(positions: WordPosition[]): Particle[] {
-  return positions.map((wp) => createParticle(wp.text, wp.x, wp.y, wp.font, wp.color))
-}
-
-export function explodeWordToCharParticles(
-  word: WordPosition,
+export function explodeDots(
+  particles: Particle[],
   clickX: number,
   clickY: number,
   minVel: number,
   maxVel: number,
 ): Particle[] {
-  const chars = splitWordIntoCharPositions(word)
-  return chars.map((ch) => {
-    const dx = ch.x - clickX
-    const dy = ch.y - clickY
+  return particles.map((p) => {
+    const dx = p.targetX - clickX
+    const dy = p.targetY - clickY
     const angle = Math.atan2(dy, dx) + (Math.random() - 0.5) * 0.5
     const speed = minVel + Math.random() * (maxVel - minVel)
-    const p = createParticle(ch.text, ch.x, ch.y, word.font, word.color)
-    p.vx = Math.cos(angle) * speed
-    p.vy = Math.sin(angle) * speed
-    p.targetX = ch.x
-    p.targetY = ch.y
-    return p
+    return {
+      ...p,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+    }
   })
 }

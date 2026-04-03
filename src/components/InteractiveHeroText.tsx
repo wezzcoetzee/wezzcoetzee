@@ -2,12 +2,7 @@
 
 import { useRef, useEffect, useCallback, useState } from 'react'
 import { useReducedMotion } from '@/hooks/use-reduced-motion'
-import {
-  layoutAllText,
-  wordPositionsToParticles,
-  explodeWordToCharParticles,
-  type WordPosition,
-} from './interactive-hero-text/text-layout'
+import { sampleDotsFromText, explodeDots } from './interactive-hero-text/text-layout'
 import {
   type Particle,
   applySpring,
@@ -35,11 +30,10 @@ export default function InteractiveHeroText() {
   const [canvasEnabled, setCanvasEnabled] = useState(false)
 
   const particlesRef = useRef<Particle[]>([])
-  const wordPositionsRef = useRef<WordPosition[]>([])
+  const baseParticlesRef = useRef<Particle[]>([])
   const cursorRef = useRef({ x: -9999, y: -9999 })
   const rafRef = useRef<number>(0)
   const runningRef = useRef(false)
-  const explodedRef = useRef(false)
 
   const getTheme = useCallback((): 'dark' | 'light' => {
     return (document.documentElement.getAttribute('data-theme') as 'dark' | 'light') ?? 'dark'
@@ -61,10 +55,9 @@ export default function InteractiveHeroText() {
     const theme = getTheme()
     const dpr = window.devicePixelRatio || 1
 
-    const { wordPositions, totalHeight } = layoutAllText(width, isMobile, theme)
-    wordPositionsRef.current = wordPositions
-    particlesRef.current = wordPositionsToParticles(wordPositions)
-    explodedRef.current = false
+    const { particles, totalHeight } = sampleDotsFromText(width, isMobile, theme)
+    baseParticlesRef.current = particles.map((p) => ({ ...p }))
+    particlesRef.current = particles
 
     canvas.width = width * dpr
     canvas.height = totalHeight * dpr
@@ -74,7 +67,6 @@ export default function InteractiveHeroText() {
     const ctx = canvas.getContext('2d')
     if (ctx) {
       ctx.scale(dpr, dpr)
-      ctx.textBaseline = 'top'
       renderFrame(ctx)
     }
   }, [getTheme])
@@ -82,14 +74,14 @@ export default function InteractiveHeroText() {
   const renderFrame = useCallback((ctx: CanvasRenderingContext2D) => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const width = canvas.style.width ? parseInt(canvas.style.width) : canvas.width
-    const height = canvas.style.height ? parseInt(canvas.style.height) : canvas.height
+    const width = parseInt(canvas.style.width) || canvas.width
+    const height = parseInt(canvas.style.height) || canvas.height
     ctx.clearRect(0, 0, width, height)
-    ctx.textBaseline = 'top'
     for (const p of particlesRef.current) {
-      ctx.font = p.font
+      ctx.beginPath()
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
       ctx.fillStyle = p.color
-      ctx.fillText(p.text, p.x, p.y)
+      ctx.fill()
     }
   }, [])
 
@@ -111,11 +103,6 @@ export default function InteractiveHeroText() {
     if (totalKineticEnergy(particlesRef.current) > IDLE_ENERGY_THRESHOLD) {
       rafRef.current = requestAnimationFrame(tick)
     } else {
-      if (explodedRef.current) {
-        particlesRef.current = wordPositionsToParticles(wordPositionsRef.current)
-        explodedRef.current = false
-        renderFrame(ctx)
-      }
       runningRef.current = false
     }
   }, [renderFrame])
@@ -147,20 +134,13 @@ export default function InteractiveHeroText() {
       if (!rect) return
       const clickX = e.clientX - rect.left
       const clickY = e.clientY - rect.top
-
-      const newParticles: Particle[] = []
-      for (const wp of wordPositionsRef.current) {
-        const chars = explodeWordToCharParticles(
-          wp,
-          clickX,
-          clickY,
-          EXPLODE_MIN_VELOCITY,
-          EXPLODE_MAX_VELOCITY,
-        )
-        newParticles.push(...chars)
-      }
-      particlesRef.current = newParticles
-      explodedRef.current = true
+      particlesRef.current = explodeDots(
+        particlesRef.current,
+        clickX,
+        clickY,
+        EXPLODE_MIN_VELOCITY,
+        EXPLODE_MAX_VELOCITY,
+      )
       startLoop()
     },
     [startLoop],
@@ -190,20 +170,13 @@ export default function InteractiveHeroText() {
       if (!rect || !e.touches[0]) return
       const clickX = e.touches[0].clientX - rect.left
       const clickY = e.touches[0].clientY - rect.top
-
-      const newParticles: Particle[] = []
-      for (const wp of wordPositionsRef.current) {
-        const chars = explodeWordToCharParticles(
-          wp,
-          clickX,
-          clickY,
-          EXPLODE_MIN_VELOCITY,
-          EXPLODE_MAX_VELOCITY,
-        )
-        newParticles.push(...chars)
-      }
-      particlesRef.current = newParticles
-      explodedRef.current = true
+      particlesRef.current = explodeDots(
+        particlesRef.current,
+        clickX,
+        clickY,
+        EXPLODE_MIN_VELOCITY,
+        EXPLODE_MAX_VELOCITY,
+      )
       startLoop()
     },
     [startLoop],

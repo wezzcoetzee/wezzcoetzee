@@ -44,3 +44,8 @@ export const EXPLODE_MAX_VELOCITY = 15
 export const SETTLE_THRESHOLD = 0.5
 export const IDLE_ENERGY_THRESHOLD = 0.1
 export const MIN_CANVAS_WIDTH = 400
+
+export const DOT_SPACING = 4
+export const DOT_MIN_RADIUS = 1
+export const DOT_MAX_RADIUS = 2.5
+export const DOT_JITTER = 1.5
