@@ -34,12 +34,13 @@ export default function InteractiveHeroText() {
   const cursorRef = useRef({ x: -9999, y: -9999 })
   const rafRef = useRef<number>(0)
   const runningRef = useRef(false)
+  const initTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined)
 
   const getTheme = useCallback((): 'dark' | 'light' => {
     return (document.documentElement.getAttribute('data-theme') as 'dark' | 'light') ?? 'dark'
   }, [])
 
-  const initLayout = useCallback(() => {
+  const doLayout = useCallback(() => {
     const canvas = canvasRef.current
     const container = containerRef.current
     if (!canvas || !container) return
@@ -53,30 +54,31 @@ export default function InteractiveHeroText() {
 
     const isMobile = width < 768
     const theme = getTheme()
-    const dpr = window.devicePixelRatio || 1
 
     const { particles, totalHeight } = sampleDotsFromText(width, isMobile, theme)
     baseParticlesRef.current = particles.map((p) => ({ ...p }))
     particlesRef.current = particles
 
-    canvas.width = width * dpr
-    canvas.height = totalHeight * dpr
+    canvas.width = width
+    canvas.height = totalHeight
     canvas.style.width = `${width}px`
     canvas.style.height = `${totalHeight}px`
 
     const ctx = canvas.getContext('2d')
     if (ctx) {
-      ctx.scale(dpr, dpr)
       renderFrame(ctx)
     }
   }, [getTheme])
 
+  const initLayout = useCallback(() => {
+    clearTimeout(initTimerRef.current)
+    initTimerRef.current = setTimeout(doLayout, 50)
+  }, [doLayout])
+
   const renderFrame = useCallback((ctx: CanvasRenderingContext2D) => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const width = parseInt(canvas.style.width) || canvas.width
-    const height = parseInt(canvas.style.height) || canvas.height
-    ctx.clearRect(0, 0, width, height)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (const p of particlesRef.current) {
       ctx.beginPath()
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
