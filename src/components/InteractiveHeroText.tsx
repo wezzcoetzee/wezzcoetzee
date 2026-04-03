@@ -74,6 +74,7 @@ export default function InteractiveHeroText() {
     const ctx = canvas.getContext('2d')
     if (ctx) {
       ctx.scale(dpr, dpr)
+      ctx.textBaseline = 'top'
       renderFrame(ctx)
     }
   }, [getTheme])
@@ -84,6 +85,7 @@ export default function InteractiveHeroText() {
     const width = canvas.style.width ? parseInt(canvas.style.width) : canvas.width
     const height = canvas.style.height ? parseInt(canvas.style.height) : canvas.height
     ctx.clearRect(0, 0, width, height)
+    ctx.textBaseline = 'top'
     for (const p of particlesRef.current) {
       ctx.font = p.font
       ctx.fillStyle = p.color
@@ -244,20 +246,18 @@ export default function InteractiveHeroText() {
 
   return (
     <div ref={containerRef} className="relative">
-      {canvasEnabled && (
-        <canvas
-          ref={canvasRef}
-          role="img"
-          aria-label={accessibleText}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          onClick={handleClick}
-          onTouchMove={handleTouchMove}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-          className="block cursor-default"
-        />
-      )}
+      <canvas
+        ref={canvasRef}
+        role="img"
+        aria-label={accessibleText}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
+        onTouchMove={handleTouchMove}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className={`block cursor-default ${canvasEnabled ? '' : 'hidden'}`}
+      />
       <div className="sr-only" aria-hidden={canvasEnabled ? 'false' : undefined}>
         <span>{HERO_TEXTS.badges}</span>
         <span>{HERO_TEXTS.name}</span>
