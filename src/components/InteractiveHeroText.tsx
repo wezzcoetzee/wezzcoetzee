@@ -79,12 +79,23 @@ export default function InteractiveHeroText() {
     const canvas = canvasRef.current
     if (!canvas) return
     ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+    const byColor = new Map<string, Particle[]>()
     for (const p of particlesRef.current) {
-      ctx.beginPath()
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-      ctx.fillStyle = p.color
-      ctx.fill()
+      const group = byColor.get(p.color)
+      if (group) group.push(p)
+      else byColor.set(p.color, [p])
     }
+
+    byColor.forEach((dots, color) => {
+      ctx.fillStyle = color
+      ctx.beginPath()
+      for (const p of dots) {
+        ctx.moveTo(p.x + p.radius, p.y)
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
+      }
+      ctx.fill()
+    })
   }, [])
 
   const tick = useCallback(() => {

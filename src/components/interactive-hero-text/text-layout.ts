@@ -7,8 +7,7 @@ import {
   LINE_HEIGHTS,
   BLOCK_GAPS,
   DOT_SPACING,
-  DOT_MIN_RADIUS,
-  DOT_MAX_RADIUS,
+  DOT_RADIUS,
   DOT_JITTER,
 } from './constants'
 import type { FontConfigKey } from './constants'
@@ -26,6 +25,7 @@ export function sampleDotsFromText(
   const configs = isMobile ? MOBILE_FONT_CONFIGS : FONT_CONFIGS
   const allParticles: Particle[] = []
   let yOffset = 0
+  const scale = 3
 
   const offscreen = document.createElement('canvas')
   const offCtx = offscreen.getContext('2d')
@@ -42,13 +42,16 @@ export function sampleDotsFromText(
     yOffset += gap
 
     const prepared = prepare(text, config.font)
-    const { height, lineCount } = layout(prepared, canvasWidth, lineHeight)
+    const { lineCount } = layout(prepared, canvasWidth, lineHeight)
 
     const blockHeight = lineCount * lineHeight
-    offscreen.width = canvasWidth
-    offscreen.height = blockHeight
+    const sw = canvasWidth * scale
+    const sh = blockHeight * scale
+    offscreen.width = sw
+    offscreen.height = sh
 
-    offCtx.clearRect(0, 0, canvasWidth, blockHeight)
+    offCtx.clearRect(0, 0, sw, sh)
+    offCtx.scale(scale, scale)
     offCtx.font = config.font
     offCtx.fillStyle = '#ffffff'
     offCtx.textBaseline = 'top'
@@ -69,19 +72,19 @@ export function sampleDotsFromText(
       offCtx.fillText(word, lineX, lineY)
       lineX += wordWidth
     }
+    offCtx.setTransform(1, 0, 0, 1, 0, 0)
 
-    const imageData = offCtx.getImageData(0, 0, canvasWidth, blockHeight)
+    const imageData = offCtx.getImageData(0, 0, sw, sh)
     const pixels = imageData.data
 
-    for (let y = 0; y < blockHeight; y += DOT_SPACING) {
-      for (let x = 0; x < canvasWidth; x += DOT_SPACING) {
-        const i = (y * canvasWidth + x) * 4
+    for (let y = 0; y < sh; y += DOT_SPACING) {
+      for (let x = 0; x < sw; x += DOT_SPACING) {
+        const i = (y * sw + x) * 4
         const alpha = pixels[i + 3]
         if (alpha > 128) {
-          const jx = x + (Math.random() - 0.5) * DOT_JITTER * 2
-          const jy = y + (Math.random() - 0.5) * DOT_JITTER * 2
-          const radius = DOT_MIN_RADIUS + Math.random() * (DOT_MAX_RADIUS - DOT_MIN_RADIUS)
-          allParticles.push(createDotParticle(jx, yOffset + jy, radius, color))
+          const cx = x / scale
+          const cy = y / scale
+          allParticles.push(createDotParticle(cx, yOffset + cy, DOT_RADIUS, color))
         }
       }
     }
