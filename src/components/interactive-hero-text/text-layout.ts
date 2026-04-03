@@ -25,7 +25,7 @@ export function sampleDotsFromText(
   const configs = isMobile ? MOBILE_FONT_CONFIGS : FONT_CONFIGS
   const allParticles: Particle[] = []
   let yOffset = 0
-  const scale = 3
+  const scale = 4
 
   const offscreen = document.createElement('canvas')
   const offCtx = offscreen.getContext('2d')
