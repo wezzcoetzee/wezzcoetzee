@@ -245,7 +245,7 @@ export default function InteractiveHeroText() {
   const accessibleText = `${HERO_TEXTS.badges}. ${HERO_TEXTS.name}. ${HERO_TEXTS.tagline}. ${HERO_TEXTS.location}.`
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative w-full">
       <canvas
         ref={canvasRef}
         role="img"

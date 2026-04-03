@@ -18,7 +18,7 @@ export default function Introduction() {
     <div className="relative flex justify-center">
       <div className="absolute inset-0 dot-matrix dot-matrix-fade pointer-events-none" />
 
-      <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+      <div className="relative w-full flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
         <div
           className="relative transition-[opacity,transform] duration-600 ease-out shrink-0"
           style={{
@@ -38,7 +38,7 @@ export default function Introduction() {
           </div>
         </div>
 
-        <div className="flex-1 min-w-0 space-y-6">
+        <div className="flex-1 min-w-0 w-full md:w-auto space-y-6">
           {!reducedMotion ? (
             <InteractiveHeroText />
           ) : (
