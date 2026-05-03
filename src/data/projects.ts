@@ -12,6 +12,32 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'hyperliquid-cli',
+    title: 'Hyperliquid CLI',
+    tagline: 'Command-line interface for trading on Hyperliquid',
+    description:
+      'A TypeScript-based command-line interface for interacting with the Hyperliquid exchange. Provides traders with a fast, scriptable way to manage positions, place orders, and query account state directly from the terminal without leaving their development workflow.',
+    technologies: ['TypeScript', 'Node.js', 'Hyperliquid', 'CLI'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/hyperliquid-cli',
+      },
+      {
+        label: 'View on NPM',
+        url: 'https://www.npmjs.com/package/@wezzcoetzee/hyperliquid-cli',
+      },
+    ],
+    highlights: [
+      'Trade Hyperliquid perps directly from the terminal',
+      'Scriptable for automation and custom workflows',
+      'Built with TypeScript for type-safe interactions',
+      'Fast, keyboard-driven trading experience',
+    ],
+    dateCreated: '2026-05-03',
+  },
+  {
     slug: 'grvt-sdk',
     title: 'GRVT TypeScript SDK',
     tagline: 'Deno-first TypeScript SDK for GRVT Exchange',
