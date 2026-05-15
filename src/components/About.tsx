@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 type AboutBlockProps = {
   title: string;
   children: React.ReactNode;
@@ -21,15 +19,6 @@ export default function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
         <AboutBlock title="Journey">
-          <div className="float-left mr-4 mb-2">
-            <Image
-              src="/avatar.jpg"
-              alt="Wesley Coetzee"
-              width={56}
-              height={56}
-              className="rounded-full ring-1 ring-border"
-            />
-          </div>
           <p>
             10+ years in software engineering, from junior developer to Tech Lead and Principal
             Software Engineer. Built casino platforms at Derivco, a Virtual Power Plant at Eneco,
