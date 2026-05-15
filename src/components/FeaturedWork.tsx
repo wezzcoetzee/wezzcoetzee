@@ -24,8 +24,8 @@ export default function FeaturedWork() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {featured.map((project, index) => (
-          <ProjectCard key={project.slug} project={project} index={index} maxTechnologies={3} />
+        {featured.map((project) => (
+          <ProjectCard key={project.slug} project={project} maxTechnologies={3} />
         ))}
       </div>
     </section>

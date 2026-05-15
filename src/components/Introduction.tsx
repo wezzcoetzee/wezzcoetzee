@@ -26,7 +26,7 @@ export default function Introduction() {
         >
           <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full ring-1 ring-border">
             <Image
-              src="https://avatars.githubusercontent.com/u/15249642?v=4"
+              src="/avatar.jpg"
               alt="Wesley Coetzee"
               fill
               className="object-cover"

@@ -45,20 +45,20 @@ export default function ConnectSection() {
         </div>
       </div>
 
-      <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+      <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
+        <span className="section-marker">also at</span>
         {SECONDARY_LINKS.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
-          </li>
+          <Link
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            {link.label}
+          </Link>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

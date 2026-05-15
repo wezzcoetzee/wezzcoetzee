@@ -77,13 +77,8 @@ export default function WorkPage() {
 
             <section>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {PROJECTS.map((project, index) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                    index={index}
-                    headingLevel="h2"
-                  />
+                {PROJECTS.map((project) => (
+                  <ProjectCard key={project.slug} project={project} headingLevel="h2" />
                 ))}
               </div>
             </section>

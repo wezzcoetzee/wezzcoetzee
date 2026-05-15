@@ -4,7 +4,6 @@ import { ArrowRightIcon } from './Icons';
 
 type ProjectCardProps = {
   project: Project;
-  index: number;
   headingLevel?: 'h2' | 'h3';
   maxTechnologies?: number;
 };
@@ -24,7 +23,7 @@ export function ProjectCard({
   return (
     <Link
       href={`/work/${project.slug}/`}
-      className="group relative block w-full h-full text-left focus:outline-none"
+      className="group relative block w-full h-full text-left"
     >
       <div className="card-minimal p-6 h-full">
         <div className="space-y-4">
@@ -33,7 +32,7 @@ export function ProjectCard({
               {project.title}
             </Heading>
 
-            <div className="flex-shrink-0 transition-all duration-300 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 text-muted-foreground">
+            <div className="flex-shrink-0 text-muted-foreground opacity-30 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
               <ArrowRightIcon className="w-5 h-5" />
             </div>
           </div>
