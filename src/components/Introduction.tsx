@@ -1,96 +1,57 @@
-'use client';
-
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useReducedMotion } from '@/hooks/use-reduced-motion';
 
 export default function Introduction() {
-  const [isVisible, setIsVisible] = useState(false);
-  const reducedMotion = useReducedMotion();
-  const roles = ['Tech Lead', 'Principal Software Engineer'];
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <div className="relative flex justify-center">
-      <div className="absolute inset-0 dot-matrix dot-matrix-fade pointer-events-none" />
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10 md:gap-y-8">
+      <div className="md:col-span-8 space-y-6 md:space-y-8">
+        <h1 className="hero-headline rise-in" style={{ animationDelay: '0s' }}>
+          I build highly scalable distributed systems, and lead the engineering teams that ship
+          them.
+        </h1>
 
-      <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
-        <div
-          className="relative transition-[opacity,transform] duration-600 ease-out shrink-0"
-          style={{
-            opacity: isVisible || reducedMotion ? 1 : 0,
-            transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-          }}
+        <p
+          className="text-lg text-muted-foreground max-w-2xl leading-snug rise-in"
+          style={{ animationDelay: '0.15s' }}
         >
-          <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-2 border-border">
+          Twelve years deep in distributed systems and crypto infrastructure. Recently: Eneco Virtual Power Plant and Idexx Mass Communications.
+        </p>
+      </div>
+
+      <div
+        className="md:col-span-4 md:col-start-9 md:pt-3 md:border-l md:border-border md:pl-6 space-y-6 rise-in"
+        style={{ animationDelay: '0.25s' }}
+      >
+        <div className="hidden md:block">
+          <div className="relative w-20 h-20 overflow-hidden rounded-full ring-1 ring-border">
             <Image
-              src="https://avatars.githubusercontent.com/u/15249642?v=4"
-              alt="Wesley Coetzee - Principal Software Engineer and Tech Lead"
+              src="/avatar.jpg"
+              alt="Wesley Coetzee"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="5rem"
               priority
             />
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div
-            className="space-y-4 transition-[opacity,transform] duration-600 ease-out"
-            style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.2s',
-            }}
-          >
-            <div className="flex flex-wrap gap-2">
-              {roles.map((role) => (
-                <span
-                  key={role}
-                  className="inline-block px-4 py-1.5 border border-border text-sm font-medium text-muted-foreground tracking-wide uppercase"
-                >
-                  {role}
-                </span>
-              ))}
-            </div>
-
-            <h1>Wesley Coetzee</h1>
-
-            <p className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] max-w-2xl">
-              Building scalable solutions & leading engineering teams
-            </p>
+        <dl className="grid grid-cols-3 md:grid-cols-1 gap-x-6 gap-y-5 text-sm">
+          <div>
+            <dt className="font-mono text-xs text-muted-foreground tracking-wide mb-1">
+              currently
+            </dt>
+            <dd className="text-foreground">Tech Lead, Idexx</dd>
           </div>
-
-          <div
-            className="flex items-center gap-3 text-muted-foreground transition-[opacity,transform] duration-600 ease-out"
-            style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.4s',
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-5 h-5"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-              />
-            </svg>
-            <span className="text-base font-medium text-foreground">Auckland, New Zealand</span>
+          <div>
+            <dt className="font-mono text-xs text-muted-foreground tracking-wide mb-1">open to</dt>
+            <dd className="text-foreground">Principal / Staff &amp; contracts</dd>
           </div>
-        </div>
+          <div>
+            <dt className="font-mono text-xs text-muted-foreground tracking-wide mb-1">
+              based in
+            </dt>
+            <dd className="text-foreground">Auckland, NZ &middot; remote</dd>
+          </div>
+        </dl>
       </div>
     </div>
   );

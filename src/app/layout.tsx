@@ -1,57 +1,53 @@
 import type { Metadata } from 'next';
-import { DM_Sans, Crimson_Pro } from 'next/font/google';
+import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
 import { NavBar } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 
-const dmSans = DM_Sans({
+const geistSans = Geist({
   subsets: ['latin'],
   variable: '--font-body',
   weight: ['400', '500', '600', '700'],
 });
 
-const crimsonPro = Crimson_Pro({
+const geistMono = Geist_Mono({
   subsets: ['latin'],
-  variable: '--font-display',
-  weight: ['400', '600', '700', '900'],
+  variable: '--font-mono',
+  weight: ['400', '500'],
 });
+
+const SITE_TITLE =
+  'Wesley Coetzee, Principal Engineer working on distributed systems and crypto infrastructure';
+const SITE_DESCRIPTION =
+  'I build highly scalable distributed systems, and lead the engineering teams that ship it. Auckland-based, remote anywhere.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wezzcoetzee.com'),
-  alternates: {
-    canonical: '/',
-  },
+  alternates: { canonical: '/' },
   title: {
-    default: 'Wesley Coetzee | Tech Lead & Software Engineer',
-    template: '%s | Wesley Coetzee',
+    default: SITE_TITLE,
+    template: '%s · Wesley Coetzee',
   },
-  description:
-    'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams to deliver exceptional products.',
+  description: SITE_DESCRIPTION,
   authors: [{ name: 'Wesley Coetzee' }],
   creator: 'Wesley Coetzee',
   publisher: 'Wesley Coetzee',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
     type: 'website',
     locale: 'en_NZ',
     url: 'https://wezzcoetzee.com',
     siteName: 'Wesley Coetzee',
-    title: 'Wesley Coetzee | Tech Lead & Software Engineer',
-    description:
-      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   twitter: {
     card: 'summary_large_image',
     site: '@wezzcoetzee',
     creator: '@wezzcoetzee',
-    title: 'Wesley Coetzee | Tech Lead & Software Engineer',
-    description:
-      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
   },
   robots: {
     index: true,
@@ -92,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
         <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
       </head>
-      <body className={`${dmSans.variable} ${crimsonPro.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"

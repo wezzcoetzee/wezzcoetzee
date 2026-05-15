@@ -7,21 +7,19 @@ import { ArrowLeftIcon } from '@/components/Icons';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
-  alternates: {
-    canonical: '/work/',
-  },
+    'Selected projects by Wesley Coetzee: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
+  alternates: { canonical: '/work/' },
   openGraph: {
-    title: 'Work | Wesley Coetzee',
+    title: 'Work · Wesley Coetzee',
     description:
-      'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
+      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
     url: 'https://wezzcoetzee.com/work/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Work | Wesley Coetzee',
+    title: 'Work · Wesley Coetzee',
     description:
-      'Portfolio of projects by Wesley Coetzee - GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.',
+      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
   },
 };
 
@@ -57,43 +55,29 @@ export default function WorkPage() {
 
       <main id="main-content" className="relative min-h-screen">
         <div className="container relative py-12 md:py-24">
-          <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
+          <div className="mx-auto w-full max-w-5xl space-y-16 md:space-y-20">
             <header className="space-y-6">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 group"
-                style={{
-                  opacity: 0,
-                  animation: 'fadeInUp 0.6s ease-out forwards',
-                }}
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 group"
               >
                 <ArrowLeftIcon className="w-4 h-4 transition-transform duration-300 group-hover:-translate-x-1" />
                 Back home
               </Link>
 
-              <div
-                style={{
-                  opacity: 0,
-                  animation: 'fadeInUp 0.6s ease-out 0.1s forwards',
-                }}
-              >
+              <div className="space-y-4 max-w-3xl">
                 <h1>Work</h1>
-                <p className="text-xl text-muted-foreground max-w-2xl mt-4">
-                  A collection of projects I&apos;ve built - from open source tools to
-                  side projects exploring different technologies.
+                <p className="text-xl text-muted-foreground leading-snug">
+                  Open source tools, trading infrastructure, security research, and the side
+                  projects in between. {PROJECTS.length} projects.
                 </p>
               </div>
             </header>
 
-            <section className="space-y-8">
+            <section>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {PROJECTS.map((project, index) => (
-                  <ProjectCard
-                    key={project.slug}
-                    project={project}
-                    index={index}
-                    headingLevel="h2"
-                  />
+                {PROJECTS.map((project) => (
+                  <ProjectCard key={project.slug} project={project} headingLevel="h2" />
                 ))}
               </div>
             </section>

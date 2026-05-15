@@ -4,50 +4,19 @@ import FeaturedWork from '@/components/FeaturedWork';
 import ConnectSection from '@/components/ConnectSection';
 import { PROJECTS } from '@/data';
 
+const SITE_URL = 'https://wezzcoetzee.com';
+const PERSON_DESCRIPTION =
+  'I build highly scalable distributed systems, and lead the engineering teams that ship them. Auckland-based, remote anywhere.';
+
 export default function Home() {
-  const websiteData = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Wesley Coetzee',
-    url: 'https://wezzcoetzee.com',
-    description:
-      'Tech Lead and Principal Software Engineer based in Auckland, NZ. Building scalable solutions and leading engineering teams.',
-    author: {
-      '@type': 'Person',
-      name: 'Wesley Coetzee',
-    },
-  };
-
-  const profilePageData = {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    dateCreated: '2023-05-01T00:00:00+00:00',
-    dateModified: new Date().toISOString(),
-    mainEntity: {
-      '@type': 'Person',
-      name: 'Wesley Coetzee',
-      jobTitle: ['Tech Lead', 'Principal Software Engineer'],
-      url: 'https://wezzcoetzee.com',
-      image: 'https://avatars.githubusercontent.com/u/15249642?v=4',
-      sameAs: [
-        'https://www.linkedin.com/in/wesleycoetzee/',
-        'https://github.com/wezzcoetzee',
-        'https://medium.com/@wezzcoetzee',
-        'https://x.com/wezzcoetzee',
-        'https://stackoverflow.com/users/5658060/wesley-coetzee',
-      ],
-    },
-  };
-
-  const structuredData = {
+  const personData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Wesley Coetzee',
     jobTitle: ['Tech Lead', 'Principal Software Engineer'],
-    description:
-      'Tech Lead, and Principal Software Engineer based in Auckland, New Zealand. Passionate about crafting elegant, scalable solutions and empowering engineering teams to build exceptional products.',
-    url: 'https://wezzcoetzee.com',
-    image: 'https://avatars.githubusercontent.com/u/15249642?v=4',
+    description: PERSON_DESCRIPTION,
+    url: SITE_URL,
+    image: `${SITE_URL}/avatar.jpg`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Auckland',
@@ -61,19 +30,15 @@ export default function Home() {
       'https://stackoverflow.com/users/5658060/wesley-coetzee',
     ],
     knowsAbout: [
-      'Software Engineering',
+      'Distributed Systems',
+      'Event-Driven Architecture',
       'Technical Leadership',
-      'Engineering Management',
-      'Scalable Solutions',
-      'Web Development',
-      'Full Stack Development',
+      'Crypto Infrastructure',
+      'Smart Contract Security',
       'Blockchain Development',
-      'Cryptocurrency Trading',
+      'Full Stack Development',
     ],
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': 'https://wezzcoetzee.com',
-    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': SITE_URL },
     hasOccupation: {
       '@type': 'Occupation',
       name: 'Software Engineer',
@@ -81,7 +46,7 @@ export default function Home() {
       workExample: PROJECTS.map((project) => ({
         '@type': 'CreativeWork',
         name: project.title,
-        url: `https://wezzcoetzee.com/work/${project.slug}/`,
+        url: `${SITE_URL}/work/${project.slug}/`,
       })),
     },
   };
@@ -90,20 +55,12 @@ export default function Home() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personData) }}
       />
 
       <main id="main-content" className="relative min-h-screen">
         <div className="container relative py-12 md:py-24">
-          <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-24">
+          <div className="mx-auto w-full max-w-5xl space-y-20 md:space-y-28">
             <Introduction />
 
             <section id="about">
