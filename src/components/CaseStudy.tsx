@@ -19,7 +19,9 @@ export default function CaseStudy({ project }: CaseStudyProps) {
         </Link>
 
         <div className="space-y-6 max-w-3xl">
-          <p className="section-marker">case study · {project.role.toLowerCase()}</p>
+          <p className="font-mono text-xs text-muted-foreground tracking-wide">
+            {project.role.toLowerCase()}
+          </p>
 
           <h1>{project.title}</h1>
 
@@ -37,18 +39,12 @@ export default function CaseStudy({ project }: CaseStudyProps) {
       </header>
 
       <section className="space-y-6">
-        <div className="flex items-baseline gap-4">
-          <span className="section-marker">§ overview</span>
-          <div className="h-px flex-1 divider self-center" />
-        </div>
+        <h2>Overview</h2>
         <p className="text-foreground text-lg leading-relaxed max-w-3xl">{project.description}</p>
       </section>
 
       <section className="space-y-6">
-        <div className="flex items-baseline gap-4">
-          <span className="section-marker">§ highlights</span>
-          <div className="h-px flex-1 divider self-center" />
-        </div>
+        <h2>Highlights</h2>
         <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 max-w-4xl">
           {project.highlights.map((highlight, index) => (
             <li key={index} className="flex items-start gap-3 text-foreground">
@@ -61,10 +57,7 @@ export default function CaseStudy({ project }: CaseStudyProps) {
 
       {project.links.length > 0 && (
         <section className="space-y-6">
-          <div className="flex items-baseline gap-4">
-            <span className="section-marker">§ links</span>
-            <div className="h-px flex-1 divider self-center" />
-          </div>
+          <h2>Links</h2>
           <div className="flex flex-wrap gap-3">
             {project.links.map((link) => (
               <a

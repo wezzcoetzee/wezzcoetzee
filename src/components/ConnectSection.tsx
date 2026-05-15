@@ -14,11 +14,7 @@ const SECONDARY_LINKS: { label: string; href: string }[] = [
 export default function ConnectSection() {
   return (
     <section className="space-y-10">
-      <div className="flex items-baseline gap-4">
-        <span className="section-marker">§ 03</span>
-        <h2>Get in touch</h2>
-        <div className="h-px flex-1 divider self-center" />
-      </div>
+      <h2>Get in touch</h2>
 
       <div className="max-w-2xl space-y-8">
         <p className="text-lg text-foreground">
@@ -45,8 +41,7 @@ export default function ConnectSection() {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-baseline gap-x-6 gap-y-2 text-sm text-muted-foreground">
-        <span className="section-marker">also at</span>
+      <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
         {SECONDARY_LINKS.map((link) => (
           <Link
             key={link.href}

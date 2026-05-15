@@ -13,7 +13,7 @@ export default function NotFound() {
     <main className="relative min-h-screen flex items-center">
       <div className="container py-12 md:py-24">
         <div className="max-w-2xl space-y-8">
-          <p className="section-marker">404 · not found</p>
+          <p className="font-mono text-xs text-muted-foreground tracking-wide">404</p>
           <h1>This page does not exist, or moved.</h1>
           <p className="text-muted-foreground">Probably nothing here. Try one of these instead.</p>
           <ul className="space-y-3 text-foreground">

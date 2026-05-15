@@ -80,6 +80,16 @@ html[data-theme='light'] {
     line-height: 1.06;
   }
 
+  .hero-headline {
+    font-family: var(--font-body), sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    font-size: clamp(2.75rem, 7vw + 0.5rem, 5.75rem);
+    color: rgb(var(--color-primary));
+    line-height: 1.02;
+    max-width: 20ch;
+  }
+
   h2 {
     font-family: var(--font-body), sans-serif;
     @apply font-semibold tracking-[-0.02em];
@@ -224,14 +234,6 @@ html[data-theme='light'] {
   .divider {
     height: 1px;
     background-color: rgb(var(--color-border));
-  }
-
-  .section-marker {
-    font-family: var(--font-mono), monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.04em;
-    color: rgb(var(--color-muted-foreground));
-    text-transform: lowercase;
   }
 
   section[id] {

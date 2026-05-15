@@ -1,16 +1,14 @@
+import Image from 'next/image';
+
 type AboutBlockProps = {
-  marker: string;
   title: string;
   children: React.ReactNode;
 };
 
-function AboutBlock({ marker, title, children }: AboutBlockProps) {
+function AboutBlock({ title, children }: AboutBlockProps) {
   return (
     <div className="space-y-3">
-      <div className="flex items-baseline gap-3">
-        <span className="section-marker">{marker}</span>
-        <h3 className="text-foreground">{title}</h3>
-      </div>
+      <h3 className="text-foreground">{title}</h3>
       <div className="text-sm text-muted-foreground leading-relaxed space-y-3">{children}</div>
     </div>
   );
@@ -19,14 +17,19 @@ function AboutBlock({ marker, title, children }: AboutBlockProps) {
 export default function About() {
   return (
     <section className="space-y-10">
-      <div className="flex items-baseline gap-4">
-        <span className="section-marker">§ 01</span>
-        <h2>About</h2>
-        <div className="h-px flex-1 divider self-center" />
-      </div>
+      <h2>About</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
-        <AboutBlock marker="a." title="Journey">
+        <AboutBlock title="Journey">
+          <div className="float-left mr-4 mb-2">
+            <Image
+              src="/avatar.jpg"
+              alt="Wesley Coetzee"
+              width={56}
+              height={56}
+              className="rounded-full ring-1 ring-border"
+            />
+          </div>
           <p>
             10+ years in software engineering, from junior developer to Tech Lead and Principal
             Software Engineer. Built casino platforms at Derivco, a Virtual Power Plant at Eneco,
@@ -38,7 +41,7 @@ export default function About() {
           </p>
         </AboutBlock>
 
-        <AboutBlock marker="b." title="Expertise">
+        <AboutBlock title="Expertise">
           <p>
             Full-stack with C#, TypeScript, and Go. Deep experience in distributed systems,
             event-driven architecture, and cloud infrastructure on Azure and AWS.
@@ -50,7 +53,7 @@ export default function About() {
           </p>
         </AboutBlock>
 
-        <AboutBlock marker="c." title="Leadership">
+        <AboutBlock title="Leadership">
           <p>
             Led cross-functional teams of developers and automation engineers. Focus on mentorship,
             clear communication, and environments where engineers grow.

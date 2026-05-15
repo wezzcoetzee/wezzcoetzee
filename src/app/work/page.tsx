@@ -55,7 +55,7 @@ export default function WorkPage() {
 
       <main id="main-content" className="relative min-h-screen">
         <div className="container relative py-12 md:py-24">
-          <div className="mx-auto w-full max-w-7xl space-y-16 md:space-y-20">
+          <div className="mx-auto w-full max-w-5xl space-y-16 md:space-y-20">
             <header className="space-y-6">
               <Link
                 href="/"
@@ -66,11 +66,10 @@ export default function WorkPage() {
               </Link>
 
               <div className="space-y-4 max-w-3xl">
-                <p className="section-marker">all projects · {PROJECTS.length}</p>
                 <h1>Work</h1>
                 <p className="text-xl text-muted-foreground leading-snug">
                   Open source tools, trading infrastructure, security research, and the side
-                  projects in between.
+                  projects in between. {PROJECTS.length} projects.
                 </p>
               </div>
             </header>

@@ -10,10 +10,8 @@ export default function FeaturedWork() {
 
   return (
     <section className="space-y-10">
-      <div className="flex items-baseline gap-4">
-        <span className="section-marker">§ 02</span>
+      <div className="flex items-baseline justify-between gap-4">
         <h2>Selected work</h2>
-        <div className="h-px flex-1 divider self-center" />
         <Link
           href="/work/"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1 group whitespace-nowrap"
