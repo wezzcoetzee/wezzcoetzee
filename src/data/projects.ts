@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
       {
         label: 'View on JSR',
         url: 'https://jsr.io/@wezzcoetzee/grvt',
-      }
+      },
     ],
     highlights: [
       'Full TypeScript support with typed requests, responses, and enums',
@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'trading-lab',
-    title: "Trading Lab",
+    title: 'Trading Lab',
     tagline: 'Data driven trading signals for the crypto market',
     description:
       'This project removes the guesswork from momentum trading by backtesting three critical pillars: trend direction, capital efficiency, and risk protection. It calculates the optimal Moving Average and Leverage settings while using an ATR Trailing Stop to ensure exits are dictated by market volatility, not emotion.',
@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
       {
         label: 'Visit Site',
         url: 'https://tradinglab.vip',
-      }
+      },
     ],
     highlights: [
       'Data driven trading',

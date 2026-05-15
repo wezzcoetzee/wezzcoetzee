@@ -7,89 +7,78 @@ import { useReducedMotion } from '@/hooks/use-reduced-motion';
 export default function Introduction() {
   const [isVisible, setIsVisible] = useState(false);
   const reducedMotion = useReducedMotion();
-  const roles = ['Tech Lead', 'Principal Software Engineer'];
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  return (
-    <div className="relative flex justify-center">
-      <div className="absolute inset-0 dot-matrix dot-matrix-fade pointer-events-none" />
+  const settled = isVisible || reducedMotion;
 
-      <div className="relative flex flex-col md:flex-row gap-8 md:gap-12 items-center md:items-start">
+  return (
+    <div className="relative">
+      <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
         <div
-          className="relative transition-[opacity,transform] duration-600 ease-out shrink-0"
+          className="relative shrink-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
           style={{
-            opacity: isVisible || reducedMotion ? 1 : 0,
-            transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
+            opacity: settled ? 1 : 0,
+            transform: settled ? 'translateY(0)' : 'translateY(16px)',
           }}
         >
-          <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-2 border-border">
+          <div className="relative w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-full ring-1 ring-border">
             <Image
               src="https://avatars.githubusercontent.com/u/15249642?v=4"
-              alt="Wesley Coetzee - Principal Software Engineer and Tech Lead"
+              alt="Wesley Coetzee"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 40vw, 12rem"
               priority
             />
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div
-            className="space-y-4 transition-[opacity,transform] duration-600 ease-out"
+        <div className="space-y-8 flex-1 min-w-0">
+          <p
+            className="section-marker transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
             style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
+              opacity: settled ? 1 : 0,
+              transform: settled ? 'translateY(0)' : 'translateY(16px)',
+            }}
+          >
+            wesley coetzee · principal engineer
+          </p>
+
+          <h1
+            className="max-w-3xl transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              opacity: settled ? 1 : 0,
+              transform: settled ? 'translateY(0)' : 'translateY(16px)',
+              transitionDelay: '0.1s',
+            }}
+          >
+            I build highly scalable distributed systems, and lead the engineering teams that ship it.
+          </h1>
+
+          <dl
+            className="flex flex-col sm:flex-row gap-x-10 gap-y-4 text-sm transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              opacity: settled ? 1 : 0,
+              transform: settled ? 'translateY(0)' : 'translateY(16px)',
               transitionDelay: '0.2s',
             }}
           >
-            <div className="flex flex-wrap gap-2">
-              {roles.map((role) => (
-                <span
-                  key={role}
-                  className="inline-block px-4 py-1.5 border border-border text-sm font-medium text-muted-foreground tracking-wide uppercase"
-                >
-                  {role}
-                </span>
-              ))}
+            <div>
+              <dt className="section-marker mb-1">currently</dt>
+              <dd className="text-foreground">Tech Lead, Idexx</dd>
             </div>
-
-            <h1>Wesley Coetzee</h1>
-
-            <p className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary leading-[1.2] max-w-2xl">
-              Building scalable solutions & leading engineering teams
-            </p>
-          </div>
-
-          <div
-            className="flex items-center gap-3 text-muted-foreground transition-[opacity,transform] duration-600 ease-out"
-            style={{
-              opacity: isVisible || reducedMotion ? 1 : 0,
-              transform: isVisible || reducedMotion ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '0.4s',
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-5 h-5"
-              aria-hidden="true"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-              />
-            </svg>
-            <span className="text-base font-medium text-foreground">Auckland, New Zealand</span>
-          </div>
+            <div>
+              <dt className="section-marker mb-1">open to</dt>
+              <dd className="text-foreground">Principal / Staff &amp; contracts</dd>
+            </div>
+            <div>
+              <dt className="section-marker mb-1">based in</dt>
+              <dd className="text-foreground">Auckland, NZ &middot; remote</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </div>

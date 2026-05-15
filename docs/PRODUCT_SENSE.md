@@ -23,13 +23,13 @@ There is one user type: the visitor. There are no accounts, no forms, no user-ge
 
 ## Site Sections
 
-| Section | Purpose |
-|---------|---------|
-| Introduction | Hero with name, title, tagline |
-| About | Professional background |
-| Featured Work | Grid of project cards linking to case studies |
+| Section                      | Purpose                                                         |
+| ---------------------------- | --------------------------------------------------------------- |
+| Introduction                 | Hero with name, title, tagline                                  |
+| About                        | Professional background                                         |
+| Featured Work                | Grid of project cards linking to case studies                   |
 | Case Study (`/work/[slug]/`) | Detailed project page with description, tech, highlights, links |
-| Connect | Social links (LinkedIn, GitHub, Medium, X, CV, StackOverflow) |
+| Connect                      | Social links (LinkedIn, GitHub, Medium, X, CV, StackOverflow)   |
 
 ## What This Is NOT
 

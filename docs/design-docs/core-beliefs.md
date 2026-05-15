@@ -7,6 +7,7 @@ Foundational principles that guide technical decisions for this portfolio site.
 The site has no dynamic content. Every page is pre-rendered at build time and served as static HTML from a CDN. This eliminates server costs, maximizes performance, and removes an entire class of runtime failures.
 
 Implications:
+
 - `output: 'export'` in Next.js config
 - No API routes, middleware, or server actions
 - No database or external data sources at runtime
@@ -22,6 +23,7 @@ No icon libraries beyond inline SVGs. No animation libraries. No state managemen
 ## SEO-Optimized
 
 The site exists to be found. Every SEO mechanism available in Next.js is used:
+
 - Comprehensive `Metadata` export with OpenGraph and Twitter cards
 - JSON-LD structured data (Person + WebSite schemas)
 - Dynamic sitemap and robots.txt generation

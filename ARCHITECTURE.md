@@ -2,19 +2,19 @@
 
 ## Tech Stack
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| Framework | Next.js (App Router) | 15.3.3 |
-| UI | React | 19.1.0 |
-| Styling | Tailwind CSS v4 | 4.1.8 |
-| CSS Processing | @tailwindcss/postcss + postcss-nesting | — |
-| Fonts | DM Sans (body), Crimson Pro (display) | Google Fonts via next/font |
-| Linting | ESLint + eslint-config-next | 8.x |
-| Formatting | Prettier | 3.x |
-| Runtime | Bun | latest |
-| Hosting | Cloudflare Pages | — |
-| CI/CD | GitHub Actions | — |
-| Analytics | Google Analytics (G-M18S2XK0BZ) | gtag.js |
+| Layer          | Technology                             | Version                    |
+| -------------- | -------------------------------------- | -------------------------- |
+| Framework      | Next.js (App Router)                   | 15.3.3                     |
+| UI             | React                                  | 19.1.0                     |
+| Styling        | Tailwind CSS v4                        | 4.1.8                      |
+| CSS Processing | @tailwindcss/postcss + postcss-nesting | —                          |
+| Fonts          | DM Sans (body), Crimson Pro (display)  | Google Fonts via next/font |
+| Linting        | ESLint + eslint-config-next            | 8.x                        |
+| Formatting     | Prettier                               | 3.x                        |
+| Runtime        | Bun                                    | latest                     |
+| Hosting        | Cloudflare Pages                       | —                          |
+| CI/CD          | GitHub Actions                         | —                          |
+| Analytics      | Google Analytics (G-M18S2XK0BZ)        | gtag.js                    |
 
 ## Directory Structure
 
@@ -77,12 +77,12 @@ Push to main
 
 ## Key Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| Static export | Portfolio has no dynamic content; CDN-served static files maximize performance and minimize cost |
-| Tailwind CSS v4 | Uses `@theme` directive for design tokens instead of `tailwind.config.js`; CSS-native approach |
-| Dark-first theme | Default `color-scheme: dark` with `data-theme='light'` override; theme persisted to localStorage |
-| Client-side theme init | Inline `<script>` in `<head>` reads localStorage before paint to prevent flash |
+| Decision                   | Rationale                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Static export              | Portfolio has no dynamic content; CDN-served static files maximize performance and minimize cost        |
+| Tailwind CSS v4            | Uses `@theme` directive for design tokens instead of `tailwind.config.js`; CSS-native approach          |
+| Dark-first theme           | Default `color-scheme: dark` with `data-theme='light'` override; theme persisted to localStorage        |
+| Client-side theme init     | Inline `<script>` in `<head>` reads localStorage before paint to prevent flash                          |
 | All components client-side | Most components use `'use client'` for animations and interactivity; acceptable for a small static site |
-| Unoptimized images | Required for static export (no image optimization server); images served as-is |
-| `optimizePackageImports` | Experimental Next.js feature for tree-shaking lucide-react and @radix-ui/react-icons |
+| Unoptimized images         | Required for static export (no image optimization server); images served as-is                          |
+| `optimizePackageImports`   | Experimental Next.js feature for tree-shaking lucide-react and @radix-ui/react-icons                    |
