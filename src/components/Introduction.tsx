@@ -13,34 +13,7 @@ export default function Introduction() {
           className="text-lg text-muted-foreground max-w-2xl leading-snug rise-in"
           style={{ animationDelay: '0.15s' }}
         >
-          Twelve years deep in distributed systems and crypto infrastructure. Recently:{' '}
-          <a
-            href="https://github.com/wezzcoetzee/grvt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground hover:text-accent transition-colors"
-          >
-            GRVT TypeScript SDK
-          </a>
-          ,{' '}
-          <a
-            href="https://github.com/wezzcoetzee/hyperliquid-cli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground hover:text-accent transition-colors"
-          >
-            Hyperliquid CLI
-          </a>
-          ,{' '}
-          <a
-            href="https://tradinglab.vip"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground hover:text-accent transition-colors"
-          >
-            Trading Lab
-          </a>
-          .
+          Twelve years deep in distributed systems and crypto infrastructure. Recently: Eneco Virtual Power Plant and Idexx Mass Communications.
         </p>
       </div>
 
