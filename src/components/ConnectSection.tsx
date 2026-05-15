@@ -15,7 +15,7 @@ export default function ConnectSection() {
   return (
     <section className="space-y-10">
       <div className="flex items-baseline gap-4">
-        <span className="section-marker">§ 04</span>
+        <span className="section-marker">§ 03</span>
         <h2>Get in touch</h2>
         <div className="h-px flex-1 divider self-center" />
       </div>

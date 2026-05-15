@@ -38,7 +38,7 @@ export function NavBar() {
             href="/"
             className="font-mono text-sm text-foreground hover:text-accent transition-colors"
           >
-            wesley.dev
+            wezzcoetzee.com
           </Link>
 
           <div className="hidden sm:flex items-center gap-8 text-sm text-muted-foreground">

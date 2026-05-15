@@ -32,7 +32,7 @@ export function ProjectCard({
               {project.title}
             </Heading>
 
-            <div className="flex-shrink-0 text-muted-foreground opacity-30 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1">
+            <div className="flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:text-foreground group-hover:translate-x-1 group-hover:-translate-y-1">
               <ArrowRightIcon className="w-5 h-5" />
             </div>
           </div>
