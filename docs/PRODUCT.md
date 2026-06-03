@@ -29,7 +29,7 @@ Voice is plainspoken and senior: no hedging, no marketing varnish, no performati
 
 1. **The work is the argument.** Show projects, writing, and decisions; don't describe them in adjectives. If a claim needs a label like "senior" or "expert," cut it and let the artifact carry the weight.
 2. **Earned attention.** Nothing animates, decorates, or interrupts unless it improves comprehension or hierarchy. Restraint is the default; flourish has to justify itself.
-3. **Typography over chrome.** Hierarchy, mood, and rhythm come from the Crimson Pro / DM Sans pairing and spacing — not from cards, borders, or color accents.
+3. **Typography over chrome.** Hierarchy, mood, and rhythm come from a single Geist sans family and spacing — not from cards, borders, or color accents.
 4. **One-read clarity for three audiences.** Every surface should read coherently to a recruiter, a founder, and a peer in a single pass. No section that only makes sense to one of them.
 5. **Make contact obvious, never loud.** The desired outcome is an inbound message. Reach-out should be findable from any screen without ever being the loudest element on it.
 

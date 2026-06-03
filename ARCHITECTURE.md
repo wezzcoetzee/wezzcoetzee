@@ -6,9 +6,9 @@
 | -------------- | -------------------------------------- | -------------------------- |
 | Framework      | Next.js (App Router)                   | 15.3.3                     |
 | UI             | React                                  | 19.1.0                     |
-| Styling        | Tailwind CSS v4                        | 4.1.8                      |
+| Styling        | Tailwind CSS v4                        | 4.3.0                      |
 | CSS Processing | @tailwindcss/postcss + postcss-nesting | —                          |
-| Fonts          | DM Sans (body), Crimson Pro (display)  | Google Fonts via next/font |
+| Fonts          | Geist (body), Geist Mono (mono)        | Google Fonts via next/font |
 | Linting        | ESLint + eslint-config-next            | 8.x                        |
 | Formatting     | Prettier                               | 3.x                        |
 | Runtime        | Bun                                    | latest                     |
@@ -23,29 +23,34 @@ src/
 ├── app/
 │   ├── layout.tsx        # Root layout: fonts, metadata, analytics, NavBar + Footer
 │   ├── page.tsx          # Home: JSON-LD structured data, section composition
+│   ├── not-found.tsx     # 404 page
+│   ├── opengraph-image.tsx # Dynamically generated OG image
 │   ├── globals.css       # Design tokens, base styles, animations, utility classes
-│   ├── work/[slug]/
-│   │   └── page.tsx      # Case study pages (dynamic route, statically generated)
+│   ├── work/
+│   │   ├── page.tsx      # Work index (all projects)
+│   │   └── [slug]/
+│   │       └── page.tsx  # Case study pages (dynamic route, statically generated)
 │   ├── sitemap.ts        # Generates sitemap.xml
 │   └── robots.ts         # Generates robots.txt
 ├── components/
-│   ├── Navigation.tsx    # NavBar with scroll-aware header
+│   ├── Navigation.tsx    # Sticky NavBar (renders ThemeToggle)
 │   ├── Introduction.tsx  # Hero section
 │   ├── About.tsx         # About section
 │   ├── FeaturedWork.tsx  # Project cards grid
+│   ├── ProjectCard.tsx   # Single project card
 │   ├── CaseStudy.tsx     # Individual project detail page
 │   ├── ConnectSection.tsx# Social links section
-│   ├── SocialCard.tsx    # Individual social link card
 │   ├── ThemeToggle.tsx   # Dark/light theme switcher
-│   ├── CornerBrackets.tsx# Decorative corner bracket wrapper
+│   ├── Icons.tsx         # Inline SVG icons
 │   └── Footer.tsx        # Site footer
 ├── data/
-│   ├── index.tsx         # Re-exports + CONTACTS array (social links with SVG icons)
+│   ├── index.tsx         # Barrel: re-exports PROJECTS + Project from projects.ts
 │   └── projects.ts       # PROJECTS array + Project type definition
 public/
 ├── llms.txt              # LLM-friendly site summary
 ├── llms-full.txt         # Detailed LLM-friendly content
 ├── manifest.webmanifest  # PWA manifest
+├── avatar.jpg            # Profile image (OG, Person schema)
 └── [favicons]            # Various favicon sizes
 ```
 

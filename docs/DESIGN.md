@@ -19,6 +19,7 @@ All colors are defined as space-separated RGB channels (e.g., `10 10 10`) and co
 | `--color-border`             | `38 38 38`    | `#262626` | Borders, dividers  |
 | `--color-primary`            | `245 245 245` | `#f5f5f5` | Headings, emphasis |
 | `--color-primary-foreground` | `10 10 10`    | `#0a0a0a` | Text on primary bg |
+| `--color-accent`             | `138 156 184` | `#8a9cb8` | Focus ring, accents |
 
 ### Light Theme (`html[data-theme='light']`)
 
@@ -33,22 +34,28 @@ All colors are defined as space-separated RGB channels (e.g., `10 10 10`) and co
 | `--color-border`             | `220 215 207` | `#dcd7cf` | Borders                   |
 | `--color-primary`            | `22 18 14`    | `#16120e` | Headings, emphasis        |
 | `--color-primary-foreground` | `250 248 245` | `#faf8f5` | Text on primary bg        |
+| `--color-accent`             | `78 96 124`   | `#4e607c` | Focus ring, accents       |
 
 ## Typography
 
-| Role               | Font        | Variable         | Weights            |
-| ------------------ | ----------- | ---------------- | ------------------ |
-| Display (headings) | Crimson Pro | `--font-display` | 400, 600, 700, 900 |
-| Body               | DM Sans     | `--font-body`    | 400, 500, 600, 700 |
+Loaded via `next/font/google` in `layout.tsx`. Headings and body share the same sans family; there is no separate display face.
+
+| Role | Font      | Variable      |
+| ---- | --------- | ------------- |
+| Body | Geist     | `--font-body` |
+| Mono | Geist Mono | `--font-mono` |
 
 ### Heading Scale
 
-| Element | Size (mobile → desktop) | Weight   | Line Height |
-| ------- | ----------------------- | -------- | ----------- |
-| `h1`    | `text-5xl` → `text-6xl` | Bold     | 1.1         |
-| `h2`    | `text-2xl` → `text-3xl` | Semibold | 1.2         |
-| `h3`    | `text-xl` → `text-2xl`  | Semibold | 1.3         |
-| `p`     | `text-base`             | Regular  | Relaxed     |
+Sizes use `clamp()` for fluid scaling between mobile and desktop. All headings are semibold with negative tracking and use `--color-primary`.
+
+| Element          | Size (`clamp`)                        | Weight   | Line Height |
+| ---------------- | ------------------------------------- | -------- | ----------- |
+| `h1`             | `clamp(2.5rem, 5vw + 1rem, 4.5rem)`   | Semibold | 1.06        |
+| `.hero-headline` | `clamp(2.5rem, 5.5vw + 0.5rem, 5rem)` | 600      | 1.04        |
+| `h2`             | `clamp(1.5rem, 1.5vw + 1rem, 1.875rem)` | Semibold | 1.15      |
+| `h3`             | `clamp(1.125rem, 0.5vw + 1rem, 1.25rem)` | Semibold | 1.3      |
+| `p`              | `text-base`, `max-width: 70ch`        | Regular  | Relaxed     |
 
 ## Spacing (Container)
 
@@ -64,32 +71,23 @@ Custom `container` utility with responsive inline padding:
 
 ## Animations
 
-Three entrance animations, all `ease-out` with `forwards` fill:
+A single entrance animation:
 
-| Class                 | Effect                 | Duration |
-| --------------------- | ---------------------- | -------- |
-| `.animate-fade-in-up` | Fade + slide up 20px   | 0.6s     |
-| `.animate-fade-in`    | Fade only              | 0.6s     |
-| `.animate-scale-in`   | Fade + scale from 0.95 | 0.5s     |
+| Class      | Effect                | Duration | Easing                            |
+| ---------- | --------------------- | -------- | --------------------------------- |
+| `.rise-in` | Fade + slide up 16px  | 0.7s     | `cubic-bezier(0.16, 1, 0.3, 1)`   |
 
-All animations respect `prefers-reduced-motion: reduce` (duration set to near-zero).
+`.rise-in` uses `forwards` fill; components stagger it with inline `animation-delay`. It respects `prefers-reduced-motion: reduce` (duration set to near-zero).
 
 ## Visual Motifs
 
-### CornerBrackets
-
-Decorative corner accents on cards (`src/components/CornerBrackets.tsx`). Four 12px L-shaped borders at each corner using `border-foreground`.
-
-### Dot Matrix
-
-Background pattern using radial gradient dots at 24px intervals, with optional radial fade mask:
-
-- `.dot-matrix` — repeating dot pattern
-- `.dot-matrix-fade` — radial mask that fades dots toward edges
-
 ### Card Style
 
-`.card-minimal` — card background with hover state that shifts to muted background and lighter border.
+`.card-minimal` — card background with a 1px border and a hover state (0.25s ease) that shifts to muted background and a lighter `muted-foreground` border.
+
+### Divider
+
+`.divider` — a 1px-tall horizontal rule using `border` color.
 
 ## Theme Switching
 
@@ -113,15 +111,15 @@ Recruiters, collaborators, and the broader tech community visiting a personal po
 
 ### Aesthetic Direction
 
-- **Visual tone**: Monochrome-dominant, editorial, typographically-led. Crimson Pro serifs for warmth and authority; DM Sans for clean utility.
-- **Theme**: Dark-first with warm light alternative. Both themes use intentionally muted palettes — no saturated accent colors.
-- **Motifs**: Corner brackets (engineering precision), dot matrix (technical texture), generous whitespace.
+- **Visual tone**: Monochrome-dominant, editorial, typographically-led. A single Geist sans family carries headings and body; weight and spacing do the work.
+- **Theme**: Dark-first with warm light alternative. Both themes use intentionally muted palettes with one restrained `accent` (slate-blue) reserved for focus states.
+- **Motifs**: Minimal cards, hairline dividers, generous whitespace.
 - **Anti-patterns**: No gradients, no glassmorphism, no stock photography, no decorative illustration. Nothing that looks like a template.
 
 ### Design Principles
 
 1. **Restraint over decoration** — Remove before adding. If a visual element doesn't serve comprehension or hierarchy, cut it.
-2. **Typography is the interface** — Type size, weight, and spacing do the heavy lifting. Rely on the Crimson Pro / DM Sans pairing to establish mood and hierarchy.
+2. **Typography is the interface** — Type size, weight, and spacing do the heavy lifting. A single Geist family establishes mood and hierarchy.
 3. **Earned attention** — Animations and interactive elements are subtle and purposeful. No entrance for the sake of entrance.
 4. **Accessible by default** — WCAG AA contrast ratios, visible focus states, reduced-motion support. Accessibility is not a feature, it's the baseline.
 5. **Dark-first, light-considered** — Design in dark mode, then verify light mode feels equally intentional (warm, not washed out).

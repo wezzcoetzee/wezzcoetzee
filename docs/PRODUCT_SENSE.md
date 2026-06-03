@@ -43,4 +43,4 @@ There is one user type: the visitor. There are no accounts, no forms, no user-ge
 
 To add a new project: add an entry to the `PROJECTS` array in `src/data/projects.ts`. The case study page, sitemap, and structured data update automatically at build time.
 
-To update social links: edit the `CONTACTS` array in `src/data/index.tsx`.
+To update social links: edit `SECONDARY_LINKS` in `src/components/ConnectSection.tsx` and the `sameAs` array in the Person schema (`src/app/page.tsx`).
