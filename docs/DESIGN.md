@@ -8,17 +8,17 @@ All colors are defined as space-separated RGB channels (e.g., `10 10 10`) and co
 
 ### Dark Theme (Default)
 
-| Token                        | RGB           | Hex       | Usage              |
-| ---------------------------- | ------------- | --------- | ------------------ |
-| `--color-background`         | `10 10 10`    | `#0a0a0a` | Page background    |
-| `--color-foreground`         | `229 229 229` | `#e5e5e5` | Body text          |
-| `--color-card`               | `20 20 20`    | `#141414` | Card surfaces      |
-| `--color-card-foreground`    | `229 229 229` | `#e5e5e5` | Card text          |
-| `--color-muted`              | `26 26 26`    | `#1a1a1a` | Subdued surfaces   |
-| `--color-muted-foreground`   | `140 140 140` | `#8c8c8c` | Secondary text     |
-| `--color-border`             | `38 38 38`    | `#262626` | Borders, dividers  |
-| `--color-primary`            | `245 245 245` | `#f5f5f5` | Headings, emphasis |
-| `--color-primary-foreground` | `10 10 10`    | `#0a0a0a` | Text on primary bg |
+| Token                        | RGB           | Hex       | Usage               |
+| ---------------------------- | ------------- | --------- | ------------------- |
+| `--color-background`         | `10 10 10`    | `#0a0a0a` | Page background     |
+| `--color-foreground`         | `229 229 229` | `#e5e5e5` | Body text           |
+| `--color-card`               | `20 20 20`    | `#141414` | Card surfaces       |
+| `--color-card-foreground`    | `229 229 229` | `#e5e5e5` | Card text           |
+| `--color-muted`              | `26 26 26`    | `#1a1a1a` | Subdued surfaces    |
+| `--color-muted-foreground`   | `140 140 140` | `#8c8c8c` | Secondary text      |
+| `--color-border`             | `38 38 38`    | `#262626` | Borders, dividers   |
+| `--color-primary`            | `245 245 245` | `#f5f5f5` | Headings, emphasis  |
+| `--color-primary-foreground` | `10 10 10`    | `#0a0a0a` | Text on primary bg  |
 | `--color-accent`             | `138 156 184` | `#8a9cb8` | Focus ring, accents |
 
 ### Light Theme (`html[data-theme='light']`)
@@ -40,22 +40,22 @@ All colors are defined as space-separated RGB channels (e.g., `10 10 10`) and co
 
 Loaded via `next/font/google` in `layout.tsx`. Headings and body share the same sans family; there is no separate display face.
 
-| Role | Font      | Variable      |
-| ---- | --------- | ------------- |
-| Body | Geist     | `--font-body` |
+| Role | Font       | Variable      |
+| ---- | ---------- | ------------- |
+| Body | Geist      | `--font-body` |
 | Mono | Geist Mono | `--font-mono` |
 
 ### Heading Scale
 
 Sizes use `clamp()` for fluid scaling between mobile and desktop. All headings are semibold with negative tracking and use `--color-primary`.
 
-| Element          | Size (`clamp`)                        | Weight   | Line Height |
-| ---------------- | ------------------------------------- | -------- | ----------- |
-| `h1`             | `clamp(2.5rem, 5vw + 1rem, 4.5rem)`   | Semibold | 1.06        |
-| `.hero-headline` | `clamp(2.5rem, 5.5vw + 0.5rem, 5rem)` | 600      | 1.04        |
-| `h2`             | `clamp(1.5rem, 1.5vw + 1rem, 1.875rem)` | Semibold | 1.15      |
-| `h3`             | `clamp(1.125rem, 0.5vw + 1rem, 1.25rem)` | Semibold | 1.3      |
-| `p`              | `text-base`, `max-width: 70ch`        | Regular  | Relaxed     |
+| Element          | Size (`clamp`)                           | Weight   | Line Height |
+| ---------------- | ---------------------------------------- | -------- | ----------- |
+| `h1`             | `clamp(2.5rem, 5vw + 1rem, 4.5rem)`      | Semibold | 1.06        |
+| `.hero-headline` | `clamp(2.5rem, 5.5vw + 0.5rem, 5rem)`    | 600      | 1.04        |
+| `h2`             | `clamp(1.5rem, 1.5vw + 1rem, 1.875rem)`  | Semibold | 1.15        |
+| `h3`             | `clamp(1.125rem, 0.5vw + 1rem, 1.25rem)` | Semibold | 1.3         |
+| `p`              | `text-base`, `max-width: 70ch`           | Regular  | Relaxed     |
 
 ## Spacing (Container)
 
@@ -73,9 +73,9 @@ Custom `container` utility with responsive inline padding:
 
 A single entrance animation:
 
-| Class      | Effect                | Duration | Easing                            |
-| ---------- | --------------------- | -------- | --------------------------------- |
-| `.rise-in` | Fade + slide up 16px  | 0.7s     | `cubic-bezier(0.16, 1, 0.3, 1)`   |
+| Class      | Effect               | Duration | Easing                          |
+| ---------- | -------------------- | -------- | ------------------------------- |
+| `.rise-in` | Fade + slide up 16px | 0.7s     | `cubic-bezier(0.16, 1, 0.3, 1)` |
 
 `.rise-in` uses `forwards` fill; components stagger it with inline `animation-delay`. It respects `prefers-reduced-motion: reduce` (duration set to near-zero).
 

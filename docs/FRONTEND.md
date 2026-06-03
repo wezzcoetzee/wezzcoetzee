@@ -24,10 +24,10 @@ RootLayout (layout.tsx) — Server Component
 
 `ThemeToggle` is the only client component. Everything else renders on the server — entrance motion is pure CSS (`.rise-in` with staggered inline `animation-delay`), so no JavaScript is needed for animations.
 
-| Component   | Directive      | Reason                                |
-| ----------- | -------------- | ------------------------------------- |
-| ThemeToggle | `'use client'` | localStorage access, DOM manipulation |
-| _all others_ | Server        | Static markup + CSS-only animation    |
+| Component    | Directive      | Reason                                |
+| ------------ | -------------- | ------------------------------------- |
+| ThemeToggle  | `'use client'` | localStorage access, DOM manipulation |
+| _all others_ | Server         | Static markup + CSS-only animation    |
 
 ### Component Conventions
 
