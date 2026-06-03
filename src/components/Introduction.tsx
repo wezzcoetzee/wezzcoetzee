@@ -13,7 +13,8 @@ export default function Introduction() {
           className="text-lg text-muted-foreground max-w-2xl leading-snug rise-in"
           style={{ animationDelay: '0.15s' }}
         >
-          Twelve years deep in distributed systems and crypto infrastructure. Recently: Eneco Virtual Power Plant and Idexx Mass Communications.
+          Twelve years deep in distributed systems and crypto infrastructure. Recently: Eneco
+          Virtual Power Plant and Idexx Mass Communications.
         </p>
       </div>
 
@@ -46,9 +47,7 @@ export default function Introduction() {
             <dd className="text-foreground">Principal / Staff &amp; contracts</dd>
           </div>
           <div>
-            <dt className="font-mono text-xs text-muted-foreground tracking-wide mb-1">
-              based in
-            </dt>
+            <dt className="font-mono text-xs text-muted-foreground tracking-wide mb-1">based in</dt>
             <dd className="text-foreground">Auckland, NZ &middot; remote</dd>
           </div>
         </dl>

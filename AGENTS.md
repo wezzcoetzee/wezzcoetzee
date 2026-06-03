@@ -15,7 +15,7 @@ For full architecture details, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 Update portfolio content by editing files in `src/data/`:
 
 - **Projects**: `src/data/projects.ts` — `PROJECTS` array of `Project` objects
-- **Social links**: `src/data/index.tsx` — `CONTACTS` array with inline SVG icons
+- **Social links**: `SECONDARY_LINKS` in `src/components/ConnectSection.tsx` and `sameAs` in the Person schema (`src/app/page.tsx`)
 - **SEO metadata**: `src/app/layout.tsx` — Next.js `Metadata` export
 - **Structured data**: `src/app/page.tsx` — JSON-LD schemas (Person, WebSite)
 
@@ -36,7 +36,7 @@ Key rules:
 SEO configuration lives in three places:
 
 1. `src/app/layout.tsx` — OpenGraph, Twitter cards, robots, canonical URL
-2. `src/app/page.tsx` — JSON-LD structured data (Person + WebSite schemas)
+2. `src/app/page.tsx` — JSON-LD structured data (Person schema)
 3. `src/app/sitemap.ts` and `src/app/robots.ts` — sitemap and robots.txt generation
 
 Also maintain `public/llms.txt` and `public/llms-full.txt` for LLM discoverability.
@@ -57,4 +57,4 @@ No manual deployment steps. Merge to `main` and it ships.
 - **No `as any`**, `@ts-ignore`, or `@ts-expect-error`
 - **No commented-out code** — delete it or don't write it
 - **Static export**: No server-side features (API routes, middleware, SSR, ISR)
-- All components under `src/components/` are client components (`'use client'`) except `CornerBrackets` and `Footer`
+- All components under `src/components/` are client components (`'use client'`) except `ProjectCard`, `Icons`, and `Footer`

@@ -6,31 +6,28 @@ All components live in `src/components/`. The site is a single-page layout compo
 
 ```
 RootLayout (layout.tsx) — Server Component
-├── NavBar — Client Component (scroll-aware sticky header)
+├── NavBar — Server Component (sticky header; renders ThemeToggle)
+│   └── ThemeToggle — Client Component
 ├── Home (page.tsx) — Server Component
-│   ├── Introduction — Client Component (hero with animations)
-│   ├── About — Client Component
-│   ├── FeaturedWork — Client Component (project cards grid)
-│   └── ConnectSection — Client Component (social links)
+│   ├── Introduction — Server Component (hero)
+│   ├── About — Server Component
+│   ├── FeaturedWork — Server Component (project cards grid)
+│   └── ConnectSection — Server Component (social links)
 ├── Footer — Server Component
+├── work/page.tsx — Server Component (work index)
+│   └── ProjectCard — Server Component
 └── work/[slug]/page.tsx — Server Component
-    └── CaseStudy — Client Component (project detail)
+    └── CaseStudy — Server Component (project detail)
 ```
 
 ### Client vs Server Components
 
-| Component      | Directive      | Reason                                    |
-| -------------- | -------------- | ----------------------------------------- |
-| Navigation     | `'use client'` | Scroll event listeners, mobile menu state |
-| Introduction   | `'use client'` | Entrance animations                       |
-| About          | `'use client'` | Animations                                |
-| FeaturedWork   | `'use client'` | Interactive card grid                     |
-| CaseStudy      | `'use client'` | Interactive project detail                |
-| ConnectSection | `'use client'` | Animations                                |
-| SocialCard     | `'use client'` | Hover interactions                        |
-| ThemeToggle    | `'use client'` | localStorage access, DOM manipulation     |
-| CornerBrackets | Server         | Pure presentational wrapper               |
-| Footer         | Server         | Static content                            |
+`ThemeToggle` is the only client component. Everything else renders on the server — entrance motion is pure CSS (`.rise-in` with staggered inline `animation-delay`), so no JavaScript is needed for animations.
+
+| Component    | Directive      | Reason                                |
+| ------------ | -------------- | ------------------------------------- |
+| ThemeToggle  | `'use client'` | localStorage access, DOM manipulation |
+| _all others_ | Server         | Static markup + CSS-only animation    |
 
 ### Component Conventions
 
@@ -45,7 +42,9 @@ RootLayout (layout.tsx) — Server Component
 No data fetching. All content is static TypeScript:
 
 - `src/data/projects.ts` — `Project` type + `PROJECTS` array
-- `src/data/index.tsx` — `CONTACTS` array (social links with JSX icons), re-exports from projects
+- `src/data/index.tsx` — barrel that re-exports `PROJECTS` and `Project` from `projects.ts`
+
+Social links are inlined where used (`SECONDARY_LINKS` in `ConnectSection.tsx`, `sameAs` in the Person schema).
 
 Data is imported directly into components at build time.
 
@@ -56,6 +55,7 @@ Single page with hash navigation to sections (`#about`, `#work`, `#connect`), pl
 | Route           | File                           | Content             |
 | --------------- | ------------------------------ | ------------------- |
 | `/`             | `src/app/page.tsx`             | Home (all sections) |
+| `/work/`        | `src/app/work/page.tsx`        | Work index          |
 | `/work/[slug]/` | `src/app/work/[slug]/page.tsx` | Case study detail   |
 
 Dynamic routes use `generateStaticParams()` to pre-render all project slugs at build time.
@@ -74,10 +74,7 @@ Defined in `src/app/layout.tsx` via Next.js `Metadata` export:
 
 ### Structured Data
 
-Two JSON-LD scripts injected in `src/app/page.tsx`:
-
-1. **WebSite** schema — site name, URL, author
-2. **Person** schema — job titles, social profiles (`sameAs`), occupation with work examples linked to project slugs
+A **Person** JSON-LD script is injected in `src/app/page.tsx` — job titles, description, address, social profiles (`sameAs`), `knowsAbout`, and an occupation with work examples linked to project slugs.
 
 ### Sitemap & Robots
 

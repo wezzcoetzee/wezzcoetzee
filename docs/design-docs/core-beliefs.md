@@ -25,7 +25,7 @@ No icon libraries beyond inline SVGs. No animation libraries. No state managemen
 The site exists to be found. Every SEO mechanism available in Next.js is used:
 
 - Comprehensive `Metadata` export with OpenGraph and Twitter cards
-- JSON-LD structured data (Person + WebSite schemas)
+- JSON-LD structured data (Person schema)
 - Dynamic sitemap and robots.txt generation
 - Canonical URLs with trailing slashes
 - `llms.txt` and `llms-full.txt` for AI crawler discoverability
