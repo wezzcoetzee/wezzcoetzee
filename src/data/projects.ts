@@ -12,6 +12,28 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'tradingview-mcp',
+    title: 'TradingView MCP Bridge',
+    tagline: 'AI-assisted TradingView chart analysis with Claude Code',
+    description:
+      'A Model Context Protocol bridge that connects Claude Code to the locally running TradingView Desktop app via Chrome DevTools Protocol. It enables AI-assisted chart analysis, Pine Script development, and workflow automation entirely on your machine, with no data transmitted externally. The project explores how LLM-based agents can interact with professional trading interfaces to support human decision-making.',
+    technologies: ['TypeScript', 'MCP', 'Chrome DevTools Protocol', 'Claude Code'],
+    role: 'Maintainer',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/tradingview-mcp',
+      },
+    ],
+    highlights: [
+      'Connects Claude Code to TradingView Desktop via Chrome DevTools Protocol',
+      'AI-assisted chart analysis and Pine Script development',
+      'All data processing happens locally — nothing transmitted externally',
+      'Research into human-AI collaboration in financial workflows',
+    ],
+    dateCreated: '2026-05-10',
+  },
+  {
     slug: 'hyperliquid-cli',
     title: 'Hyperliquid CLI',
     tagline: 'Command-line interface for trading on Hyperliquid',
@@ -70,6 +92,28 @@ export const PROJECTS: Project[] = [
       'Real-time orderbook, ticker, and trade subscriptions via WebSocket',
     ],
     dateCreated: '2026-01-24',
+  },
+  {
+    slug: 'claude-code-config',
+    title: 'Claude Code Config',
+    tagline: 'Personal Claude Code setup — rules, hooks, agents, skills, and commands',
+    description:
+      'A curated, shareable configuration for Claude Code, bundling the rules, hooks, agents, skills, and slash commands that shape a productive AI coding workflow. It collects both custom and community-sourced skills into one installable setup, with copy-paste, full-clone, and selective install options so others can adopt the parts that fit their own workflow.',
+    technologies: ['Claude Code', 'Python', 'MCP', 'Skills'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/claude-code-config',
+      },
+    ],
+    highlights: [
+      'Bundles rules, hooks, agents, skills, and commands in one config',
+      'Mixes custom skills with curated community contributions',
+      'Multiple install paths: copy-paste, full clone, or selective',
+      'Documents an opinionated, reproducible AI coding workflow',
+    ],
+    dateCreated: '2026-01-20',
   },
   {
     slug: 'trading-lab',
