@@ -12,6 +12,28 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'tokengochi',
+    title: 'Tokengochi',
+    tagline: 'A macOS menu-bar pet for monitoring Claude usage',
+    description:
+      'A Swift macOS menu-bar virtual pet that turns Claude usage into a lightweight game. Session and weekly usage feed the pet, context-window data affects its state when available, and helper tools keep its snapshot updated from Claude Code statusline data or the Anthropic OAuth usage API.',
+    technologies: ['Swift', 'macOS', 'Claude Code', 'Anthropic API', 'Shell'],
+    role: 'Creator',
+    links: [
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/tokengochi',
+      },
+    ],
+    highlights: [
+      'Turns Claude session and weekly usage into a virtual pet care loop',
+      'Runs as a native macOS menu-bar app with no Dock icon',
+      'Supports Claude Code statusline snapshots and OAuth usage polling',
+      'Includes a shared pet engine with tests for rollover, health, mood, and cleanup',
+    ],
+    dateCreated: '2026-06-25',
+  },
+  {
     slug: 'tradingview-mcp',
     title: 'TradingView MCP Bridge',
     tagline: 'AI-assisted TradingView chart analysis with Claude Code',
