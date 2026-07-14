@@ -150,6 +150,10 @@ export const PROJECTS: Project[] = [
         label: 'Visit Site',
         url: 'https://tradinglab.vip',
       },
+      {
+        label: 'View on GitHub',
+        url: 'https://github.com/wezzcoetzee/tradinglab',
+      },
     ],
     highlights: [
       'Data driven trading',
@@ -158,32 +162,6 @@ export const PROJECTS: Project[] = [
       'Helps traders develop disciplined trading habits',
     ],
     dateCreated: '2026-02-02',
-  },
-  {
-    slug: 'risk-management',
-    title: "What's Risk Management",
-    tagline: 'Teaching traders to manage risk before entering trades',
-    description:
-      'An educational platform designed to help traders understand and implement proper risk management strategies. The site provides calculators, guides, and interactive tools that teach fundamental concepts like position sizing, stop-loss placement, and risk-to-reward ratios. Built to help both novice and experienced traders protect their capital while maximising their potential returns.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
-    role: 'Creator',
-    links: [
-      {
-        label: 'Visit Site',
-        url: 'https://whatsriskmanagement.com',
-      },
-      {
-        label: 'View on GitHub',
-        url: 'https://github.com/wezzcoetzee/whats-risk-management',
-      },
-    ],
-    highlights: [
-      'Interactive risk calculators for position sizing',
-      'Educational content on trading risk management',
-      'Responsive design for use on any device',
-      'Helps traders develop disciplined trading habits',
-    ],
-    dateCreated: '2024-03-20',
   },
   {
     slug: 'solana-dca-bot',

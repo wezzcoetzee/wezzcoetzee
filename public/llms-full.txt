@@ -43,7 +43,7 @@ Experience orchestrating migrations, establishing CI/CD pipelines, and improving
 
 **URL:** https://wezzcoetzee.com/work/
 
-Portfolio of projects by Wesley Coetzee — GRVT TypeScript SDK, Trading Lab, Email Verification Service, Risk Management Tools, Solana DCA Bot, and more.
+Portfolio of projects by Wesley Coetzee — GRVT TypeScript SDK, Trading Lab, Email Verification Service, Solana DCA Bot, and more.
 
 ---
 
@@ -91,28 +91,7 @@ This project removes the guesswork from momentum trading by backtesting three cr
 
 **Links:**
 - Site: https://tradinglab.vip
-
----
-
-### What's Risk Management
-
-**URL:** https://wezzcoetzee.com/work/risk-management/  
-**Tagline:** Teaching traders to manage risk before entering trades  
-**Role:** Creator  
-**Technologies:** Next.js, React, TypeScript, Tailwind CSS  
-**Date:** 2024-03-20
-
-An educational platform designed to help traders understand and implement proper risk management strategies. The site provides calculators, guides, and interactive tools that teach fundamental concepts like position sizing, stop-loss placement, and risk-to-reward ratios. Built to help both novice and experienced traders protect their capital while maximising their potential returns.
-
-**Highlights:**
-- Interactive risk calculators for position sizing
-- Educational content on trading risk management
-- Responsive design for use on any device
-- Helps traders develop disciplined trading habits
-
-**Links:**
-- Site: https://whatsriskmanagement.com
-- GitHub: https://github.com/wezzcoetzee/whats-risk-management
+- GitHub: https://github.com/wezzcoetzee/tradinglab
 
 ---
 

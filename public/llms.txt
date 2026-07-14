@@ -14,7 +14,6 @@ Wesley Coetzee is a hands-on engineering leader with expertise in full-stack dev
 
 - [GRVT TypeScript SDK](https://wezzcoetzee.com/work/grvt-sdk/): Deno-first, NPM-compatible TypeScript SDK for the GRVT Exchange with CCXT-style client and WebSocket support
 - [Trading Lab](https://wezzcoetzee.com/work/trading-lab/): Data-driven trading signals and backtesting for crypto momentum strategies
-- [What's Risk Management](https://wezzcoetzee.com/work/risk-management/): Educational platform with calculators and guides for trading risk management
 - [Solana DCA Bot](https://wezzcoetzee.com/work/solana-dca-bot/): Automated dollar-cost averaging bot on the Solana blockchain
 - [Email Verification Service](https://wezzcoetzee.com/work/email-verification/): High-performance email validation service in Go with syntax, domain, and SMTP checks
 - [Solidity Tips and Tricks](https://wezzcoetzee.com/work/solidity-tips-and-tricks/): Article on practical Solidity development tips

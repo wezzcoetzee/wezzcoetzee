@@ -7,19 +7,19 @@ import { ArrowLeftIcon } from '@/components/Icons';
 export const metadata: Metadata = {
   title: 'Work',
   description:
-    'Selected projects by Wesley Coetzee: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
+    'Selected projects by Wesley Coetzee: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, on-chain bots, and smart-contract security research.',
   alternates: { canonical: '/work/' },
   openGraph: {
     title: 'Work · Wesley Coetzee',
     description:
-      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
+      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, on-chain bots, and smart-contract security research.',
     url: 'https://wezzcoetzee.com/work/',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Work · Wesley Coetzee',
     description:
-      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, risk-management tooling, on-chain bots, and smart-contract security research.',
+      'Selected projects: Hyperliquid CLI, GRVT TypeScript SDK, Trading Lab, on-chain bots, and smart-contract security research.',
   },
 };
 
