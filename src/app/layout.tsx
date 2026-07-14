@@ -1,20 +1,12 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Script from 'next/script';
-import { NavBar } from '@/components/Navigation';
-import { Footer } from '@/components/Footer';
-
-const geistSans = Geist({
-  subsets: ['latin'],
-  variable: '--font-body',
-  weight: ['400', '500', '600', '700'],
-});
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   variable: '--font-mono',
-  weight: ['400', '500'],
+  weight: ['400', '500', '700'],
 });
 
 const SITE_TITLE =
@@ -85,10 +77,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.webmanifest" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf8f5" />
-        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0a0a0a" />
+        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fafaf9" />
+        <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={geistMono.variable}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
@@ -108,11 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           gtag('config', 'G-M18S2XK0BZ');
         `}
         </Script>
-        <div className="min-h-screen bg-background text-foreground">
-          <NavBar />
-          {children}
-          <Footer />
-        </div>
+        <div className="min-h-screen bg-background text-foreground">{children}</div>
       </body>
     </html>
   );

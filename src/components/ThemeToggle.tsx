@@ -1,26 +1,46 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useSyncExternalStore } from 'react';
 
 type Theme = 'dark' | 'light';
 
-function getSystemTheme(): Theme {
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+const SYSTEM_LIGHT = '(prefers-color-scheme: light)';
+
+const listeners = new Set<() => void>();
+
+function subscribe(onStoreChange: () => void) {
+  const media = window.matchMedia(SYSTEM_LIGHT);
+  listeners.add(onStoreChange);
+  media.addEventListener('change', onStoreChange);
+  window.addEventListener('storage', onStoreChange);
+
+  return () => {
+    listeners.delete(onStoreChange);
+    media.removeEventListener('change', onStoreChange);
+    window.removeEventListener('storage', onStoreChange);
+  };
+}
+
+/** Mirrors the first-paint script in layout.tsx: stored preference wins, else system. */
+function getSnapshot(): Theme {
+  const stored = localStorage.getItem('theme') as Theme | null;
+  if (stored) return stored;
+  return window.matchMedia(SYSTEM_LIGHT).matches ? 'light' : 'dark';
+}
+
+/** No theme is known until the client reads localStorage, so render the placeholder. */
+function getServerSnapshot(): null {
+  return null;
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme | null>(null);
-
-  useEffect(() => {
-    const stored = localStorage.getItem('theme') as Theme | null;
-    setTheme(stored ?? getSystemTheme());
-  }, []);
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function toggle() {
     const next: Theme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
+    listeners.forEach((listener) => listener());
   }
 
   if (theme === null) {

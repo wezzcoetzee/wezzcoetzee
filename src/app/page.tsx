@@ -1,12 +1,13 @@
-import Introduction from '@/components/Introduction';
-import About from '@/components/About';
-import FeaturedWork from '@/components/FeaturedWork';
-import ConnectSection from '@/components/ConnectSection';
-import { PROJECTS } from '@/data';
+import { SiteHeader } from '@/components/SiteHeader';
+import { WorkList } from '@/components/WorkList';
+import { MediaList } from '@/components/MediaList';
+import { ActivityGraph } from '@/components/ActivityGraph';
+import { SocialLinks } from '@/components/SocialLinks';
+import { WORK } from '@/data';
 
 const SITE_URL = 'https://wezzcoetzee.com';
 const PERSON_DESCRIPTION =
-  'I build highly scalable distributed systems, and lead the engineering teams that ship them. Auckland-based, remote anywhere.';
+  'Tech Lead at Idexx. I build highly scalable distributed systems, and lead the engineering teams that ship them. Auckland-based, remote anywhere.';
 
 export default function Home() {
   const personData = {
@@ -43,10 +44,10 @@ export default function Home() {
       '@type': 'Occupation',
       name: 'Software Engineer',
       occupationalCategory: '15-1252.00',
-      workExample: PROJECTS.map((project) => ({
+      workExample: WORK.map((item) => ({
         '@type': 'CreativeWork',
-        name: project.title,
-        url: `${SITE_URL}/work/${project.slug}/`,
+        name: item.title,
+        url: item.url,
       })),
     },
   };
@@ -58,25 +59,34 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personData) }}
       />
 
-      <main id="main-content" className="relative min-h-screen">
-        <div className="container relative py-12 md:py-24">
-          <div className="mx-auto w-full max-w-5xl space-y-20 md:space-y-28">
-            <Introduction />
+      <div className="mx-auto w-full max-w-3xl px-6 py-10 md:py-14">
+        <SiteHeader />
 
-            <section id="about">
-              <About />
-            </section>
-
-            <section id="work">
-              <FeaturedWork />
-            </section>
-
-            <section id="connect">
-              <ConnectSection />
-            </section>
+        <main id="main-content">
+          <div className="mt-10 md:mt-14">
+            <h1>Tech Lead at Idexx</h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Building distributed systems and the teams that ship them
+            </p>
           </div>
-        </div>
-      </main>
+
+          <div className="divider my-10 md:my-12" />
+
+          <div className="space-y-12">
+            <div className="grid grid-cols-1 items-start gap-x-10 gap-y-12 md:grid-cols-2">
+              <WorkList />
+              <MediaList />
+            </div>
+            <ActivityGraph />
+          </div>
+        </main>
+
+        <div className="divider my-10 md:my-12" />
+
+        <footer>
+          <SocialLinks />
+        </footer>
+      </div>
     </>
   );
 }
