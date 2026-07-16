@@ -13,7 +13,7 @@ export function SiteHeader() {
 
       <div className="flex items-center gap-5">
         <span className="hidden sm:flex items-center gap-2 text-xs tracking-widest text-muted-foreground">
-          <span className="w-1.5 h-1.5 rounded-full bg-online" aria-hidden="true" />
+          <span className="pulse-dot w-1.5 h-1.5 rounded-full bg-online" aria-hidden="true" />
           AUCKLAND, NZ
         </span>
         <ThemeToggle />

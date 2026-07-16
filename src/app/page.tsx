@@ -60,19 +60,21 @@ export default function Home() {
       />
 
       <div className="mx-auto w-full max-w-3xl px-6 py-10 md:py-14">
-        <SiteHeader />
+        <div className="fade-in">
+          <SiteHeader />
+        </div>
 
         <main id="main-content">
-          <div className="mt-10 md:mt-14">
+          <div className="fade-in mt-10 [animation-delay:80ms] md:mt-14">
             <h1>Tech Lead at Idexx</h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Building distributed systems and the teams that ship them
             </p>
           </div>
 
-          <div className="divider my-10 md:my-12" />
+          <div className="divider fade-in my-10 [animation-delay:160ms] md:my-12" />
 
-          <div className="space-y-12">
+          <div className="fade-in space-y-12 [animation-delay:160ms]">
             <div className="grid grid-cols-1 items-start gap-x-10 gap-y-12 md:grid-cols-2">
               <WorkList />
               <MediaList />
@@ -81,9 +83,9 @@ export default function Home() {
           </div>
         </main>
 
-        <div className="divider my-10 md:my-12" />
+        <div className="divider fade-in my-10 [animation-delay:240ms] md:my-12" />
 
-        <footer>
+        <footer className="fade-in [animation-delay:240ms]">
           <SocialLinks />
         </footer>
       </div>
