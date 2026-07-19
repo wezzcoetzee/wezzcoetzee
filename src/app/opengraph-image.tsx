@@ -18,7 +18,7 @@ export default async function Image() {
     <div
       style={{
         fontSize: 60,
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+        background: '#000000',
         width: '100%',
         height: '100%',
         display: 'flex',
@@ -37,9 +37,8 @@ export default async function Image() {
           left: 0,
           right: 0,
           bottom: 0,
-          opacity: 0.1,
           background:
-            'radial-gradient(circle at 20% 50%, rgba(203, 213, 225, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(148, 163, 184, 0.3) 0%, transparent 50%)',
+            'radial-gradient(circle at 20% 50%, rgba(122, 150, 214, 0.14) 0%, transparent 55%), radial-gradient(circle at 80% 80%, rgba(122, 150, 214, 0.08) 0%, transparent 55%)',
         }}
       />
 
@@ -59,9 +58,7 @@ export default async function Image() {
           style={{
             fontSize: 72,
             fontWeight: 900,
-            background: 'linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%)',
-            backgroundClip: 'text',
-            color: 'transparent',
+            color: '#fafafa',
             marginBottom: 20,
             letterSpacing: '-0.02em',
           }}
@@ -85,11 +82,11 @@ export default async function Image() {
               style={{
                 fontSize: 24,
                 fontWeight: 500,
-                color: '#cbd5e1',
+                color: '#7a96d6',
                 padding: '12px 24px',
-                border: '2px solid rgba(203, 213, 225, 0.3)',
+                border: '1px solid #262626',
                 borderRadius: 8,
-                background: 'rgba(203, 213, 225, 0.1)',
+                background: 'rgba(122, 150, 214, 0.08)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
               }}
@@ -103,7 +100,7 @@ export default async function Image() {
         <div
           style={{
             fontSize: 32,
-            color: '#94a3b8',
+            color: '#ededed',
             maxWidth: 900,
             lineHeight: 1.4,
           }}
@@ -115,7 +112,7 @@ export default async function Image() {
         <div
           style={{
             fontSize: 24,
-            color: '#64748b',
+            color: '#7a7a7a',
             marginTop: 30,
             display: 'flex',
             alignItems: 'center',
@@ -135,22 +132,22 @@ export default async function Image() {
           alignItems: 'center',
           gap: 12,
           fontSize: 20,
-          color: '#475569',
+          color: '#7a7a7a',
         }}
       >
         <div
           style={{
             width: 40,
-            height: 2,
-            background: 'rgba(148, 163, 184, 0.4)',
+            height: 1,
+            background: '#262626',
           }}
         />
         <span>wezzcoetzee.com</span>
         <div
           style={{
             width: 40,
-            height: 2,
-            background: 'rgba(148, 163, 184, 0.4)',
+            height: 1,
+            background: '#262626',
           }}
         />
       </div>
