@@ -1,0 +1,41 @@
+# Legacy /work/* case-study routes, removed in d53cc91 ("Simplify portfolio into
+# a single-page home experience"). These URLs are still indexed and were showing
+# as "Not found (404)" in Google Search Console, so each one is sent to the
+# destination the homepage now links to. First match wins; the splat at the end
+# catches any slug not listed above.
+#
+# Cloudflare Pages reads this file from the build output (public/ is copied into
+# out/ by `next build` with output: 'export').
+
+/work/tokengochi/*              https://github.com/wezzcoetzee/tokengochi              301
+/work/tokengochi                https://github.com/wezzcoetzee/tokengochi              301
+/work/tradingview-mcp/*         https://github.com/wezzcoetzee/tradingview-mcp         301
+/work/tradingview-mcp           https://github.com/wezzcoetzee/tradingview-mcp         301
+/work/hyperliquid-cli/*         https://github.com/wezzcoetzee/hyperliquid-cli         301
+/work/hyperliquid-cli           https://github.com/wezzcoetzee/hyperliquid-cli         301
+/work/grvt-sdk/*                https://github.com/wezzcoetzee/grvt                    301
+/work/grvt-sdk                  https://github.com/wezzcoetzee/grvt                    301
+/work/claude-code-config/*      https://github.com/wezzcoetzee/claude-code-config      301
+/work/claude-code-config        https://github.com/wezzcoetzee/claude-code-config      301
+/work/trading-lab/*             https://tradinglab.vip                                 301
+/work/trading-lab               https://tradinglab.vip                                 301
+/work/solana-dca-bot/*          https://github.com/wezzcoetzee/solana-dca-bot          301
+/work/solana-dca-bot            https://github.com/wezzcoetzee/solana-dca-bot          301
+/work/email-verification/*      https://github.com/wezzcoetzee/email-verification      301
+/work/email-verification        https://github.com/wezzcoetzee/email-verification      301
+/work/solidity-tips-and-tricks/*  https://coinsbench.com/solidity-tips-and-trick-5201d08ce49f  301
+/work/solidity-tips-and-tricks    https://coinsbench.com/solidity-tips-and-trick-5201d08ce49f  301
+/work/weth-permit-exploit/*     https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8   301
+/work/weth-permit-exploit       https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8   301
+/work/beth-stack/*              https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3   301
+/work/beth-stack                https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3   301
+/work/printable-cv/*            https://cv.wezzcoetzee.com                             301
+/work/printable-cv              https://cv.wezzcoetzee.com                             301
+
+# No surviving destination (project retired in cba91ac) — send to the homepage.
+/work/risk-management/*         /                                                      301
+/work/risk-management           /                                                      301
+
+# The old index, plus any slug not covered above.
+/work/*                         /                                                      301
+/work                           /                                                      301
