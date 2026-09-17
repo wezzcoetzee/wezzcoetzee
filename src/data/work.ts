@@ -7,6 +7,18 @@ export type WorkItem = {
 
 export const WORK: WorkItem[] = [
   {
+    title: 'Notchivity',
+    role: 'Manage subscriptions and PRs from the notch',
+    year: '2026',
+    url: 'https://github.com/wezzcoetzee/notchivity',
+  },
+  {
+    title: 'Eufy Vacuum Plugin',
+    role: 'Homebridge plugin for the Eufy L60',
+    year: '2026',
+    url: 'https://github.com/wezzcoetzee/eufy-vacuum-plugin',
+  },
+  {
     title: 'Tokengochi',
     role: 'macOS menu-bar pet for Claude usage',
     year: '2026',
