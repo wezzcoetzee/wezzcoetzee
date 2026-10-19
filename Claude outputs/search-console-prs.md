@@ -91,13 +91,13 @@ this app is indexed under its own host.
 
 ### Changes
 
-| File | Field |
-|---|---|
-| `layout.tsx` | `metadataBase` |
-| `layout.tsx` | `openGraph.url` |
-| `page.tsx` | `alternates.canonical` |
-| `sitemap.ts` | the sitemap entry |
-| `robots.ts` | the declared sitemap location |
+| File         | Field                         |
+| ------------ | ----------------------------- |
+| `layout.tsx` | `metadataBase`                |
+| `layout.tsx` | `openGraph.url`               |
+| `page.tsx`   | `alternates.canonical`        |
+| `sitemap.ts` | the sitemap entry             |
+| `robots.ts`  | the declared sitemap location |
 
 `resume-data.tsx` is intentionally unchanged — `personalWebsiteUrl` really does
 point at the main site.

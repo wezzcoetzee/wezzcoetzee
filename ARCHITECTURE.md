@@ -74,7 +74,7 @@ Push to main
   → GitHub Actions (.github/workflows/cloudflare-pages.yml)
   → ubuntu-latest runner
   → Setup Bun (latest)
-  → bun install
+  → bun install --frozen-lockfile
   → bun run lint
   → bun run build
   → wrangler pages deploy ./out → Cloudflare Pages
