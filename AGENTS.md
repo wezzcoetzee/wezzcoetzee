@@ -47,9 +47,9 @@ Deployment is fully automated via GitHub Actions → Cloudflare Pages:
 
 - Workflow: `.github/workflows/cloudflare-pages.yml`
 - Triggers on push to `main`
-- Pipeline: `bun install` → `bun run lint` → `bun run build` → deploy `./out` to Cloudflare Pages
+- Pipeline: `bun install --frozen-lockfile` → `bun run lint` → `bun run build` → deploy `./out` to Cloudflare Pages
 
-No manual deployment steps. Merge to `main` and it ships.
+No manual deployment steps. Merge to `main` and it ships. PRs run lint, format check and build via `.github/workflows/pr-checks.yml`.
 
 ## Constraints
 

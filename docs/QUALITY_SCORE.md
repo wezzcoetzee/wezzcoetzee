@@ -8,7 +8,7 @@ ESLint with `eslint-config-next` (includes `next/core-web-vitals` rules).
 bun run lint
 ```
 
-Lint runs in CI before build. Failures block deployment.
+Lint runs in CI on every PR and before deployment.
 
 ## Formatting
 
@@ -48,9 +48,15 @@ Static site on Cloudflare CDN — performance is inherently strong:
 
 ## Build Verification
 
-The CI pipeline runs these checks in order:
+Every PR to `main` runs `.github/workflows/pr-checks.yml`:
 
-1. `bun run lint` — ESLint
-2. `bun run build` — TypeScript compilation + static export
+1. `bun install --frozen-lockfile` — fails if `bun.lock` is out of sync
+2. `bun run lint` — ESLint
+3. `bun run format:check` — Prettier
+4. `bun run build` — TypeScript compilation + static export
 
-Both must pass before deployment to Cloudflare Pages.
+The deploy workflow re-runs lint and build before shipping to Cloudflare Pages.
+
+## Dependency Updates
+
+Dependabot (`.github/dependabot.yml`) opens weekly PRs for `bun` packages (minor and patch grouped into one PR) and GitHub Actions. Dependabot alerts and security updates are enabled on the repo, so vulnerable packages get fix PRs outside the weekly schedule.
