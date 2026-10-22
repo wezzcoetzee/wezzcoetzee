@@ -54,6 +54,6 @@
   
   <!-- Subtitle with shine -->
   <text x="600" y="185" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" fill="url(#shineGradientSub)" letter-spacing="2">
-    WEB DEVELOPMENT  •  DISTRIBUTED SYSTEMS  •  BLOCKCHAIN
+    AI AGENTS  •  DISTRIBUTED SYSTEMS  •  BLOCKCHAIN
   </text>
 </svg>
