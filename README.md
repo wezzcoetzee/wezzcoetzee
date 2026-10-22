@@ -9,8 +9,6 @@
 
 ---
 
-### Tech Stack
-
 <div align="center">
 
 **Languages & Frameworks**
@@ -27,15 +25,9 @@
 
 ![Ethereum](https://img.shields.io/badge/Ethereum-000000?style=flat-square&logo=ethereum&logoColor=white)
 ![Solana](https://img.shields.io/badge/Solana-000000?style=flat-square&logo=solana&logoColor=9945FF)
-![Hardhat](https://img.shields.io/badge/Hardhat-000000?style=flat-square&logo=hardhat&logoColor=FFF100)
-![Foundry](https://img.shields.io/badge/Foundry-000000?style=flat-square&logo=foundry&logoColor=white)
 ![Ethers.js](https://img.shields.io/badge/Ethers.js-000000?style=flat-square&logo=ethers&logoColor=white)
 
 </div>
-
----
-
-### Languages
 
 <div align="center">
 <picture>
