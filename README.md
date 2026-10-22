@@ -4,8 +4,6 @@
 
 [X](https://x.com/wezzcoetzee) · [LinkedIn](https://www.linkedin.com/in/wesleycoetzee/) · [wezzcoetzee.com](https://wezzcoetzee.com)
 
-</div>
-
 <table>
 <tr>
 <td width="50%"><a href="https://github.com/wezzcoetzee/notchivity"><b>notchivity</b></a><br/>Subscriptions and PRs from your Mac notch</td>
@@ -24,3 +22,5 @@
 <td><a href="https://github.com/wezzcoetzee/cliproxy"><b>cliproxy</b></a><br/>A hard fork of CLI Proxy, made much better</td>
 </tr>
 </table>
+
+</div>
