@@ -39,19 +39,12 @@ Experience orchestrating migrations, establishing CI/CD pipelines, and improving
 
 ---
 
-## Work Page
-
-**URL:** https://wezzcoetzee.com/work/
-
-Portfolio of projects by Wesley Coetzee — GRVT TypeScript SDK, Trading Lab, Email Verification Service, Solana DCA Bot, and more.
-
----
 
 ## Projects
 
 ### GRVT TypeScript SDK
 
-**URL:** https://wezzcoetzee.com/work/grvt-sdk/  
+**URL:** https://github.com/wezzcoetzee/grvt  
 **Tagline:** Deno-first TypeScript SDK for GRVT Exchange  
 **Role:** Creator  
 **Technologies:** TypeScript, Deno, Node.js, WebSocket, EIP-712  
@@ -75,7 +68,7 @@ A Deno-first, NPM-compatible TypeScript SDK for interacting with the GRVT Exchan
 
 ### Trading Lab
 
-**URL:** https://wezzcoetzee.com/work/trading-lab/  
+**URL:** https://tradinglab.vip  
 **Tagline:** Data driven trading signals for the crypto market  
 **Role:** Creator  
 **Technologies:** Next.js, React, TypeScript, Tailwind CSS  
@@ -97,7 +90,7 @@ This project removes the guesswork from momentum trading by backtesting three cr
 
 ### Solana DCA Bot
 
-**URL:** https://wezzcoetzee.com/work/solana-dca-bot/  
+**URL:** https://github.com/wezzcoetzee/solana-dca-bot  
 **Tagline:** Automated dollar-cost averaging into Bitcoin on Solana  
 **Role:** Creator  
 **Technologies:** Solana, Rust, TypeScript, Web3  
@@ -118,7 +111,7 @@ An automated trading bot built on the Solana blockchain that implements dollar-c
 
 ### Email Verification Service
 
-**URL:** https://wezzcoetzee.com/work/email-verification/  
+**URL:** https://github.com/wezzcoetzee/email-verification  
 **Tagline:** High-performance email validation at scale  
 **Role:** Creator  
 **Technologies:** Go, SMTP, DNS, MX Records  
@@ -139,7 +132,7 @@ A robust email verification service built in Go that validates email addresses a
 
 ### Solidity Tips and Tricks
 
-**URL:** https://wezzcoetzee.com/work/solidity-tips-and-tricks/  
+**URL:** https://coinsbench.com/solidity-tips-and-trick-5201d08ce49f  
 **Tagline:** Practical tips for your Solidity learning journey  
 **Role:** Author  
 **Technologies:** Solidity, Hardhat, Smart Contracts, Web3  
@@ -160,7 +153,7 @@ An article sharing practical tips and tricks learned along the Solidity developm
 
 ### WETH Permit Exploit
 
-**URL:** https://wezzcoetzee.com/work/weth-permit-exploit/  
+**URL:** https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8  
 **Tagline:** Demonstrating ERC20 permit vulnerabilities in DeFi  
 **Role:** Author  
 **Technologies:** Solidity, Foundry, Security Research, DeFi  
@@ -182,7 +175,7 @@ A security research project demonstrating a vulnerability in ERC20 token interac
 
 ### BETH Stack
 
-**URL:** https://wezzcoetzee.com/work/beth-stack/  
+**URL:** https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3  
 **Tagline:** Hypermedia-driven web apps with great DX  
 **Role:** Creator  
 **Technologies:** Bun, Elysia, Turso, HTMX, TypeScript, Drizzle  
@@ -204,7 +197,7 @@ An opinionated hypermedia-driven web framework that prioritises developer experi
 
 ### Printable CV
 
-**URL:** https://wezzcoetzee.com/work/printable-cv/  
+**URL:** https://cv.wezzcoetzee.com  
 **Tagline:** A hostable CV that prints beautifully  
 **Role:** Creator  
 **Technologies:** Next.js, React, TypeScript, CSS Print Styles  
