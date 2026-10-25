@@ -6,20 +6,19 @@ Wesley Coetzee is a hands-on engineering leader with expertise in full-stack dev
 
 ## About
 
-- [Home](https://wezzcoetzee.com/): Introduction, professional background, featured work, and contact links
-- [Work](https://wezzcoetzee.com/work/): Full portfolio of projects and case studies
+- [Home](https://wezzcoetzee.com/): Introduction, work, writing, and contact links
 - [CV](https://cv.wezzcoetzee.com): Online CV, downloadable as PDF
 
 ## Projects
 
-- [GRVT TypeScript SDK](https://wezzcoetzee.com/work/grvt-sdk/): Deno-first, NPM-compatible TypeScript SDK for the GRVT Exchange with CCXT-style client and WebSocket support
-- [Trading Lab](https://wezzcoetzee.com/work/trading-lab/): Data-driven trading signals and backtesting for crypto momentum strategies
-- [Solana DCA Bot](https://wezzcoetzee.com/work/solana-dca-bot/): Automated dollar-cost averaging bot on the Solana blockchain
-- [Email Verification Service](https://wezzcoetzee.com/work/email-verification/): High-performance email validation service in Go with syntax, domain, and SMTP checks
-- [Solidity Tips and Tricks](https://wezzcoetzee.com/work/solidity-tips-and-tricks/): Article on practical Solidity development tips
-- [WETH Permit Exploit](https://wezzcoetzee.com/work/weth-permit-exploit/): Security research demonstrating ERC20 permit vulnerability in DeFi
-- [BETH Stack](https://wezzcoetzee.com/work/beth-stack/): Hypermedia-driven web framework using Bun, Elysia, Turso, and HTMX
-- [Printable CV](https://wezzcoetzee.com/work/printable-cv/): Open-source web-based CV that renders cleanly for print
+- [GRVT TypeScript SDK](https://github.com/wezzcoetzee/grvt): Deno-first, NPM-compatible TypeScript SDK for the GRVT Exchange with CCXT-style client and WebSocket support
+- [Trading Lab](https://tradinglab.vip): Data-driven trading signals and backtesting for crypto momentum strategies
+- [Solana DCA Bot](https://github.com/wezzcoetzee/solana-dca-bot): Automated dollar-cost averaging bot on the Solana blockchain
+- [Email Verification Service](https://github.com/wezzcoetzee/email-verification): High-performance email validation service in Go with syntax, domain, and SMTP checks
+- [Solidity Tips and Tricks](https://coinsbench.com/solidity-tips-and-trick-5201d08ce49f): Article on practical Solidity development tips
+- [WETH Permit Exploit](https://coinsbench.com/erc20-exploit-with-weth-1c4ea02a52d8): Security research demonstrating ERC20 permit vulnerability in DeFi
+- [BETH Stack](https://medium.com/@wezzcoetzee/the-beth-stack-c5887a606ed3): Hypermedia-driven web framework using Bun, Elysia, Turso, and HTMX
+- [Printable CV](https://cv.wezzcoetzee.com): Open-source web-based CV that renders cleanly for print
 
 ## Connect
 

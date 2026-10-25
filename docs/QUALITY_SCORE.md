@@ -24,7 +24,7 @@ bun run format:check  # Check only (CI)
 - TypeScript strict mode via Next.js defaults
 - No `any` types — use proper typing or `unknown`
 - No `@ts-ignore` or `@ts-expect-error` suppression
-- Explicit types for data structures (`Project` type in `src/data/projects.ts`)
+- Explicit types for data structures (`WorkItem` in `src/data/work.ts`, `MediaItem` in `src/data/media.ts`)
 
 ## Performance Targets
 
@@ -34,14 +34,13 @@ Static site on Cloudflare CDN — performance is inherently strong:
 - Fonts loaded via `next/font` (self-hosted, no layout shift)
 - Google Analytics lazy-loaded (`strategy="lazyOnload"`)
 - Console statements stripped in production builds
-- `optimizePackageImports` for tree-shaking icon libraries
 - Images unoptimized (static export constraint) — use appropriately sized source images
 
 ## Accessibility
 
 - Skip-to-content link
 - Semantic HTML with landmark sections
-- `aria-label` on SVG icons
+- `aria-label` on icon-only buttons
 - `prefers-reduced-motion` respected for all animations
 - Color contrast maintained across both themes
 - `lang="en"` on root `<html>` element

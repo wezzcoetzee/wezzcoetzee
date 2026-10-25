@@ -1,93 +1,67 @@
 # Architecture
 
+Single-page static portfolio, exported by Next.js and served from Cloudflare Pages.
+
 ## Tech Stack
 
-| Layer          | Technology                             | Version                    |
-| -------------- | -------------------------------------- | -------------------------- |
-| Framework      | Next.js (App Router)                   | 15.3.3                     |
-| UI             | React                                  | 19.1.0                     |
-| Styling        | Tailwind CSS v4                        | 4.3.0                      |
-| CSS Processing | @tailwindcss/postcss + postcss-nesting | —                          |
-| Fonts          | Geist (body), Geist Mono (mono)        | Google Fonts via next/font |
-| Linting        | ESLint + eslint-config-next            | 8.x                        |
-| Formatting     | Prettier                               | 3.x                        |
-| Runtime        | Bun                                    | latest                     |
-| Hosting        | Cloudflare Pages                       | —                          |
-| CI/CD          | GitHub Actions                         | —                          |
-| Analytics      | Google Analytics (G-M18S2XK0BZ)        | gtag.js                    |
+| Layer     | Technology                                |
+| --------- | ----------------------------------------- |
+| Framework | Next.js 16 (App Router, `output: export`) |
+| UI        | React 19                                  |
+| Styling   | Tailwind CSS v4 (`@theme` in globals.css) |
+| Font      | Geist Mono via `next/font/google`         |
+| Tooling   | Bun, ESLint, Prettier, TypeScript         |
+| Hosting   | Cloudflare Pages                          |
+| Analytics | Google Analytics (gtag, lazy-loaded)      |
 
 ## Directory Structure
 
 ```
 src/
 ├── app/
-│   ├── layout.tsx        # Root layout: fonts, metadata, analytics, NavBar + Footer
-│   ├── page.tsx          # Home: JSON-LD structured data, section composition
-│   ├── not-found.tsx     # 404 page
-│   ├── opengraph-image.tsx # Dynamically generated OG image
-│   ├── globals.css       # Design tokens, base styles, animations, utility classes
-│   ├── work/
-│   │   ├── page.tsx      # Work index (all projects)
-│   │   └── [slug]/
-│   │       └── page.tsx  # Case study pages (dynamic route, statically generated)
-│   ├── sitemap.ts        # Generates sitemap.xml
-│   └── robots.ts         # Generates robots.txt
+│   ├── layout.tsx          # Metadata, theme first-paint script, analytics, skip link
+│   ├── page.tsx            # Home: Person JSON-LD + section composition
+│   ├── not-found.tsx       # 404 page
+│   ├── opengraph-image.tsx # Static OG image
+│   ├── sitemap.ts / robots.ts
+│   └── globals.css         # Design tokens, base styles, animations
 ├── components/
-│   ├── Navigation.tsx    # Sticky NavBar (renders ThemeToggle)
-│   ├── Introduction.tsx  # Hero section
-│   ├── About.tsx         # About section
-│   ├── FeaturedWork.tsx  # Project cards grid
-│   ├── ProjectCard.tsx   # Single project card
-│   ├── CaseStudy.tsx     # Individual project detail page
-│   ├── ConnectSection.tsx# Social links section
-│   ├── ThemeToggle.tsx   # Dark/light theme switcher
-│   ├── Icons.tsx         # Inline SVG icons
-│   └── Footer.tsx        # Site footer
-├── data/
-│   ├── index.tsx         # Barrel: re-exports PROJECTS + Project from projects.ts
-│   └── projects.ts       # PROJECTS array + Project type definition
+│   ├── SiteHeader.tsx      # Avatar, name, location, ThemeToggle
+│   ├── ThemeToggle.tsx     # Client: dark/light switch
+│   ├── WorkList.tsx        # Client: project list with "show more"
+│   ├── MediaList.tsx       # Articles and talks
+│   ├── ActivityGraph.tsx   # GitHub contribution chart (ghchart.rshah.org)
+│   ├── SocialLinks.tsx     # Footer links
+│   └── SectionHeading.tsx  # "# HEADING" section label
+└── data/
+    ├── work.ts             # WORK list
+    └── media.ts            # MEDIA list
 public/
-├── llms.txt              # LLM-friendly site summary
-├── llms-full.txt         # Detailed LLM-friendly content
-├── manifest.webmanifest  # PWA manifest
-├── avatar.jpg            # Profile image (OG, Person schema)
-└── [favicons]            # Various favicon sizes
+├── _headers                # Cloudflare security headers
+├── _redirects              # 301s for the retired /work/* routes
+├── llms.txt, llms-full.txt # LLM-readable site summary
+└── avatar, favicons, manifest, IndexNow key
 ```
 
-## Static Export Flow
+## Build and Deploy
 
-```
-bun run build
-  → next build (with output: 'export')
-  → Generates static HTML/CSS/JS in ./out/
-  → All routes pre-rendered at build time
-  → Dynamic routes use generateStaticParams()
-  → Images unoptimized (no Next.js image optimization server)
-  → Trailing slashes enabled for clean URLs
-  → Console statements stripped in production
+```mermaid
+flowchart LR
+  A[push to main] --> B[bun install --frozen-lockfile]
+  B --> C[bun run lint]
+  C --> D[bun run build]
+  D --> E[out/]
+  E --> F[wrangler pages deploy]
 ```
 
-## Deployment Pipeline
-
-```
-Push to main
-  → GitHub Actions (.github/workflows/cloudflare-pages.yml)
-  → ubuntu-latest runner
-  → Setup Bun (latest)
-  → bun install --frozen-lockfile
-  → bun run lint
-  → bun run build
-  → wrangler pages deploy ./out → Cloudflare Pages
-```
+PRs run lint, `format:check` and build (`.github/workflows/pr-checks.yml`).
 
 ## Key Decisions
 
-| Decision                   | Rationale                                                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Static export              | Portfolio has no dynamic content; CDN-served static files maximize performance and minimize cost        |
-| Tailwind CSS v4            | Uses `@theme` directive for design tokens instead of `tailwind.config.js`; CSS-native approach          |
-| Dark-first theme           | Default `color-scheme: dark` with `data-theme='light'` override; theme persisted to localStorage        |
-| Client-side theme init     | Inline `<script>` in `<head>` reads localStorage before paint to prevent flash                          |
-| All components client-side | Most components use `'use client'` for animations and interactivity; acceptable for a small static site |
-| Unoptimized images         | Required for static export (no image optimization server); images served as-is                          |
-| `optimizePackageImports`   | Experimental Next.js feature for tree-shaking lucide-react and @radix-ui/react-icons                    |
+| Decision                | Rationale                                                                |
+| ----------------------- | ------------------------------------------------------------------------ |
+| Static export           | No dynamic content; CDN-served HTML is fast and free of runtime failures |
+| `_redirects`/`_headers` | `next.config` redirects and headers are ignored under `output: export`   |
+| Dark-first theme        | `data-theme='light'` override, set before paint by an inline script      |
+| Server components first | Only `ThemeToggle` and `WorkList` need client state                      |
+| Unoptimized images      | Static export has no image optimization server                           |
