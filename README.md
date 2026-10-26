@@ -21,7 +21,7 @@
 </tr>
 <tr>
 <td valign="top"><a href="https://github.com/wezzcoetzee/little-helper"><b>little-helper</b></a><br/>Chrome quality of life extension</td>
-<td valign="top"><a href="https://github.com/wezzcoetzee/cliproxy"><b>cliproxy</b></a><br/>A hard fork of CLI Proxy, made much better</td>
+<td valign="top"><a href="https://github.com/wezzcoetzee/hermes-password-manager"><b>hermes-password-manager</b></a><br/>Let Hermes log in with your Apple Passwords</td>
 </tr>
 </table>
 
