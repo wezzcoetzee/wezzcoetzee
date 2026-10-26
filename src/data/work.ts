@@ -7,6 +7,24 @@ export type WorkItem = {
 
 export const WORK: WorkItem[] = [
   {
+    title: 'Hermes Password Manager',
+    role: 'Let Hermes log in with Apple Passwords',
+    year: '2026',
+    url: 'https://github.com/wezzcoetzee/hermes-password-manager',
+  },
+  {
+    title: 'Little Helper',
+    role: 'Chrome quality of life extension',
+    year: '2026',
+    url: 'https://github.com/wezzcoetzee/little-helper',
+  },
+  {
+    title: 'Gardena Plugin',
+    role: 'Homebridge plugin for Gardena irrigation',
+    year: '2026',
+    url: 'https://github.com/wezzcoetzee/gardena-plugin',
+  },
+  {
     title: 'Notchivity',
     role: 'Manage subscriptions and PRs from the notch',
     year: '2026',
