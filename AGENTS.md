@@ -21,6 +21,8 @@ Run `bun run build` after changes to verify the static export.
 
 Tokens live in `src/app/globals.css` (see [docs/DESIGN.md](./docs/DESIGN.md)). Use semantic tokens, never raw colours. Dark is default; light is `html[data-theme='light']`.
 
+When tokens or components change, update `docs/DESIGN.md` and its sidecar `.impeccable/design.json` together (motion, breakpoints and component snippets live only in the sidecar).
+
 ## Deployment
 
 Merge to `main` and `.github/workflows/cloudflare-pages.yml` lints, builds and deploys `./out` to Cloudflare Pages. PRs run lint, format check and build.
