@@ -16,7 +16,7 @@
 <td valign="top"><a href="https://github.com/wezzcoetzee/hyperliquid-cli"><b>hyperliquid-cli</b></a><br/>A CLI for your agent to trade on Hyperliquid</td>
 </tr>
 <tr>
-<td valign="top"><a href="https://github.com/wezzcoetzee/commutor"><b>commutor</b></a><br/>Know when to leave to catch your transport</td>
+<td valign="top"><a href="https://github.com/wezzcoetzee/transport-planner-nz"><b>transport-planner-nz</b></a><br/>Know when to leave to catch your transport</td>
 <td valign="top"><a href="https://github.com/wezzcoetzee/hyperdash"><b>hyperdash</b></a><br/>Manage multiple Hyperliquid wallets</td>
 </tr>
 <tr>

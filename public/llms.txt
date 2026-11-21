@@ -11,6 +11,29 @@ Wesley Coetzee is a hands-on engineering leader with expertise in full-stack dev
 
 ## Projects
 
+- [Hoarder](https://github.com/wezzcoetzee/hoarder): Reclaim the disk space agents leave behind
+- [Metronome](https://github.com/wezzcoetzee/metronome): Keyboard-friendly metronome for macOS
+- [Jarvis](https://github.com/wezzcoetzee/jarvis): macOS Dock with a Claude Code capture box
+- [PrivacyPods](https://github.com/wezzcoetzee/privacypods): Blur your screen when you look away
+- [NZ Transport Planner](https://github.com/wezzcoetzee/transport-planner-nz): Know when to leave for the bus
+- [Hermes Password Manager](https://github.com/wezzcoetzee/hermes-password-manager): Let Hermes log in with Apple Passwords
+- [Little Helper](https://github.com/wezzcoetzee/little-helper): Chrome quality of life extension
+- [Gardena Plugin](https://github.com/wezzcoetzee/gardena-plugin): Homebridge plugin for Gardena irrigation
+- [Notchivity](https://github.com/wezzcoetzee/notchivity): Manage subscriptions and PRs from the notch
+- [Eufy Vacuum Plugin](https://github.com/wezzcoetzee/eufy-vacuum-plugin): Homebridge plugin for the Eufy L60
+- [What Did I Say](https://github.com/wezzcoetzee/what-did-i-say): Calls transcribed locally into Obsidian
+- [Hyperdash](https://github.com/wezzcoetzee/hyperdash): iOS app for Hyperliquid wallets
+- [Copy Trade Bot](https://github.com/wezzcoetzee/copy-trade-bot): Mirror wallets on Hyperliquid
+- [Smart DCA Bot](https://github.com/wezzcoetzee/smart-dca-bot): Signal-weighted DCA into Bitcoin
+- [Moving Average Bot](https://github.com/wezzcoetzee/moving-average-bot): Moving-average trading on Hyperliquid
+- [Tokengochi](https://github.com/wezzcoetzee/tokengochi): macOS menu-bar pet for Claude usage
+- [TradingView MCP Bridge](https://github.com/wezzcoetzee/tradingview-mcp): AI-assisted chart analysis
+- [Hyperliquid CLI](https://github.com/wezzcoetzee/hyperliquid-cli): Terminal trading for perps
+- [Hyperliquid Go SDK](https://github.com/wezzcoetzee/hyperliquid-go): Byte-identical port of the TS SDK
+- [SnipSnapp](https://github.com/wezzcoetzee/snipsnapp): Copy any page as Markdown
+- [Claude Code Config](https://github.com/wezzcoetzee/claude-code-config): Rules, hooks, agents, skills
+- [Blockchain Agent](https://github.com/wezzcoetzee/blockchain-agent): OpenAI assistant that talks to the chain
+- [Uniswap V3 Arbitrage](https://github.com/wezzcoetzee/uniswap-v3-arbitrage): Arbitrage between Uniswap pools
 - [GRVT TypeScript SDK](https://github.com/wezzcoetzee/grvt): Deno-first, NPM-compatible TypeScript SDK for the GRVT Exchange with CCXT-style client and WebSocket support
 - [Trading Lab](https://tradinglab.vip): Data-driven trading signals and backtesting for crypto momentum strategies
 - [Solana DCA Bot](https://github.com/wezzcoetzee/solana-dca-bot): Automated dollar-cost averaging bot on the Solana blockchain
