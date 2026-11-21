@@ -1,49 +1,239 @@
-# Design System
+---
+name: Wesley Coetzee
+description: Personal site of an engineer building AI agents, set entirely in one monospace family on true black.
+colors:
+  background: '#000000'
+  foreground: '#ededed'
+  muted-foreground: '#7a7a7a'
+  border: '#262626'
+  primary: '#fafafa'
+  primary-foreground: '#000000'
+  accent: '#7a96d6'
+  online: '#6ebe82'
+  background-light: '#fafaf9'
+  foreground-light: '#262626'
+  muted-foreground-light: '#8a8a8a'
+  border-light: '#e2e2e0'
+  primary-light: '#171717'
+  primary-foreground-light: '#fafaf9'
+  accent-light: '#5a7abe'
+  online-light: '#5cac70'
+typography:
+  display:
+    fontFamily: 'Geist Mono, monospace'
+    fontSize: 'clamp(2rem, 4vw + 0.5rem, 3.25rem)'
+    fontWeight: 700
+    lineHeight: 1.15
+    letterSpacing: '-0.02em'
+  title:
+    fontFamily: 'Geist Mono, monospace'
+    fontSize: '1.125rem'
+    fontWeight: 400
+    lineHeight: 1.75
+  body:
+    fontFamily: 'Geist Mono, monospace'
+    fontSize: '1rem'
+    fontWeight: 400
+    lineHeight: 1.5
+  meta:
+    fontFamily: 'Geist Mono, monospace'
+    fontSize: '0.875rem'
+    fontWeight: 400
+    lineHeight: 1.43
+    fontFeature: 'tnum'
+  label:
+    fontFamily: 'Geist Mono, monospace'
+    fontSize: '0.75rem'
+    fontWeight: 400
+    lineHeight: 1.33
+    letterSpacing: '0.1em'
+rounded:
+  hairline: '1px'
+  sm: '6px'
+  full: '9999px'
+spacing:
+  row: '16px'
+  gutter: '24px'
+  column-gap: '40px'
+  section: '48px'
+  page-top: '56px'
+  measure: '48rem'
+components:
+  section-heading:
+    textColor: '{colors.muted-foreground}'
+    typography: '{typography.label}'
+  list-row:
+    textColor: '{colors.primary}'
+    typography: '{typography.body}'
+    padding: '16px 0'
+  list-row-hover:
+    textColor: '{colors.accent}'
+  list-row-meta:
+    textColor: '{colors.muted-foreground}'
+    typography: '{typography.meta}'
+  text-button:
+    textColor: '{colors.muted-foreground}'
+    typography: '{typography.meta}'
+  text-button-hover:
+    textColor: '{colors.accent}'
+  footer-link:
+    textColor: '{colors.muted-foreground}'
+    typography: '{typography.body}'
+  footer-link-hover:
+    textColor: '{colors.foreground}'
+  skip-link:
+    backgroundColor: '{colors.primary}'
+    textColor: '{colors.primary-foreground}'
+    rounded: '{rounded.sm}'
+    padding: '8px 16px'
+  avatar:
+    rounded: '{rounded.full}'
+    size: '28px'
+  status-dot:
+    backgroundColor: '{colors.online}'
+    rounded: '{rounded.full}'
+    size: '6px'
+---
 
-Tokens and conventions from `src/app/globals.css`.
+# Design System: Wesley Coetzee
 
-## Color Tokens
+Tokens live in `src/app/globals.css` as full colour values in `@theme`, overridden under `html[data-theme='light']`. The `-light` keys above are those overrides. Components use the semantic Tailwind utilities (`text-primary`, `border-border`), never raw colours.
 
-Full colour values (not RGB channels), declared in `@theme` and overridden under `html[data-theme='light']`.
+## 1. Overview
 
-| Token                        | Dark      | Light     | Usage                     |
-| ---------------------------- | --------- | --------- | ------------------------- |
-| `--color-background`         | `#000000` | `#fafaf9` | Page background           |
-| `--color-foreground`         | `#ededed` | `#262626` | Body text                 |
-| `--color-muted-foreground`   | `#7a7a7a` | `#8a8a8a` | Secondary text            |
-| `--color-border`             | `#262626` | `#e2e2e0` | Row borders, dividers     |
-| `--color-primary`            | `#fafafa` | `#171717` | Headings, link titles     |
-| `--color-primary-foreground` | `#000000` | `#fafaf9` | Text on primary bg        |
-| `--color-accent`             | `#7a96d6` | `#5a7abe` | `#` markers, hover, focus |
-| `--color-online`             | `#6ebe82` | `#5cac70` | Location dot              |
+**Creative North Star: "The Engineer's Notebook"**
 
-## Typography
+The page is a single sheet from a working notebook: one typeface, one column, entries written in rows and ruled with hairlines. Nothing is boxed, lifted, or illustrated. Hierarchy comes from size, weight, and the gap between things. The one dash of colour is the cursor: it shows where you are and what you can press, and nothing else.
 
-One family: Geist Mono (400, 500, 700) via `next/font`, exposed as `--font-mono`. `h1` is bold, `clamp(2rem, 4vw + 0.5rem, 3.25rem)`, `-0.02em` tracking. Section labels are `text-xs`, widely tracked, prefixed with an accent `#`.
+Density is moderate and deliberate. The content sits in a 48rem measure with a 24px gutter, two lists side by side from 768px up, stacked below. Rows are 16px of vertical padding apart; sections are 48px apart; the page breathes at 40 to 56px top and bottom. Motion is a single 6px rise on load, staggered by section, and a nudge on hover. A return visitor should notice what's new in the list, not what's new in the chrome.
 
-## Motion
+This system rejects Notion-clone resume pages, SaaS marketing surfaces (hero metric, three-up grid, gradient buttons, logo strip), generic dev-portfolio defaults (neon accent, Inter everywhere, "Hi, I'm X"), and maximalist novelty (3D heroes, scroll-jacking, WebGL for its own sake).
 
-| Class        | Effect                  | Use                      |
-| ------------ | ----------------------- | ------------------------ |
-| `.fade-in`   | Rise 6px + fade, 0.5s   | Page sections, staggered |
-| `.rise-in`   | Same, 0.35s             | Expanded work items      |
-| `.icon-swap` | Rotate + scale in, 0.4s | Theme toggle icon        |
+**Key Characteristics:**
 
-No looping animations. `prefers-reduced-motion` collapses everything to ~0ms.
+- One family, Geist Mono, in three weights (400, 500, 700).
+- True black (#000) by default; a near-neutral off-white light theme of equal standing.
+- Flat. No shadows, no cards, no fills behind content.
+- Hairline row borders and full-width dividers are the only structure.
+- A single accent, used for state and the `#` section marker.
+- Motion on load and on hover only. Nothing loops.
 
-## Motifs
+## 2. Colors
 
-- `.divider`: 1px rule in `--color-border`
-- Lists: hairline row borders, title left, meta right
-- `.gh-chart`: inverted in dark mode so the third-party chart reads on black
+A monochrome ink-on-black palette with one cool blue for interaction and one green for presence.
 
-## Theme Switching
+### Primary
 
-An inline script in `<head>` reads `localStorage('theme')`, falling back to `prefers-color-scheme`, and sets `data-theme` before paint. `.no-transitions` suppresses colour transitions for the first two frames.
+- **Cursor Blue** (`accent`, light `accent-light`): the `#` before each section label, link and button hover text, and the 2px focus-visible outline. It marks where attention or interaction is. It never fills a surface and never decorates static text.
 
-## Principles
+### Tertiary
 
-1. Restraint over decoration. No gradients, cards, or illustration.
-2. Typography and spacing carry hierarchy.
-3. Motion only where it aids comprehension.
-4. WCAG AA in both themes; light mode is not second-class.
+- **Online Green** (`online`, light `online-light`): the 6px location dot in the header, and only there. A presence signal, never decoration.
+
+### Neutral
+
+- **True Black** (`background`): the dark-theme page. Pure #000, not a tinted near-black.
+- **Chalk** (`foreground`): body text on black.
+- **Bright Chalk** (`primary`): the h1, list titles, and the name in the header. One step brighter than body so titles lead.
+- **Graphite** (`muted-foreground`): section labels, roles, years, sources, footer links, the location label.
+- **Rule** (`border`): row borders, dividers, the avatar ring.
+- **Light theme**: Off-white page (`background-light`, chroma near zero, not cream), Ink (`foreground-light`), Deep Ink (`primary-light`), Pewter (`muted-foreground-light`), Pale Rule (`border-light`).
+
+### Named Rules
+
+**The Cursor Rule.** Cursor Blue appears only where the reader can act or where a section begins. If it's on static prose, remove it.
+
+**The Equal Themes Rule.** Every token has a light counterpart and each theme is checked independently. Light mode is not a degraded mode.
+
+**Known contrast debt.** Pewter on the light page measures about 3.3:1 and Cursor Blue (light) about 4.0:1; both are under AA for body-size text. Graphite on black (about 4.9:1) and Cursor Blue on black (about 7.2:1) pass. Fix light values before adding more muted text.
+
+## 3. Typography
+
+**Display Font:** Geist Mono (with monospace)
+**Body Font:** Geist Mono (with monospace)
+**Label/Mono Font:** Geist Mono (with monospace)
+
+**Character:** One monospace family carries everything, chosen as the notebook's handwriting rather than as a "developer" costume. Fixed-width figures keep years and dates aligned down a column without extra tooling.
+
+### Hierarchy
+
+- **Display** (700, `clamp(2rem, 4vw + 0.5rem, 3.25rem)`, 1.15, -0.02em): the single h1. One per page.
+- **Title** (400, 1.125rem, 1.75): the one-line subtitle under the h1, in Graphite.
+- **Body** (400, 1rem, 1.5): list titles, footer links, the name in the header (at 500).
+- **Meta** (400, 0.875rem, tabular figures): years, roles (italic), sources, the expand button.
+- **Label** (400, 0.75rem, 0.1em tracking, uppercase): section headings (`# WORK`) and the location label. Short words only.
+
+### Named Rules
+
+**The One Family Rule.** Geist Mono only. Contrast comes from weight (400 / 500 / 700) and size, never from a second typeface.
+
+**The Single Kicker Rule.** The `#`-prefixed uppercase label is the site's one named label system. Don't introduce a second kind of eyebrow, number markers, or decorative caps elsewhere.
+
+## 4. Elevation
+
+The system is completely flat. There are no shadows, no blurs, no raised surfaces, and no tonal layering. Depth is never simulated; separation comes from 1px rules in Rule grey and from spacing. The only ring in the system is the 1px Rule ring around the avatar.
+
+### Named Rules
+
+**The Flat Page Rule.** If an element needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.
+
+## 5. Components
+
+### Section Heading
+
+Label type in Graphite, preceded by a Cursor Blue `#` (hidden from assistive tech). An `h2` that labels its section via `aria-labelledby`. Sits 8px above its list.
+
+### List Row (Work, Media)
+
+The signature component: the notebook entry.
+
+- **Structure:** title on the left, meta on the right on a shared baseline, 16px vertical padding, 16px gap, a 1px Rule border under each row. Work rows add the role in italic meta beside the title; the title and role wrap together on narrow screens.
+- **Default:** title in Bright Chalk, meta in Graphite with tabular figures.
+- **Hover:** the title shifts 4px right and turns Cursor Blue over 200ms ease-out. The meta doesn't move.
+- **Expand:** Work shows 5 rows; a text button reveals the rest, each new row rising 6px in with a 50ms stagger.
+
+### Text Button
+
+Meta type in Graphite, no background, no border, no padding: `+ 3 more` / `− Show less`. Hover turns Cursor Blue. Reports `aria-expanded`.
+
+### Footer Links (Navigation)
+
+A wrapping row of plain words (Email, GitHub, X, LinkedIn, CV), 24px apart, Graphite. Hover brightens to Chalk while a 1px underline grows left to right from the baseline over 300ms ease-out. Labelled `Elsewhere`.
+
+### Header
+
+Avatar (28px circle, 1px Rule ring), name at weight 500 in Bright Chalk, then on the right a 6px Online Green dot with the location label (hidden under 640px) and the theme toggle.
+
+### Theme Toggle
+
+A 20px inline SVG icon button in Graphite, brightening on hover. The sun turns 90° on hover; the moon tilts -12°. On toggle the icon swaps in with a short rotate-and-scale. It renders an empty 20px box until the stored theme is known, to avoid a flash.
+
+### Skip Link
+
+Hidden until focused, then a Bright Chalk block (6px radius, 8px by 16px padding) with black text, top-left.
+
+### Focus
+
+Every interactive element gets a 2px Cursor Blue outline at 3px offset on `:focus-visible`.
+
+## 6. Do's and Don'ts
+
+### Do:
+
+- **Do** keep everything in Geist Mono at 400, 500, or 700.
+- **Do** build structure from 1px Rule borders and spacing (16px rows, 48px sections, 48rem measure).
+- **Do** keep newest work first and every entry dated, so the cadence is visible on a return visit.
+- **Do** reserve Cursor Blue for hover, focus, and the `#` marker.
+- **Do** check both themes for AA contrast independently, and pair every new token with a light value.
+- **Do** ease out (200 to 500ms) and keep entrance motion to a 6px rise; reduced-motion collapses it to near zero.
+
+### Don't:
+
+- **Don't** make it a Notion-clone resume page: a bullet-list CV in HTML with no point of view.
+- **Don't** borrow SaaS marketing vocabulary: hero metric, three-up feature grid, gradient buttons, testimonial carousel, "Trusted by" logo strip.
+- **Don't** fall into generic dev-portfolio defaults: neon accent, Inter everywhere, "Hi, I'm X" h1, tech-logo wall.
+- **Don't** reach for maximalist novelty: 3D heroes, scroll-jacking, WebGL for its own sake.
+- **Don't** add cards, filled panels, shadows, glass, or gradients of any kind.
+- **Don't** use a `border-left` or `border-right` over 1px as a coloured accent.
+- **Don't** add looping or continuously repainting animation (pulse, shimmer, spinners). The online dot stays still.
+- **Don't** add uppercase labels beyond the `#` section heading and the location label.
