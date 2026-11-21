@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T00:00:00Z",
+  "title": "Design System: Wesley Coetzee",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Cursor Blue",
+        "canonical": "oklch(66.5% 0.095 268)",
+        "tonalRamp": [
+          "oklch(15% 0.095 268)",
+          "oklch(26% 0.095 268)",
+          "oklch(37% 0.095 268)",
+          "oklch(48% 0.095 268)",
+          "oklch(59% 0.095 268)",
+          "oklch(70% 0.095 268)",
+          "oklch(82% 0.06 268)",
+          "oklch(95% 0.02 268)"
+        ]
+      },
+      "accent-light": {
+        "role": "primary",
+        "displayName": "Cursor Blue (light)",
+        "canonical": "oklch(57.5% 0.11 266)"
+      },
+      "online": {
+        "role": "tertiary",
+        "displayName": "Online Green",
+        "canonical": "oklch(73% 0.12 150)",
+        "tonalRamp": [
+          "oklch(15% 0.12 150)",
+          "oklch(26% 0.12 150)",
+          "oklch(37% 0.12 150)",
+          "oklch(48% 0.12 150)",
+          "oklch(59% 0.12 150)",
+          "oklch(70% 0.12 150)",
+          "oklch(82% 0.08 150)",
+          "oklch(95% 0.03 150)"
+        ]
+      },
+      "online-light": {
+        "role": "tertiary",
+        "displayName": "Online Green (light)",
+        "canonical": "oklch(68% 0.12 150)"
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "True Black",
+        "canonical": "oklch(0% 0 0)",
+        "tonalRamp": [
+          "oklch(0% 0 0)",
+          "oklch(15% 0 0)",
+          "oklch(27% 0 0)",
+          "oklch(40% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(85% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "foreground": { "role": "neutral", "displayName": "Chalk", "canonical": "oklch(94.9% 0 0)" },
+      "primary": {
+        "role": "neutral",
+        "displayName": "Bright Chalk",
+        "canonical": "oklch(98.5% 0 0)"
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(58% 0 0)"
+      },
+      "border": { "role": "neutral", "displayName": "Rule", "canonical": "oklch(26.9% 0 0)" },
+      "primary-foreground": {
+        "role": "neutral",
+        "displayName": "True Black",
+        "canonical": "oklch(0% 0 0)"
+      },
+      "background-light": {
+        "role": "neutral",
+        "displayName": "Off-white",
+        "canonical": "oklch(98.5% 0.001 106)"
+      },
+      "foreground-light": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(26.9% 0 0)"
+      },
+      "primary-light": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "oklch(20.5% 0 0)"
+      },
+      "muted-foreground-light": {
+        "role": "neutral",
+        "displayName": "Pewter",
+        "canonical": "oklch(63% 0 0)"
+      },
+      "border-light": {
+        "role": "neutral",
+        "displayName": "Pale Rule",
+        "canonical": "oklch(91.5% 0.002 106)"
+      },
+      "primary-foreground-light": {
+        "role": "neutral",
+        "displayName": "Off-white",
+        "canonical": "oklch(98.5% 0.001 106)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The single h1." },
+      "title": { "displayName": "Title", "purpose": "One-line subtitle under the h1." },
+      "body": { "displayName": "Body", "purpose": "List titles, footer links, header name." },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Years, roles, sources, the expand button. Tabular figures."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase # section headings and the location label."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "rise-in",
+        "value": "riseIn 0.5s ease-out both (translateY 6px to 0, opacity 0 to 1)",
+        "purpose": "Page sections on load, staggered 0 / 80 / 160 / 240ms."
+      },
+      {
+        "name": "rise-in-fast",
+        "value": "riseIn 0.35s ease-out both",
+        "purpose": "Rows revealed by Work expand, 50ms stagger."
+      },
+      {
+        "name": "row-nudge",
+        "value": "color, transform 200ms ease-out; translateX(4px)",
+        "purpose": "List row title on hover."
+      },
+      {
+        "name": "underline-grow",
+        "value": "transform 300ms ease-out; scaleX(0) to scaleX(1), origin left",
+        "purpose": "Footer link hover underline."
+      },
+      {
+        "name": "icon-swap",
+        "value": "iconSwap 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both",
+        "purpose": "Theme toggle icon on change."
+      },
+      {
+        "name": "theme-fade",
+        "value": "background-color, color 0.3s ease",
+        "purpose": "Page colours on theme switch; suppressed for first two frames."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "The site's one label system: Cursor Blue # plus uppercase tracked label.",
+      "html": "<h2 class=\"ds-section-heading\"><span class=\"ds-section-hash\" aria-hidden=\"true\"># </span>WORK</h2>",
+      "css": ".ds-section-heading { margin: 0 0 8px; font-family: var(--font-mono), monospace; font-size: 0.75rem; line-height: 1rem; letter-spacing: 0.1em; font-weight: 400; color: var(--color-muted-foreground); } .ds-section-hash { color: var(--color-accent); }"
+    },
+    {
+      "name": "List Row",
+      "kind": "custom",
+      "refersTo": "list-row",
+      "description": "The notebook entry: title left, meta right, hairline below. Used by Work and Media.",
+      "html": "<ul class=\"ds-list\"><li class=\"ds-row\"><a class=\"ds-row-link\" href=\"#\"><span class=\"ds-row-main\"><span class=\"ds-row-title\">tradingview-mcp</span><span class=\"ds-row-role\">Creator</span></span><span class=\"ds-row-meta\">2026</span></a></li><li class=\"ds-row\"><a class=\"ds-row-link\" href=\"#\"><span class=\"ds-row-main\"><span class=\"ds-row-title\">hyperliquid-cli</span><span class=\"ds-row-role\">Creator</span></span><span class=\"ds-row-meta\">2025</span></a></li></ul>",
+      "css": ".ds-list { list-style: none; margin: 0; padding: 0; font-family: var(--font-mono), monospace; } .ds-row { border-bottom: 1px solid var(--color-border); } .ds-row-link { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 16px 0; text-decoration: none; } .ds-row-main { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 4px; } .ds-row-title { color: var(--color-primary); font-size: 1rem; transition: color 200ms ease-out, transform 200ms ease-out; } .ds-row-role { font-size: 0.875rem; font-style: italic; color: var(--color-muted-foreground); } .ds-row-meta { flex-shrink: 0; font-size: 0.875rem; color: var(--color-muted-foreground); font-variant-numeric: tabular-nums; } .ds-row-link:hover .ds-row-title { color: var(--color-accent); transform: translateX(4px); } .ds-row-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
+    },
+    {
+      "name": "Text Button",
+      "kind": "button",
+      "refersTo": "text-button",
+      "description": "Bare text action, used to expand the Work list.",
+      "html": "<button type=\"button\" class=\"ds-text-btn\" aria-expanded=\"false\">+ 3 more</button>",
+      "css": ".ds-text-btn { background: none; border: 0; padding: 0; font-family: var(--font-mono), monospace; font-size: 0.875rem; color: var(--color-muted-foreground); cursor: pointer; transition: color 150ms ease-out; } .ds-text-btn:hover { color: var(--color-accent); } .ds-text-btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
+    },
+    {
+      "name": "Footer Links",
+      "kind": "nav",
+      "refersTo": "footer-link",
+      "description": "Wrapping row of plain-word links with a growing underline on hover.",
+      "html": "<nav class=\"ds-footer-nav\" aria-label=\"Elsewhere\"><a class=\"ds-footer-link\" href=\"#\">Email</a><a class=\"ds-footer-link\" href=\"#\">GitHub</a><a class=\"ds-footer-link\" href=\"#\">X</a><a class=\"ds-footer-link\" href=\"#\">LinkedIn</a><a class=\"ds-footer-link\" href=\"#\">CV</a></nav>",
+      "css": ".ds-footer-nav { display: flex; flex-wrap: wrap; column-gap: 24px; row-gap: 8px; font-family: var(--font-mono), monospace; } .ds-footer-link { position: relative; color: var(--color-muted-foreground); text-decoration: none; transition: color 150ms ease-out; } .ds-footer-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 300ms ease-out; } .ds-footer-link:hover { color: var(--color-foreground); } .ds-footer-link:hover::after { transform: scaleX(1); } .ds-footer-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "avatar",
+      "description": "Avatar, name, presence dot with location, theme toggle.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-header-id\"><span class=\"ds-avatar\"></span><span class=\"ds-name\">Wesley Coetzee</span></div><div class=\"ds-header-right\"><span class=\"ds-location\"><span class=\"ds-dot\" aria-hidden=\"true\"></span>AUCKLAND, NZ</span><button class=\"ds-toggle\" aria-label=\"Switch to light mode\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"3.25\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M12 3.5v2.75M12 17.75v2.75M3.5 12h2.75M17.75 12h2.75\"/></svg></button></div></header>",
+      "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono), monospace; } .ds-header-id { display: flex; align-items: center; gap: 12px; } .ds-avatar { width: 28px; height: 28px; border-radius: 9999px; background: var(--color-border); box-shadow: 0 0 0 1px var(--color-border); } .ds-name { font-weight: 500; color: var(--color-primary); } .ds-header-right { display: flex; align-items: center; gap: 20px; } .ds-location { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-muted-foreground); } .ds-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--color-online); } .ds-toggle { background: none; border: 0; padding: 0; color: var(--color-muted-foreground); cursor: pointer; transition: color 150ms ease-out; } .ds-toggle svg { display: block; transition: transform 300ms ease-out; } .ds-toggle:hover { color: var(--color-foreground); } .ds-toggle:hover svg { transform: rotate(90deg); } .ds-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "button",
+      "refersTo": "skip-link",
+      "description": "Hidden until keyboard focus.",
+      "html": "<a class=\"ds-skip\" href=\"#main-content\">Skip to content</a>",
+      "css": ".ds-skip { display: inline-block; padding: 8px 16px; border-radius: 6px; background: var(--color-primary); color: var(--color-primary-foreground); font-family: var(--font-mono), monospace; text-decoration: none; } .ds-skip:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Engineer's Notebook",
+    "overview": "The page is a single sheet from a working notebook: one typeface, one column, entries written in rows and ruled with hairlines. Nothing is boxed, lifted, or illustrated. Hierarchy comes from size, weight, and the gap between things. The one dash of colour is the cursor: it shows where you are and what you can press, and nothing else.\n\nDensity is moderate and deliberate. The content sits in a 48rem measure with a 24px gutter, two lists side by side from 768px up, stacked below. Rows are 16px of vertical padding apart; sections are 48px apart; the page breathes at 40 to 56px top and bottom. Motion is a single 6px rise on load, staggered by section, and a nudge on hover. A return visitor should notice what's new in the list, not what's new in the chrome.",
+    "keyCharacteristics": [
+      "One family, Geist Mono, in three weights (400, 500, 700).",
+      "True black (#000) by default; a near-neutral off-white light theme of equal standing.",
+      "Flat. No shadows, no cards, no fills behind content.",
+      "Hairline row borders and full-width dividers are the only structure.",
+      "A single accent, used for state and the `#` section marker.",
+      "Motion on load and on hover only. Nothing loops."
+    ],
+    "rules": [
+      {
+        "name": "The Cursor Rule",
+        "body": "Cursor Blue appears only where the reader can act or where a section begins. If it's on static prose, remove it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Equal Themes Rule",
+        "body": "Every token has a light counterpart and each theme is checked independently. Light mode is not a degraded mode.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Geist Mono only. Contrast comes from weight (400 / 500 / 700) and size, never from a second typeface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Kicker Rule",
+        "body": "The `#`-prefixed uppercase label is the site's one named label system. Don't introduce a second kind of eyebrow, number markers, or decorative caps elsewhere.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Page Rule",
+        "body": "If an element needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep everything in Geist Mono at 400, 500, or 700.",
+      "Do build structure from 1px Rule borders and spacing (16px rows, 48px sections, 48rem measure).",
+      "Do keep newest work first and every entry dated, so the cadence is visible on a return visit.",
+      "Do reserve Cursor Blue for hover, focus, and the `#` marker.",
+      "Do check both themes for AA contrast independently, and pair every new token with a light value.",
+      "Do ease out (200 to 500ms) and keep entrance motion to a 6px rise; reduced-motion collapses it to near zero."
+    ],
+    "donts": [
+      "Don't make it a Notion-clone resume page: a bullet-list CV in HTML with no point of view.",
+      "Don't borrow SaaS marketing vocabulary: hero metric, three-up feature grid, gradient buttons, testimonial carousel, \"Trusted by\" logo strip.",
+      "Don't fall into generic dev-portfolio defaults: neon accent, Inter everywhere, \"Hi, I'm X\" h1, tech-logo wall.",
+      "Don't reach for maximalist novelty: 3D heroes, scroll-jacking, WebGL for its own sake.",
+      "Don't add cards, filled panels, shadows, glass, or gradients of any kind.",
+      "Don't use a `border-left` or `border-right` over 1px as a coloured accent.",
+      "Don't add looping or continuously repainting animation (pulse, shimmer, spinners). The online dot stays still.",
+      "Don't add uppercase labels beyond the `#` section heading and the location label."
+    ]
+  }
+}
