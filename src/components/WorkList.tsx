@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { WORK } from '@/data';
+import { DatedRow } from './DatedRow';
 import { SectionHeading } from './SectionHeading';
 
 const VISIBLE = 5;
@@ -17,32 +18,20 @@ export function WorkList() {
       <SectionHeading id="work-heading">WORK</SectionHeading>
 
       <ul>
-        {items.map((item, i) => (
-          <li
-            key={item.url}
-            className={`border-b border-border ${expanded && i >= VISIBLE ? 'rise-in' : ''}`}
-            style={
-              expanded && i >= VISIBLE ? { animationDelay: `${(i - VISIBLE) * 50}ms` } : undefined
-            }
-          >
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-baseline justify-between gap-4 py-4"
-            >
-              <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <span className="text-primary transition-[color,transform] duration-200 ease-out group-hover:translate-x-1 group-hover:text-accent">
-                  {item.title}
-                </span>
-                <span className="text-sm italic text-muted-foreground">{item.role}</span>
-              </span>
-              <span className="shrink-0 text-sm text-muted-foreground tabular-nums">
-                {item.year}
-              </span>
-            </a>
-          </li>
-        ))}
+        {items.map((item, i) => {
+          const revealed = expanded && i >= VISIBLE;
+          return (
+            <DatedRow
+              key={item.url}
+              title={item.title}
+              detail={item.role}
+              date={item.date}
+              url={item.url}
+              className={revealed ? 'rise-in' : ''}
+              style={revealed ? { animationDelay: `${(i - VISIBLE) * 50}ms` } : undefined}
+            />
+          );
+        })}
       </ul>
 
       {hidden > 0 && (
