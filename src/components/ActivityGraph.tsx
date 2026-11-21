@@ -18,6 +18,8 @@ export function ActivityGraph() {
           alt={`GitHub contribution activity for ${GITHUB_USER} over the last year`}
           width={CHART_WIDTH}
           height={CHART_HEIGHT}
+          loading="lazy"
+          decoding="async"
           className="gh-chart mt-2 max-w-none"
         />
       </div>
