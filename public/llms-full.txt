@@ -217,6 +217,282 @@ A web-based CV solution that can be hosted online and prints to a clean, profess
 
 ---
 
+### Hoarder
+
+**URL:** https://github.com/wezzcoetzee/hoarder  
+**Tagline:** Reclaim the disk space agents leave behind  
+**Role:** Creator  
+**Technologies:** Swift, macOS, SSH  
+**Date:** 2026-11
+
+A macOS menu bar app that watches free disk space and finds what agent coding leaves behind: git worktrees, node_modules, Docker build cache and images, and package manager caches. Each finding gets a verdict and the command that reclaims it. Other machines on your tailnet, Linux or Mac, can be watched and cleaned from the same popover over SSH.
+
+---
+
+### Metronome
+
+**URL:** https://github.com/wezzcoetzee/metronome  
+**Tagline:** Keyboard-friendly metronome for macOS  
+**Role:** Creator  
+**Technologies:** Swift, macOS  
+**Date:** 2026-11
+
+A precise, keyboard-friendly metronome for macOS 14 and later, built for practising instruments at home.
+
+---
+
+### Jarvis
+
+**URL:** https://github.com/wezzcoetzee/jarvis  
+**Tagline:** macOS Dock with a Claude Code capture box  
+**Role:** Creator  
+**Technologies:** Swift, TypeScript, Claude Code, Obsidian  
+**Date:** 2026-10
+
+A replacement for the macOS Dock with a capture box built in. Press Option+Space from anywhere, type what you just did or want to find, and Jarvis hands it to Claude Code running inside your Obsidian vault, which saves the note in the right place or finds it for you. Jarvis also watches for meeting recordings and drafts follow-ups and decisions for you to approve.
+
+---
+
+### PrivacyPods
+
+**URL:** https://github.com/wezzcoetzee/privacypods  
+**Tagline:** Blur your screen when you look away  
+**Role:** Creator  
+**Technologies:** Swift, macOS, AirPods head tracking  
+**Date:** 2026-10
+
+Uses AirPods head tracking to blur your screens when you look away and lock the Mac when you walk off. Lives in the menu bar with no Dock icon.
+
+---
+
+### NZ Transport Planner
+
+**URL:** https://github.com/wezzcoetzee/transport-planner-nz  
+**Tagline:** Know when to leave for the bus  
+**Role:** Creator  
+**Technologies:** Swift, macOS, Auckland Transport GTFS  
+**Date:** 2026-10
+
+A macOS menu bar app that tells you when to walk out of the office so you arrive at the stop just before the bus, using Auckland Transport timetable data. An independent community project, not affiliated with Auckland Transport.
+
+---
+
+### Hermes Password Manager
+
+**URL:** https://github.com/wezzcoetzee/hermes-password-manager  
+**Tagline:** Let Hermes log in with Apple Passwords  
+**Role:** Creator  
+**Technologies:** TypeScript  
+**Date:** 2026-10
+
+Lets the Hermes agent log in to websites using the passwords saved in Apple Passwords.
+
+---
+
+### Little Helper
+
+**URL:** https://github.com/wezzcoetzee/little-helper  
+**Tagline:** Chrome quality of life extension  
+**Role:** Creator  
+**Technologies:** JavaScript, Chrome Extensions  
+**Date:** 2026-10
+
+A Chrome extension that bundles a set of quality of life improvements for everyday browsing.
+
+---
+
+### Gardena Plugin
+
+**URL:** https://github.com/wezzcoetzee/gardena-plugin  
+**Tagline:** Homebridge plugin for Gardena irrigation  
+**Role:** Creator  
+**Technologies:** TypeScript, Homebridge  
+**Date:** 2026-10
+
+A Homebridge plugin that brings the Gardena home water irrigation system into Apple Home.
+
+---
+
+### Notchivity
+
+**URL:** https://github.com/wezzcoetzee/notchivity  
+**Tagline:** Manage subscriptions and PRs from the notch  
+**Role:** Creator  
+**Technologies:** Swift, macOS  
+**Date:** 2026-09
+
+A notch app for managing multiple subscriptions and pull requests in a configurable UI.
+
+---
+
+### Eufy Vacuum Plugin
+
+**URL:** https://github.com/wezzcoetzee/eufy-vacuum-plugin  
+**Tagline:** Homebridge plugin for the Eufy L60  
+**Role:** Creator  
+**Technologies:** TypeScript, Homebridge  
+**Date:** 2026-09
+
+A Homebridge plugin that exposes the Eufy L60 robot vacuum to Apple Home.
+
+---
+
+### What Did I Say
+
+**URL:** https://github.com/wezzcoetzee/what-did-i-say  
+**Tagline:** Calls transcribed locally into Obsidian  
+**Role:** Creator  
+**Technologies:** Swift, WhisperKit, macOS  
+**Date:** 2026-07
+
+A macOS menu bar app that detects Slack huddles, Teams calls and Google Meet, records both sides, transcribes locally with WhisperKit, and writes a Markdown note to your Obsidian vault. It also records in-person meetings from the laptop microphone.
+
+---
+
+### Hyperdash
+
+**URL:** https://github.com/wezzcoetzee/hyperdash  
+**Tagline:** iOS app for Hyperliquid wallets  
+**Role:** Creator  
+**Technologies:** Swift, SwiftUI, iOS  
+**Date:** 2026-07
+
+A native SwiftUI iOS app for monitoring and trading multiple Hyperliquid wallets: total value, perp positions, liquidation distance, funding, spot balances and open orders, with trading through an approved agent wallet.
+
+---
+
+### Copy Trade Bot
+
+**URL:** https://github.com/wezzcoetzee/copy-trade-bot  
+**Tagline:** Mirror wallets on Hyperliquid  
+**Role:** Creator  
+**Technologies:** TypeScript, Hyperliquid  
+**Date:** 2026-07
+
+A bot that copy trades chosen wallets on the Hyperliquid DEX.
+
+---
+
+### Smart DCA Bot
+
+**URL:** https://github.com/wezzcoetzee/smart-dca-bot  
+**Tagline:** Signal-weighted DCA into Bitcoin  
+**Role:** Creator  
+**Technologies:** TypeScript  
+**Date:** 2026-07
+
+Buys Bitcoin every day with a DCA strategy, sizing each buy from market signals instead of a fixed amount.
+
+---
+
+### Moving Average Bot
+
+**URL:** https://github.com/wezzcoetzee/moving-average-bot  
+**Tagline:** Moving-average trading on Hyperliquid  
+**Role:** Creator  
+**Technologies:** TypeScript, Hyperliquid  
+**Date:** 2026-07
+
+Trades crypto on Hyperliquid using the best-performing moving averages.
+
+---
+
+### Tokengochi
+
+**URL:** https://github.com/wezzcoetzee/tokengochi  
+**Tagline:** macOS menu-bar pet for Claude usage  
+**Role:** Creator  
+**Technologies:** Swift, macOS  
+**Date:** 2026-06
+
+A playful menu bar pet that monitors your token usage and gamifies it.
+
+---
+
+### TradingView MCP Bridge
+
+**URL:** https://github.com/wezzcoetzee/tradingview-mcp  
+**Tagline:** AI-assisted chart analysis  
+**Role:** Creator  
+**Technologies:** TypeScript, MCP, Claude Code  
+**Date:** 2026-05
+
+Connects Claude Code to TradingView Desktop for AI-assisted chart analysis and personal workflow automation.
+
+---
+
+### Hyperliquid CLI
+
+**URL:** https://github.com/wezzcoetzee/hyperliquid-cli  
+**Tagline:** Terminal trading for perps  
+**Role:** Creator  
+**Technologies:** TypeScript, Hyperliquid  
+**Date:** 2026-05
+
+A CLI that lets your agent trade perps on Hyperliquid from the terminal.
+
+---
+
+### Hyperliquid Go SDK
+
+**URL:** https://github.com/wezzcoetzee/hyperliquid-go  
+**Tagline:** Byte-identical port of the TS SDK  
+**Role:** Creator  
+**Technologies:** Go  
+**Date:** 2026-05
+
+A Go SDK for Hyperliquid, ported from the canonical TypeScript SDK. Action signing produces byte-identical output to the TypeScript SDK, verified against captured fixtures. Info, Exchange and WebSocket clients are feature-complete.
+
+---
+
+### SnipSnapp
+
+**URL:** https://github.com/wezzcoetzee/snipsnapp  
+**Tagline:** Copy any page as Markdown  
+**Role:** Creator  
+**Technologies:** TypeScript, Chrome Extensions  
+**Date:** 2026-02
+
+A Chrome extension that copies page content as Markdown so agents can read and interpret it easily.
+
+---
+
+### Claude Code Config
+
+**URL:** https://github.com/wezzcoetzee/claude-code-config  
+**Tagline:** Rules, hooks, agents, skills  
+**Role:** Creator  
+**Technologies:** Shell, Claude Code  
+**Date:** 2026-01
+
+A personal Claude Code configuration: rules, hooks, agents, skills and commands.
+
+---
+
+### Blockchain Agent
+
+**URL:** https://github.com/wezzcoetzee/blockchain-agent  
+**Tagline:** OpenAI assistant that talks to the chain  
+**Role:** Creator  
+**Technologies:** TypeScript, OpenAI Assistants API  
+**Date:** 2025-01
+
+A basic blockchain AI agent that uses the OpenAI Assistants API (assistant, thread, run) to interact with the blockchain.
+
+---
+
+### Uniswap V3 Arbitrage
+
+**URL:** https://github.com/wezzcoetzee/uniswap-v3-arbitrage  
+**Tagline:** Arbitrage between Uniswap pools  
+**Role:** Creator  
+**Technologies:** Solidity, Uniswap V3  
+**Date:** 2024-04
+
+An arbitrage strategy that exploits price differences between Uniswap V3 liquidity pools for the same pair.
+
+---
+
 ## Connect
 
 Contact and social profiles for Wesley Coetzee:

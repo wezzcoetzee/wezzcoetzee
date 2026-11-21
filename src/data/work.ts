@@ -9,6 +9,66 @@ export type WorkItem = {
 
 export const WORK = newestFirst<WorkItem>([
   {
+    title: 'Hoarder',
+    role: 'Reclaim the disk space agents leave behind',
+    date: '2026-11',
+    url: 'https://github.com/wezzcoetzee/hoarder',
+  },
+  {
+    title: 'Metronome',
+    role: 'Keyboard-friendly metronome for macOS',
+    date: '2026-11',
+    url: 'https://github.com/wezzcoetzee/metronome',
+  },
+  {
+    title: 'Jarvis',
+    role: 'macOS Dock with a Claude Code capture box',
+    date: '2026-10',
+    url: 'https://github.com/wezzcoetzee/jarvis',
+  },
+  {
+    title: 'PrivacyPods',
+    role: 'Blur your screen when you look away',
+    date: '2026-10',
+    url: 'https://github.com/wezzcoetzee/privacypods',
+  },
+  {
+    title: 'NZ Transport Planner',
+    role: 'Know when to leave for the bus',
+    date: '2026-10',
+    url: 'https://github.com/wezzcoetzee/transport-planner-nz',
+  },
+  {
+    title: 'What Did I Say',
+    role: 'Calls transcribed locally into Obsidian',
+    date: '2026-07',
+    url: 'https://github.com/wezzcoetzee/what-did-i-say',
+  },
+  {
+    title: 'Hyperdash',
+    role: 'iOS app for Hyperliquid wallets',
+    date: '2026-07',
+    url: 'https://github.com/wezzcoetzee/hyperdash',
+  },
+  {
+    title: 'Hyperliquid Go SDK',
+    role: 'Byte-identical port of the TS SDK',
+    date: '2026-05',
+    url: 'https://github.com/wezzcoetzee/hyperliquid-go',
+  },
+  {
+    title: 'Blockchain Agent',
+    role: 'OpenAI assistant that talks to the chain',
+    date: '2025-01',
+    url: 'https://github.com/wezzcoetzee/blockchain-agent',
+  },
+  {
+    title: 'Uniswap V3 Arbitrage',
+    role: 'Arbitrage between Uniswap pools',
+    date: '2024-04',
+    url: 'https://github.com/wezzcoetzee/uniswap-v3-arbitrage',
+  },
+  {
     title: 'Hermes Password Manager',
     role: 'Let Hermes log in with Apple Passwords',
     date: '2026-10',
