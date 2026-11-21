@@ -187,9 +187,10 @@ Label type in Graphite, preceded by a Cursor Blue `#` (hidden from assistive tec
 
 The signature component: the notebook entry.
 
-- **Structure:** title on the left, meta on the right on a shared baseline, 16px vertical padding, 16px gap, a 1px Rule border under each row. Work rows add the role in italic meta beside the title; the title and role wrap together on narrow screens.
+- **Structure:** title on the left, ship date on the right on a shared baseline, 16px vertical padding, 16px gap, a 1px Rule border under each row. An italic detail sits beside the title (a project's one-liner, an article's publication); title and detail wrap together on narrow screens.
+- **Date:** month and year (`Oct 2026`), or the year alone when the month is unknown. Always newest first. The right column holds nothing but the date.
 - **Default:** title in Bright Chalk, meta in Graphite with tabular figures.
-- **Hover:** the title shifts 4px right and turns Cursor Blue over 200ms ease-out. The meta doesn't move.
+- **Hover:** the title shifts 4px right and turns Cursor Blue over 200ms ease-out. The date doesn't move.
 - **Expand:** Work shows 5 rows; a text button reveals the rest, each new row rising 6px in with a 50ms stagger.
 
 ### Text Button

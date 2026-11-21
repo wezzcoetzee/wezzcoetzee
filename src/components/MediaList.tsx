@@ -1,4 +1,5 @@
 import { MEDIA } from '@/data';
+import { DatedRow } from './DatedRow';
 import { SectionHeading } from './SectionHeading';
 
 export function MediaList() {
@@ -8,19 +9,13 @@ export function MediaList() {
 
       <ul>
         {MEDIA.map((item) => (
-          <li key={item.url} className="border-b border-border">
-            <a
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-baseline justify-between gap-4 py-4"
-            >
-              <span className="text-primary transition-[color,transform] duration-200 ease-out group-hover:translate-x-1 group-hover:text-accent">
-                {item.title}
-              </span>
-              <span className="shrink-0 text-sm text-muted-foreground">{item.source}</span>
-            </a>
-          </li>
+          <DatedRow
+            key={item.url}
+            title={item.title}
+            detail={item.source}
+            date={item.date}
+            url={item.url}
+          />
         ))}
       </ul>
     </section>

@@ -8,7 +8,9 @@ RootLayout (layout.tsx)
     ├── SiteHeader
     │   └── ThemeToggle      'use client'
     ├── WorkList             'use client'
+    │   └── DatedRow
     ├── MediaList
+    │   └── DatedRow
     ├── ActivityGraph
     └── SocialLinks (footer)
 ```
@@ -23,6 +25,9 @@ All content is static TypeScript in `src/data/`, re-exported from `src/data/inde
 
 - `work.ts`: `WORK`, rendered by `WorkList` and used for `workExample` in the Person JSON-LD
 - `media.ts`: `MEDIA`, rendered by `MediaList`
+- `ship-date.ts`: every entry carries a `date` (`'YYYY-MM'`, or `'YYYY'` when the month is unknown). Both lists pass through `newestFirst`, so new entries can go anywhere in the array. `formatShipDate` renders `Oct 2026` / `2024`.
+
+Both lists render through `DatedRow`: title, italic detail (project one-liner or publication), and a `<time>` on the right.
 
 Social links live in `SocialLinks.tsx`; the Person schema keeps its own `sameAs` list in `page.tsx`.
 
