@@ -7,7 +7,7 @@ import { WORK } from '@/data';
 
 const SITE_URL = 'https://wezzcoetzee.com';
 const PERSON_DESCRIPTION =
-  'Tech Lead at Idexx. I build highly scalable distributed systems, and lead the engineering teams that ship them. Auckland-based, remote anywhere.';
+  'Engineer shipping agent tooling in the open: MCP servers, trading CLIs, browser and macOS helpers. Tech Lead at Idexx, based in Auckland.';
 
 export default function Home() {
   const personData = {
@@ -31,6 +31,8 @@ export default function Home() {
       'https://stackoverflow.com/users/5658060/wesley-coetzee',
     ],
     knowsAbout: [
+      'AI Agents',
+      'Model Context Protocol',
       'Distributed Systems',
       'Event-Driven Architecture',
       'Technical Leadership',
@@ -66,9 +68,9 @@ export default function Home() {
 
         <main id="main-content">
           <div className="fade-in mt-10 [animation-delay:80ms] md:mt-14">
-            <h1>Tech Lead at Idexx</h1>
+            <h1>Building AI agents and the tools they run on</h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Building distributed systems and the teams that ship them
+              Tech Lead at Idexx. Distributed systems and crypto infrastructure before that.
             </p>
           </div>
 

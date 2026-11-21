@@ -1,6 +1,6 @@
 # Wesley Coetzee
 
-> Tech Lead and Principal Software Engineer based in Auckland, New Zealand. 10+ years of experience building scalable software systems and leading engineering teams across fintech, energy, and veterinary diagnostics industries.
+> Engineer building AI agents and the tools they run on: MCP servers, trading CLIs, browser and macOS helpers. Tech Lead at Idexx, based in Auckland, New Zealand, with 10+ years of building scalable software systems and leading engineering teams across fintech, energy, and veterinary diagnostics.
 
 Wesley Coetzee is a hands-on engineering leader with expertise in full-stack development, distributed systems, and cloud infrastructure. He has held roles ranging from junior developer to Tech Lead and Principal Software Engineer, working across companies such as Derivco, Eneco, and Idexx. He won the Tesla Innovation Award in 2017 and spoke at GoTo Amsterdam 2024.
 

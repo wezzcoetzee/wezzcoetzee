@@ -9,10 +9,9 @@ const geistMono = Geist_Mono({
   weight: ['400', '500', '700'],
 });
 
-const SITE_TITLE =
-  'Wesley Coetzee, Tech Lead & Principal Software Engineer working on distributed systems and crypto infrastructure';
+const SITE_TITLE = 'Wesley Coetzee, building AI agents and the tools they run on';
 const SITE_DESCRIPTION =
-  'I build highly scalable distributed systems, and lead the engineering teams that ship them. Auckland-based, remote anywhere.';
+  'Engineer shipping agent tooling in the open: MCP servers, trading CLIs, browser and macOS helpers. Tech Lead at Idexx, based in Auckland.';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wezzcoetzee.com'),
