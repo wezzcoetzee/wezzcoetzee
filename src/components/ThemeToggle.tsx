@@ -51,7 +51,7 @@ export function ThemeToggle() {
     <button
       onClick={toggle}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-      className="group text-muted-foreground hover:text-foreground transition-colors"
+      className="group -m-2 p-2 text-muted-foreground hover:text-foreground transition-colors"
     >
       {/* Remounting on theme change restarts the entry animation. */}
       <span key={theme} className="icon-swap block">

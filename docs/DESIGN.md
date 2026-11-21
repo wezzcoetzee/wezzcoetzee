@@ -12,11 +12,11 @@ colors:
   online: '#6ebe82'
   background-light: '#fafaf9'
   foreground-light: '#262626'
-  muted-foreground-light: '#8a8a8a'
+  muted-foreground-light: '#6b6b6b'
   border-light: '#e2e2e0'
   primary-light: '#171717'
   primary-foreground-light: '#fafaf9'
-  accent-light: '#5a7abe'
+  accent-light: '#4a6aae'
   online-light: '#5cac70'
 typography:
   display:
@@ -145,7 +145,7 @@ A monochrome ink-on-black palette with one cool blue for interaction and one gre
 
 **The Equal Themes Rule.** Every token has a light counterpart and each theme is checked independently. Light mode is not a degraded mode.
 
-**Known contrast debt.** Pewter on the light page measures about 3.3:1 and Cursor Blue (light) about 4.0:1; both are under AA for body-size text. Graphite on black (about 4.9:1) and Cursor Blue on black (about 7.2:1) pass. Fix light values before adding more muted text.
+**The AA Floor Rule.** Every text colour clears 4.5:1 on its own theme's page. Current lows: Graphite on black (about 4.9:1), Pewter on off-white (about 5.1:1), Cursor Blue (light) on off-white (about 5.1:1). Check any new muted value against these before shipping.
 
 ## 3. Typography
 

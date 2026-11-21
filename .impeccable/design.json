@@ -22,7 +22,7 @@
       "accent-light": {
         "role": "primary",
         "displayName": "Cursor Blue (light)",
-        "canonical": "oklch(57.5% 0.11 266)"
+        "canonical": "oklch(52% 0.11 265)"
       },
       "online": {
         "role": "tertiary",
@@ -59,7 +59,11 @@
           "oklch(95% 0 0)"
         ]
       },
-      "foreground": { "role": "neutral", "displayName": "Chalk", "canonical": "oklch(94.9% 0 0)" },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Chalk",
+        "canonical": "oklch(94.9% 0 0)"
+      },
       "primary": {
         "role": "neutral",
         "displayName": "Bright Chalk",
@@ -70,7 +74,11 @@
         "displayName": "Graphite",
         "canonical": "oklch(58% 0 0)"
       },
-      "border": { "role": "neutral", "displayName": "Rule", "canonical": "oklch(26.9% 0 0)" },
+      "border": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "oklch(26.9% 0 0)"
+      },
       "primary-foreground": {
         "role": "neutral",
         "displayName": "True Black",
@@ -94,7 +102,7 @@
       "muted-foreground-light": {
         "role": "neutral",
         "displayName": "Pewter",
-        "canonical": "oklch(63% 0 0)"
+        "canonical": "oklch(52% 0 0)"
       },
       "border-light": {
         "role": "neutral",
@@ -108,9 +116,18 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The single h1." },
-      "title": { "displayName": "Title", "purpose": "One-line subtitle under the h1." },
-      "body": { "displayName": "Body", "purpose": "List titles, footer links, header name." },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The single h1."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "One-line subtitle under the h1."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "List titles, footer links, header name."
+      },
       "meta": {
         "displayName": "Meta",
         "purpose": "Years, roles, sources, the expand button. Tabular figures."
@@ -144,7 +161,7 @@
       },
       {
         "name": "icon-swap",
-        "value": "iconSwap 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both",
+        "value": "iconSwap 0.4s cubic-bezier(0.16, 1, 0.3, 1) both (ease-out-expo)",
         "purpose": "Theme toggle icon on change."
       },
       {
@@ -154,8 +171,14 @@
       }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      }
     ]
   },
   "components": [
@@ -228,6 +251,11 @@
       {
         "name": "The Equal Themes Rule",
         "body": "Every token has a light counterpart and each theme is checked independently. Light mode is not a degraded mode.",
+        "section": "colors"
+      },
+      {
+        "name": "The AA Floor Rule",
+        "body": "Every text colour clears 4.5:1 on its own theme's page. Current lows: Graphite on black (about 4.9:1), Pewter on off-white (about 5.1:1), Cursor Blue (light) on off-white (about 5.1:1). Check any new muted value against these before shipping.",
         "section": "colors"
       },
       {
