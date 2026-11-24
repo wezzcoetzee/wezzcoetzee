@@ -8,20 +8,36 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><a href="https://github.com/wezzcoetzee/notchivity"><b>notchivity</b></a><br/>Subscriptions and PRs from your Mac notch</td>
-<td width="50%" valign="top"><a href="https://github.com/wezzcoetzee/tradingview-mcp"><b>tradingview-mcp</b></a><br/>Claude Code meets TradingView</td>
+<td valign="top"><b>Agents</b></td>
+<td valign="top">
+<a href="https://github.com/wezzcoetzee/claude-code-config"><b>claude-code-config</b></a> My Claude Code rules, hooks and skills<br/>
+<a href="https://github.com/wezzcoetzee/hermes-password-manager"><b>hermes-password-manager</b></a> Let Hermes log in with your Apple Passwords<br/>
+<a href="https://github.com/wezzcoetzee/what-did-i-say"><b>what-did-i-say</b></a> Record calls, transcribe locally, notes to Obsidian
+</td>
 </tr>
 <tr>
-<td valign="top"><a href="https://github.com/wezzcoetzee/tokengochi"><b>tokengochi</b></a><br/>A pet that gamifies your token usage</td>
-<td valign="top"><a href="https://github.com/wezzcoetzee/hyperliquid-cli"><b>hyperliquid-cli</b></a><br/>A CLI for your agent to trade on Hyperliquid</td>
+<td valign="top"><b>macOS</b></td>
+<td valign="top">
+<a href="https://github.com/wezzcoetzee/privacypods"><b>privacypods</b></a> Blur your screens when you look away, via AirPods<br/>
+<a href="https://github.com/wezzcoetzee/transport-planner-nz"><b>transport-planner-nz</b></a> Know when to leave to catch your bus
+</td>
 </tr>
 <tr>
-<td valign="top"><a href="https://github.com/wezzcoetzee/transport-planner-nz"><b>transport-planner-nz</b></a><br/>Know when to leave to catch your transport</td>
-<td valign="top"><a href="https://github.com/wezzcoetzee/hyperdash"><b>hyperdash</b></a><br/>Manage multiple Hyperliquid wallets</td>
+<td valign="top"><b>Trading</b></td>
+<td valign="top">
+<a href="https://github.com/wezzcoetzee/tradinglab"><b>tradinglab</b></a> Backtest and optimise SMA crossover strategies<br/>
+<a href="https://github.com/wezzcoetzee/hyperdash"><b>hyperdash</b></a> Monitor and trade multiple Hyperliquid wallets<br/>
+<a href="https://github.com/wezzcoetzee/copy-trade-bot"><b>copy-trade-bot</b></a> Copy trades from chosen Hyperliquid wallets<br/>
+<a href="https://github.com/wezzcoetzee/moving-average-bot"><b>moving-average-bot</b></a> Trade perps on moving average crossovers
+</td>
 </tr>
 <tr>
-<td valign="top"><a href="https://github.com/wezzcoetzee/little-helper"><b>little-helper</b></a><br/>Chrome quality of life extension</td>
-<td valign="top"><a href="https://github.com/wezzcoetzee/hermes-password-manager"><b>hermes-password-manager</b></a><br/>Let Hermes log in with your Apple Passwords</td>
+<td valign="top"><b>Systems</b></td>
+<td valign="top">
+<a href="https://github.com/wezzcoetzee/hyperliquid-go"><b>hyperliquid-go</b></a> Go SDK for Hyperliquid<br/>
+<a href="https://github.com/wezzcoetzee/email-verification"><b>email-verification</b></a> Verify emails at scale with a worker pool<br/>
+<a href="https://github.com/wezzcoetzee/beth-stack"><b>beth-stack</b></a> Hypermedia web framework built for speed
+</td>
 </tr>
 </table>
 
