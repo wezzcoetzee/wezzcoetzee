@@ -18,8 +18,14 @@
 <tr>
 <td valign="top"><b>macOS</b></td>
 <td valign="top">
+<a href="https://github.com/wezzcoetzee/jarvis"><b>jarvis</b></a> Dock replacement that hands notes to Claude Code<br/>
+<a href="https://github.com/wezzcoetzee/notchivity"><b>notchivity</b></a> AI usage, token spend and open PRs in the notch<br/>
+<a href="https://github.com/wezzcoetzee/hoarder"><b>hoarder</b></a> Reclaim the disk space agents leave behind<br/>
+<a href="https://github.com/wezzcoetzee/tokengochi"><b>tokengochi</b></a> Menu bar pet that lives on your Claude usage<br/>
 <a href="https://github.com/wezzcoetzee/privacypods"><b>privacypods</b></a> Blur your screens when you look away, via AirPods<br/>
-<a href="https://github.com/wezzcoetzee/transport-planner-nz"><b>transport-planner-nz</b></a> Know when to leave to catch your bus
+<a href="https://github.com/wezzcoetzee/transport-planner-nz"><b>transport-planner-nz</b></a> Know when to leave to catch your bus<br/>
+<a href="https://github.com/wezzcoetzee/metronome"><b>metronome</b></a> Precise, keyboard-friendly metronome<br/>
+<a href="https://github.com/wezzcoetzee/pomodoro"><b>pomodoro</b></a> Turn focus sessions into streaks
 </td>
 </tr>
 <tr>
