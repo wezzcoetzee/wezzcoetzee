@@ -59,3 +59,7 @@ The deploy workflow re-runs lint and build before shipping to Cloudflare Pages.
 ## Dependency Updates
 
 Dependabot (`.github/dependabot.yml`) opens weekly PRs for `bun` packages (minor and patch grouped into one PR) and GitHub Actions. Dependabot alerts and security updates are enabled on the repo, so vulnerable packages get fix PRs outside the weekly schedule.
+
+Dependabot only sees advisories GitHub has indexed for the lockfile, so run `bun audit` as well. `bun audit fix` bumps vulnerable transitive packages within their ranges. When a parent's range blocks the fix, pin the parent in `overrides` in `package.json`:
+
+- `typescript-eslint: ^8.74.0` pulls in `minimatch@^11.0.1` (GHSA-g3hv-75wg-m249). Drop it once `eslint-config-next` requires 8.74 or later.
