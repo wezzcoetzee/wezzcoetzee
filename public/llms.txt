@@ -21,7 +21,7 @@ Wesley Coetzee is a hands-on engineering leader with expertise in full-stack dev
 - [Gardena Plugin](https://github.com/wezzcoetzee/gardena-plugin): Homebridge plugin for Gardena irrigation
 - [Notchivity](https://github.com/wezzcoetzee/notchivity): Manage subscriptions and PRs from the notch
 - [Eufy Vacuum Plugin](https://github.com/wezzcoetzee/eufy-vacuum-plugin): Homebridge plugin for the Eufy L60
-- [What Did I Say](https://github.com/wezzcoetzee/what-did-i-say): Calls transcribed locally into Obsidian
+- [Hearsay](https://github.com/wezzcoetzee/hearsay): Calls transcribed locally into Obsidian
 - [Hyperdash](https://github.com/wezzcoetzee/hyperdash): iOS app for Hyperliquid wallets
 - [Copy Trade Bot](https://github.com/wezzcoetzee/copy-trade-bot): Mirror wallets on Hyperliquid
 - [Smart DCA Bot](https://github.com/wezzcoetzee/smart-dca-bot): Signal-weighted DCA into Bitcoin
