@@ -12,7 +12,7 @@
 <td valign="top">
 <a href="https://github.com/wezzcoetzee/claude-code-config"><b>claude-code-config</b></a> My Claude Code rules, hooks and skills<br/>
 <a href="https://github.com/wezzcoetzee/hermes-password-manager"><b>hermes-password-manager</b></a> Let Hermes log in with your Apple Passwords<br/>
-<a href="https://github.com/wezzcoetzee/what-did-i-say"><b>what-did-i-say</b></a> Record calls, transcribe locally, notes to Obsidian
+<a href="https://github.com/wezzcoetzee/hearsay"><b>hearsay</b></a> Record calls, transcribe locally, notes to Obsidian
 </td>
 </tr>
 <tr>

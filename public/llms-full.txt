@@ -337,9 +337,9 @@ A Homebridge plugin that exposes the Eufy L60 robot vacuum to Apple Home.
 
 ---
 
-### What Did I Say
+### Hearsay
 
-**URL:** https://github.com/wezzcoetzee/what-did-i-say  
+**URL:** https://github.com/wezzcoetzee/hearsay  
 **Tagline:** Calls transcribed locally into Obsidian  
 **Role:** Creator  
 **Technologies:** Swift, WhisperKit, macOS  

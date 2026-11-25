@@ -39,10 +39,10 @@ export const WORK = newestFirst<WorkItem>([
     url: 'https://github.com/wezzcoetzee/transport-planner-nz',
   },
   {
-    title: 'What Did I Say',
+    title: 'Hearsay',
     role: 'Calls transcribed locally into Obsidian',
     date: '2026-07',
-    url: 'https://github.com/wezzcoetzee/what-did-i-say',
+    url: 'https://github.com/wezzcoetzee/hearsay',
   },
   {
     title: 'Hyperdash',
