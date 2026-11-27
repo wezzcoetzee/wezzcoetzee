@@ -63,3 +63,5 @@ Dependabot (`.github/dependabot.yml`) opens weekly PRs for `bun` packages (minor
 Dependabot only sees advisories GitHub has indexed for the lockfile, so run `bun audit` as well. `bun audit fix` bumps vulnerable transitive packages within their ranges. When a parent's range blocks the fix, pin the parent in `overrides` in `package.json`:
 
 - `typescript-eslint: ^8.74.0` pulls in `minimatch@^11.0.1` (GHSA-g3hv-75wg-m249). Drop it once `eslint-config-next` requires 8.74 or later.
+
+The liquid-glass kit (`src/components/liquid-glass/`) needs `@ui-sdk/core` and `@ui-sdk/react` at the exact beta upstream uses (`0.1.0-beta.13`). Don't accept a Dependabot bump of either on its own: re-copy the kit from [bilalgursen/liquid-glass](https://github.com/bilalgursen/liquid-glass) and take its pinned versions with it.

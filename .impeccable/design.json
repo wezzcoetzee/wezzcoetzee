@@ -126,7 +126,7 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "List titles, footer links, header name."
+        "purpose": "List titles, header name."
       },
       "meta": {
         "displayName": "Meta",

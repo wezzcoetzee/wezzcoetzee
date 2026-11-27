@@ -137,7 +137,7 @@ A monochrome ink-on-black palette with one cool blue for interaction and one gre
 - **True Black** (`background`): the dark-theme page. Pure #000, not a tinted near-black.
 - **Chalk** (`foreground`): body text on black.
 - **Bright Chalk** (`primary`): the h1, list titles, and the name in the header. One step brighter than body so titles lead.
-- **Graphite** (`muted-foreground`): section labels, roles, years, sources, footer links, the location label.
+- **Graphite** (`muted-foreground`): section labels, roles, years, sources, the location label.
 - **Rule** (`border`): row borders, dividers, the avatar ring.
 - **Light theme**: Off-white page (`background-light`, chroma near zero, not cream), Ink (`foreground-light`), Deep Ink (`primary-light`), Pewter (`muted-foreground-light`), Pale Rule (`border-light`).
 
@@ -161,7 +161,7 @@ A monochrome ink-on-black palette with one cool blue for interaction and one gre
 
 - **Display** (700, `clamp(2rem, 4vw + 0.5rem, 3.25rem)`, 1.15, -0.02em): the single h1. One per page.
 - **Title** (400, 1.125rem, 1.75): the one-line subtitle under the h1, in Graphite.
-- **Body** (400, 1rem, 1.5): list titles, footer links, the name in the header (at 500).
+- **Body** (400, 1rem, 1.5): list titles and the name in the header (at 500). The dock's links are 14px at 500, coloured by the glass's own tone.
 - **Meta** (400, 0.875rem, tabular figures): years, roles (italic), sources, the expand button.
 - **Label** (400, 0.75rem, 0.1em tracking, uppercase): section headings (`# WORK`) and the location label. Short words only.
 
