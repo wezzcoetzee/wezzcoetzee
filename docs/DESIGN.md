@@ -76,11 +76,12 @@ components:
     typography: '{typography.meta}'
   text-button-hover:
     textColor: '{colors.accent}'
-  footer-link:
-    textColor: '{colors.muted-foreground}'
-    typography: '{typography.body}'
-  footer-link-hover:
-    textColor: '{colors.foreground}'
+  glass-dock:
+    typography: '{typography.meta}'
+    rounded: '{rounded.full}'
+  glass-header:
+    rounded: '{rounded.full}'
+    padding: '10px 16px'
   skip-link:
     backgroundColor: '{colors.primary}'
     textColor: '{colors.primary-foreground}'
@@ -113,8 +114,9 @@ This system rejects Notion-clone resume pages, SaaS marketing surfaces (hero met
 
 - One family, Geist Mono, in three weights (400, 500, 700).
 - True black (#000) by default; a near-neutral off-white light theme of equal standing.
-- Flat. No shadows, no cards, no fills behind content.
-- Hairline row borders and full-width dividers are the only structure.
+- Flat content. Rows, headings and the graph sit straight on the sheet.
+- Two panes of liquid glass float over it: a sticky header and a link dock. They bend the page as it scrolls underneath.
+- Hairline row borders and full-width dividers are the only structure in the content.
 - A single accent, used for state and the `#` section marker.
 - Motion on load and on hover only. Nothing loops.
 
@@ -171,11 +173,15 @@ A monochrome ink-on-black palette with one cool blue for interaction and one gre
 
 ## 4. Elevation
 
-The system is completely flat. There are no shadows, no blurs, no raised surfaces, and no tonal layering. Depth is never simulated; separation comes from 1px rules in Rule grey and from spacing. The only ring in the system is the 1px Rule ring around the avatar.
+Content is flat. Rows, headings and the activity graph have no shadows, blurs, raised surfaces or tonal layering; separation comes from 1px rules in Rule grey and from spacing.
+
+The chrome floats. The header and the link dock are liquid glass from the vendored kit in `src/components/liquid-glass/` (WebGL2, copied verbatim from [bilalgursen/liquid-glass](https://github.com/bilalgursen/liquid-glass)). They are the only raised surfaces and carry the kit's own soft shadow and rim. Without WebGL2 they fall back to a CSS frosted pill.
 
 ### Named Rules
 
-**The Flat Page Rule.** If an element needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.
+**The Flat Page Rule.** If a piece of content needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.
+
+**The Two Panes Rule.** Glass is reserved for the two pieces of chrome that float over the page: the sticky header and the link dock. Content (rows, headings, the activity graph) stays flat on the sheet and is what the glass bends. Never add a third pane, and never put content inside glass.
 
 ## 5. Components
 
@@ -197,13 +203,13 @@ The signature component: the notebook entry.
 
 Meta type in Graphite, no background, no border, no padding: `+ 3 more` / `− Show less`. Hover turns Cursor Blue. Reports `aria-expanded`.
 
-### Footer Links (Navigation)
+### Glass Dock (Navigation)
 
-A wrapping row of plain words (Email, GitHub, X, LinkedIn, CV), 24px apart, Graphite. Hover brightens to Chalk while a 1px underline grows left to right from the baseline over 300ms ease-out. Labelled `Elsewhere`.
+`SocialLinks`: a clear `GlassButtonGroup` (tint 0.3, size md) fixed 24px above the bottom of the viewport (or the safe-area inset), centred. Plain-word links (Email, GitHub, X, LinkedIn, CV) at weight 500 share one body of glass, which swells under the pointer. Labelled `Elsewhere`. The page keeps 128px of bottom padding so the last row clears it.
 
 ### Header
 
-Avatar (28px circle, 1px Rule ring), name at weight 500 in Bright Chalk, then on the right a 6px Online Green dot with the location label (hidden under 640px) and the theme toggle.
+`SiteHeader`: a clear `GlassCard` pill (tint 0.35, blur 2px) stuck 16px from the top, bleeding 16px past the measure on each side so its contents line up with the column. Avatar (28px circle, 1px Rule ring), name at weight 500 in Bright Chalk, then on the right a 6px Online Green dot with the location label (hidden under 640px) and the theme toggle.
 
 ### Theme Toggle
 
@@ -234,7 +240,8 @@ Every interactive element gets a 2px Cursor Blue outline at 3px offset on `:focu
 - **Don't** borrow SaaS marketing vocabulary: hero metric, three-up feature grid, gradient buttons, testimonial carousel, "Trusted by" logo strip.
 - **Don't** fall into generic dev-portfolio defaults: neon accent, Inter everywhere, "Hi, I'm X" h1, tech-logo wall.
 - **Don't** reach for maximalist novelty: 3D heroes, scroll-jacking, WebGL for its own sake.
-- **Don't** add cards, filled panels, shadows, glass, or gradients of any kind.
+- **Don't** add cards, filled panels, shadows or gradients to content, or glass beyond the header and the dock.
+- **Don't** edit files in `src/components/liquid-glass/`. Customise through props and classes; update by re-copying from upstream.
 - **Don't** use a `border-left` or `border-right` over 1px as a coloured accent.
 - **Don't** add looping or continuously repainting animation (pulse, shimmer, spinners). The online dot stays still.
 - **Don't** add uppercase labels beyond the `#` section heading and the location label.

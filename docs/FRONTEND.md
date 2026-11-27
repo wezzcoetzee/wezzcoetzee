@@ -5,17 +5,17 @@
 ```
 RootLayout (layout.tsx)
 └── Home (page.tsx)
-    ├── SiteHeader
+    ├── SiteHeader           sticky GlassCard
     │   └── ThemeToggle      'use client'
     ├── WorkList             'use client'
     │   └── DatedRow
     ├── MediaList
     │   └── DatedRow
     ├── ActivityGraph
-    └── SocialLinks (footer)
+    └── SocialLinks          fixed GlassButtonGroup dock (footer)
 ```
 
-`ThemeToggle` (localStorage, DOM) and `WorkList` (expand state) are the only client components. Entrance motion is CSS (`.fade-in`, `.rise-in`).
+`ThemeToggle` (localStorage, DOM) and `WorkList` (expand state) are the only client components we own. The header and dock render glass from `src/components/liquid-glass/`, a vendored copy of [bilalgursen/liquid-glass](https://github.com/bilalgursen/liquid-glass): client components drawn in WebGL2, lint- and Prettier-ignored, never edited locally. To update the kit, re-copy the folder from upstream. Entrance motion is CSS (`.fade-in`, `.rise-in`).
 
 Conventions: named exports (default only for route files), Tailwind classes inline, inline SVG icons, no CSS modules.
 

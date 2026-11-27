@@ -26,12 +26,13 @@ src/
 │   ├── sitemap.ts / robots.ts
 │   └── globals.css         # Design tokens, base styles, animations
 ├── components/
-│   ├── SiteHeader.tsx      # Avatar, name, location, ThemeToggle
+│   ├── SiteHeader.tsx      # Sticky glass pill: avatar, name, location, ThemeToggle
 │   ├── ThemeToggle.tsx     # Client: dark/light switch
 │   ├── WorkList.tsx        # Client: project list with "show more"
 │   ├── MediaList.tsx       # Articles and talks
 │   ├── ActivityGraph.tsx   # GitHub contribution chart (ghchart.rshah.org)
-│   ├── SocialLinks.tsx     # Footer links
+│   ├── SocialLinks.tsx     # Floating glass link dock
+│   ├── liquid-glass/       # Vendored WebGL2 glass kit (bilalgursen/liquid-glass), do not edit
 │   └── SectionHeading.tsx  # "# HEADING" section label
 └── data/
     ├── work.ts             # WORK list
@@ -64,4 +65,5 @@ PRs run lint, `format:check` and build (`.github/workflows/pr-checks.yml`).
 | `_redirects`/`_headers` | `next.config` redirects and headers are ignored under `output: export`   |
 | Dark-first theme        | `data-theme='light'` override, set before paint by an inline script      |
 | Server components first | Only `ThemeToggle` and `WorkList` need client state                      |
+| Vendored glass kit      | Copied verbatim from upstream; its look depends on exact constants       |
 | Unoptimized images      | Static export has no image optimization server                           |

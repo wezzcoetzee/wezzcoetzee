@@ -1,3 +1,5 @@
+import { GlassButtonGroup, GlassButtonGroupItem } from './liquid-glass';
+
 const LINKS = [
   { label: 'Email', href: 'mailto:info@wezzcoetzee.com' },
   { label: 'GitHub', href: 'https://github.com/wezzcoetzee' },
@@ -6,20 +8,22 @@ const LINKS = [
   { label: 'CV', href: 'https://cv.wezzcoetzee.com' },
 ];
 
+/** Floating glass dock pinned to the bottom of the viewport; the page scrolls under it. */
 export function SocialLinks() {
   return (
-    <nav aria-label="Elsewhere" className="flex flex-wrap gap-x-6 gap-y-2">
-      {LINKS.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative text-muted-foreground transition-colors hover:text-foreground after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-out after:content-[''] hover:after:scale-x-100"
-        >
-          {link.label}
-        </a>
-      ))}
+    <nav
+      aria-label="Elsewhere"
+      className="fade-in fixed inset-x-0 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-40 flex justify-center px-4 [animation-delay:240ms]"
+    >
+      <GlassButtonGroup material="clear" tint={0.3}>
+        {LINKS.map((link) => (
+          <GlassButtonGroupItem key={link.href} asChild>
+            <a href={link.href} target="_blank" rel="noopener noreferrer" className="font-medium">
+              {link.label}
+            </a>
+          </GlassButtonGroupItem>
+        ))}
+      </GlassButtonGroup>
     </nav>
   );
 }

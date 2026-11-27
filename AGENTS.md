@@ -34,3 +34,4 @@ Merge to `main` and `.github/workflows/cloudflare-pages.yml` lints, builds and d
 - No commented-out code
 - Static export: no API routes, middleware, SSR or ISR
 - Server components by default; add `'use client'` only for state or browser APIs
+- Never edit `src/components/liquid-glass/` (vendored verbatim from bilalgursen/liquid-glass); customise through props and classes

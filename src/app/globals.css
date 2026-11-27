@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+/* `dark:` follows <html data-theme="dark">, which the first-paint script in layout.tsx
+   always sets. The liquid-glass kit reads the same attribute to pick its glass tone. */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 /* Tokens are full colour values, not bare channels: Tailwind generates its
    utilities as `var(--color-x)`, so a channel triplet resolves to an invalid
    colour and silently falls back to inherited text. */

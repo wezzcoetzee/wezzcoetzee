@@ -61,10 +61,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personData) }}
       />
 
-      <div className="mx-auto w-full max-w-3xl px-6 py-10 md:py-14">
-        <div className="fade-in">
-          <SiteHeader />
-        </div>
+      {/* Bottom padding clears the fixed glass dock (SocialLinks). */}
+      <div className="mx-auto w-full max-w-3xl px-6 pt-10 pb-32 md:pt-14">
+        <SiteHeader />
 
         <main id="main-content">
           <div className="fade-in mt-10 [animation-delay:80ms] md:mt-14">
@@ -85,9 +84,7 @@ export default function Home() {
           </div>
         </main>
 
-        <div className="divider fade-in my-10 [animation-delay:240ms] md:my-12" />
-
-        <footer className="fade-in [animation-delay:240ms]">
+        <footer>
           <SocialLinks />
         </footer>
       </div>

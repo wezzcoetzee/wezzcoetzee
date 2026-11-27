@@ -155,11 +155,6 @@
         "purpose": "List row title on hover."
       },
       {
-        "name": "underline-grow",
-        "value": "transform 300ms ease-out; scaleX(0) to scaleX(1), origin left",
-        "purpose": "Footer link hover underline."
-      },
-      {
         "name": "icon-swap",
         "value": "iconSwap 0.4s cubic-bezier(0.16, 1, 0.3, 1) both (ease-out-expo)",
         "purpose": "Theme toggle icon on change."
@@ -207,18 +202,18 @@
       "css": ".ds-text-btn { background: none; border: 0; padding: 0; font-family: var(--font-mono), monospace; font-size: 0.875rem; color: var(--color-muted-foreground); cursor: pointer; transition: color 150ms ease-out; } .ds-text-btn:hover { color: var(--color-accent); } .ds-text-btn:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
     },
     {
-      "name": "Footer Links",
+      "name": "Glass Dock",
       "kind": "nav",
-      "refersTo": "footer-link",
-      "description": "Wrapping row of plain-word links with a growing underline on hover.",
-      "html": "<nav class=\"ds-footer-nav\" aria-label=\"Elsewhere\"><a class=\"ds-footer-link\" href=\"#\">Email</a><a class=\"ds-footer-link\" href=\"#\">GitHub</a><a class=\"ds-footer-link\" href=\"#\">X</a><a class=\"ds-footer-link\" href=\"#\">LinkedIn</a><a class=\"ds-footer-link\" href=\"#\">CV</a></nav>",
-      "css": ".ds-footer-nav { display: flex; flex-wrap: wrap; column-gap: 24px; row-gap: 8px; font-family: var(--font-mono), monospace; } .ds-footer-link { position: relative; color: var(--color-muted-foreground); text-decoration: none; transition: color 150ms ease-out; } .ds-footer-link::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 300ms ease-out; } .ds-footer-link:hover { color: var(--color-foreground); } .ds-footer-link:hover::after { transform: scaleX(1); } .ds-footer-link:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
+      "refersTo": "glass-dock",
+      "description": "Fixed bottom-centre clear GlassButtonGroup of plain-word links; the page bends through it as it scrolls.",
+      "html": "<nav class=\"ds-dock\" aria-label=\"Elsewhere\"><a href=\"#\">Email</a><a href=\"#\">GitHub</a><a href=\"#\">X</a><a href=\"#\">LinkedIn</a><a href=\"#\">CV</a></nav>",
+      "css": ".ds-dock { display: inline-flex; gap: 0; padding: 4px; border-radius: 9999px; border: 1px solid rgb(255 255 255 / .15); background: rgb(255 255 255 / .1); backdrop-filter: blur(12px); font-family: var(--font-mono), monospace; font-weight: 500; } .ds-dock a { height: 32px; padding: 0 14px; display: inline-flex; align-items: center; font-size: 14px; color: inherit; text-decoration: none; border-radius: 9999px; } /* CSS fallback look; the live component is WebGL2 glass. */"
     },
     {
       "name": "Header",
       "kind": "nav",
       "refersTo": "avatar",
-      "description": "Avatar, name, presence dot with location, theme toggle.",
+      "description": "Sticky clear GlassCard pill: avatar, name, presence dot with location, theme toggle.",
       "html": "<header class=\"ds-header\"><div class=\"ds-header-id\"><span class=\"ds-avatar\"></span><span class=\"ds-name\">Wesley Coetzee</span></div><div class=\"ds-header-right\"><span class=\"ds-location\"><span class=\"ds-dot\" aria-hidden=\"true\"></span>AUCKLAND, NZ</span><button class=\"ds-toggle\" aria-label=\"Switch to light mode\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"3.25\" fill=\"currentColor\" stroke=\"none\"/><path d=\"M12 3.5v2.75M12 17.75v2.75M3.5 12h2.75M17.75 12h2.75\"/></svg></button></div></header>",
       "css": ".ds-header { display: flex; align-items: center; justify-content: space-between; font-family: var(--font-mono), monospace; } .ds-header-id { display: flex; align-items: center; gap: 12px; } .ds-avatar { width: 28px; height: 28px; border-radius: 9999px; background: var(--color-border); box-shadow: 0 0 0 1px var(--color-border); } .ds-name { font-weight: 500; color: var(--color-primary); } .ds-header-right { display: flex; align-items: center; gap: 20px; } .ds-location { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--color-muted-foreground); } .ds-dot { width: 6px; height: 6px; border-radius: 9999px; background: var(--color-online); } .ds-toggle { background: none; border: 0; padding: 0; color: var(--color-muted-foreground); cursor: pointer; transition: color 150ms ease-out; } .ds-toggle svg { display: block; transition: transform 300ms ease-out; } .ds-toggle:hover { color: var(--color-foreground); } .ds-toggle:hover svg { transform: rotate(90deg); } .ds-toggle:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 1px; }"
     },
@@ -237,7 +232,7 @@
     "keyCharacteristics": [
       "One family, Geist Mono, in three weights (400, 500, 700).",
       "True black (#000) by default; a near-neutral off-white light theme of equal standing.",
-      "Flat. No shadows, no cards, no fills behind content.",
+      "Flat content; two panes of liquid glass (sticky header, link dock) float over it and bend the page.",
       "Hairline row borders and full-width dividers are the only structure.",
       "A single accent, used for state and the `#` section marker.",
       "Motion on load and on hover only. Nothing loops."
@@ -270,8 +265,12 @@
       },
       {
         "name": "The Flat Page Rule",
-        "body": "If an element needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.",
+        "body": "If a piece of content needs a shadow or a filled panel to stand out, the hierarchy is wrong. Fix it with size, weight, or space.",
         "section": "elevation"
+      },
+      {
+        "name": "The Two Panes Rule",
+        "body": "Glass is reserved for the two pieces of chrome that float over the page: the sticky header and the link dock. Content stays flat on the sheet and is what the glass bends. Never add a third pane, and never put content inside glass."
       }
     ],
     "dos": [
@@ -287,7 +286,7 @@
       "Don't borrow SaaS marketing vocabulary: hero metric, three-up feature grid, gradient buttons, testimonial carousel, \"Trusted by\" logo strip.",
       "Don't fall into generic dev-portfolio defaults: neon accent, Inter everywhere, \"Hi, I'm X\" h1, tech-logo wall.",
       "Don't reach for maximalist novelty: 3D heroes, scroll-jacking, WebGL for its own sake.",
-      "Don't add cards, filled panels, shadows, glass, or gradients of any kind.",
+      "Don't add cards, filled panels, shadows or gradients to content, or glass beyond the header and the dock.",
       "Don't use a `border-left` or `border-right` over 1px as a coloured accent.",
       "Don't add looping or continuously repainting animation (pulse, shimmer, spinners). The online dot stays still.",
       "Don't add uppercase labels beyond the `#` section heading and the location label."
